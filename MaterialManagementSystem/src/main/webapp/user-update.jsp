@@ -16,6 +16,9 @@
     	
     </form>
     <a href="admin-menu.html">aaa戻るあああああ</a>
+
+    <a href="admin-menu.html">戻る</a>
+
 	</table>
 </body>
 </html>
