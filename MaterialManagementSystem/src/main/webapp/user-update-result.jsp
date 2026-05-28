@@ -8,7 +8,7 @@
 </head>
 <body>
 <%
-processingNumber = (Integer) request.getAttribute("processingNumber");
+int processingNumber = (Integer) request.getAttribute("processingNumber");
 if(processingNumber > 0){
 	%>
 正常に更新しました。<br>
@@ -19,10 +19,10 @@ if(processingNumber > 0){
 <%
 }
 %>
-<jsp:useBean id="user" scope="session" class="model.entity.UserBean"/>
-ユーザID：<jsp:getProperty name=”user” property=”user_id”/>
-パスワード：<jsp:getProperty name=”user” property=”user_pass”/>
-<a href="user-update.jsp">更新を続ける</a>
-<a href="admin-menu.jsp">戻る</a>
+
+<form action="user-update" method="POST">
+	<input type="submit" value="更新を続ける">
+	</form>
+
 </body>
 </html>

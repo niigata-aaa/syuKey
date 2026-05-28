@@ -7,6 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+aaaaaaa
+
+ <form action="user-delete" method="POST">
+	<input type="submit" value="削除を続ける">
+	</form>
 
 </body>
 </html>

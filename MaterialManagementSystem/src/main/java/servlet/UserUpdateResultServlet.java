@@ -56,7 +56,7 @@ public class UserUpdateResultServlet extends HttpServlet {
 		//リクエストスコープへの属性の設定
 		request.setAttribute("processingNumber", processingNumber);
 		//リクエストの転送
-		RequestDispatcher rd = request.getRequestDispatcher("user-update-confirm.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("user-update-result.jsp");
 		rd.forward(request, response);
 	}
 

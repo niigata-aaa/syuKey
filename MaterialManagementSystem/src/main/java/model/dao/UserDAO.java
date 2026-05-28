@@ -64,7 +64,7 @@ public class UserDAO {
 	public int update(UserBean user) throws ClassNotFoundException,SQLException{
 		int processingNumber = 0; //処理件数
 		
-		String sql = "UPDATE m_user SET user_pass WHERE user_id = ?";
+		String sql = "UPDATE m_user SET user_pass = ? WHERE user_id = ?";
 		
 		//データベースへの接続の取得、PreparedStatementの取得
 		try (Connection con = ConnectionManager.getConnection();
@@ -75,8 +75,8 @@ public class UserDAO {
 		String user_pass = user.getUser_pass();
 		
 		//プレースホルダーへの値の設定
-		pstmt.setString(1, user.getUser_id());
-		pstmt.setString(2, user.getUser_pass());
+		pstmt.setString(2, user_id);
+		pstmt.setString(1, user_pass);
 		
 		//SQLステートメントの実行
 		processingNumber = pstmt.executeUpdate();
