@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import model.entity.MaterialBean;
@@ -71,4 +72,74 @@ public class MaterialDAO {
 		
 		return materialList;
 	}
+	
+	public MaterialBean  select(String materialName,Date materialLimit) 
+			throws SQLException, ClassNotFoundException {
+		
+		
+
+		String sql = "SELECT * FROM m_material WHERE Material_name = ? AND Material_limit = ?";
+		MaterialBean material = new MaterialBean ();
+		try (Connection con = ConnectionManager.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql)) {
+
+			// プレースホルダへの値の設定
+			pstmt.setString(1, materialName);
+			java.sql.Date dateS = new java.sql.Date(materialLimit.getTime());
+			//java.sql.Date materialLimitS = materialLimit.getTime();
+			pstmt.setDate(2, dateS);
+
+			ResultSet res = pstmt.executeQuery();
+			
+			while (res.next()) {
+				
+				int material_id = res.getInt("material_id");
+				String material_name = res.getString("material_name");
+				String material_kana = res.getString("material_kana");
+				Date material_limit = res.getDate("material_limit");
+				int  material_amount = res.getInt("amount");
+				String  material_unit = res.getString("material_unit");
+				
+				material.setMaterial_id(material_id);
+				material.setMaterial_name(material_name);
+				material.setMaterial_kana(material_kana);
+				
+				java.sql.Date sqlDate = null;
+				
+				try {
+					sqlDate = new java.sql.Date(material_limit.getTime());
+					sqlDate = new java.sql.Date(sqlDate.getTime());
+					
+				} catch(Exception e) {
+					e.printStackTrace();
+				}
+				
+				material.setMaterial_limit(sqlDate);
+				material.setAmount(material_amount);
+				material.setMaterial_unit(material_unit);
+			}
+			
+	} return material;
+	}
+	
+	public int delete(int material_id) 
+			throws ClassNotFoundException{
+	
+		String sql = "DELETE FROM m_material WHERE material_id = ?";
+		int cnt = 0;
+		// データベースへの接続の取得、Statementの取得、SQLステートメントの実行
+		try (Connection con = ConnectionManager.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql)) {
+			
+			pstmt.setInt(1, material_id);
+
+            // SQLを実行
+             cnt = pstmt.executeUpdate();
+            	
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+		return cnt;
+    }
 }

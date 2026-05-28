@@ -10,7 +10,14 @@ public class MaterialBean implements Serializable {
 	private String material_unit;
 	private Date material_limit;
 	private String limits;
+	private int material_id;
 	
+	public int getMaterial_id() {
+		return material_id;
+	}
+	public void setMaterial_id(int material_id) {
+		this.material_id = material_id;
+	}
 	public String getLimits() {
 		return limits;
 	}
