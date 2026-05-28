@@ -115,7 +115,7 @@ div {
 						<form action="expired-delete-confirm" method="post">
 							<input type="hidden" name="material_name"
 								value="<%=list.get(i).getMaterial_name()%>"> <input
-								type="hidden" name="material_name"
+								type="hidden" name="material_limit"
 								value="<%=list.get(i).getMaterial_limit()%>"> <input
 								type="submit" value="削除">
 						</form>
