@@ -15,7 +15,7 @@
     	<input type="reset" value="クリア">
     	
     </form>
-    <a href="admin-menu.html">戻る</a>
+    <a href="admin-menu.html">戻るあああああああ</a>
 	</table>
 </body>
 </html>
