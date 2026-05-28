@@ -19,7 +19,7 @@ if(processingNumber > 0){
 <%
 }
 %>
-<jsp:UserBean i="user" scope="session" class="model.entity.UserBean"/>
+<jsp:useBean id="user" scope="session" class="model.entity.UserBean"/>
 ユーザID：<jsp:getProperty name=”user” property=”user_id”/>
 パスワード：<jsp:getProperty name=”user” property=”user_pass”/>
 <a href="user-update.jsp">更新を続ける</a>

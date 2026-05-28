@@ -23,7 +23,7 @@
 	<input type="submit" value="削除">
 </form>
 
-<form action="material-newregist" method="POST">
+<form action="material-regist" method="POST">
 	<input type="submit" value="材料マスタ登録">
 </form>
 
