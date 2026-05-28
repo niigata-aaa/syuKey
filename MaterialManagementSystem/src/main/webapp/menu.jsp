@@ -1,0 +1,190 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"
+	import="java.util.List,java.util.ArrayList,model.entity.MaterialBean,java.util.Calendar,java.time.LocalDate,java.util.Date,java.time.LocalDateTime,java.time.format.DateTimeFormatter,java.time.temporal.ChronoUnit"%>
+<!DOCTYPE html>
+<html>
+<head>
+<%
+request.setCharacterEncoding("UTF-8");
+String user_id = (String)session.getAttribute("user_id");
+%>
+<meta charset="UTF-8">
+<title><%=user_id %>さんのマイページ</title>
+<style>
+div {
+	border: 1px solid;
+}
+#expired-material{
+	color:red;
+}
+
+#near-expired-material{
+	color:#ff8c00;
+}
+	
+
+</style>
+</head>
+<body>
+	<%
+	//request.setCharacterEncoding("UTF-8");
+	List<MaterialBean> materialList = (List<MaterialBean>) request.getAttribute("materialList");
+	List<MaterialBean> materialLimitList = (List<MaterialBean>) request.getAttribute("materialLimitList");
+	List<MaterialBean> expiredList = (List<MaterialBean>) request.getAttribute("expiredList");
+	%>
+	<div id="buttons">
+		<form action="material-regist" method="post">
+			<input type="submit" value="在庫登録">
+		</form>
+
+		<form action="material-update" method="post">
+			<input type="submit" value="在庫更新">
+		</form>
+
+		<form action="history-list" method="post">
+			<input type="submit" value="スウィートメモリー">
+		</form>
+	</div>
+	<div id="material-list">
+		<div class="content-title">在庫一覧</div>
+		<input type="text" id="searchInput" placeholder="キーワードで検索">
+		<table id="myTable">
+			<tr>
+				<th>名前</th>
+				<th>数量</th>
+				<th>単位</th>
+				<th>消費期限</th>
+			</tr>
+			<%
+			for (int i = 0; i < materialList.size(); i++) {
+			%>
+			<tr>
+				<td><%=materialList.get(i).getMaterial_name()%></td>
+				<td><%=materialList.get(i).getAmount()%></td>
+				<td><%=materialList.get(i).getMaterial_unit()%></td>
+
+				<td><%=materialLimitList.get(i).getLimits()%></td>
+
+			</tr>
+			<%
+			}
+			%>
+		</table>
+	</div>
+	<div id="expired-list">
+		<div class="content-title">もったいないリスト</div>
+		<div id="expired-material">
+			<p>期限の切れてしまった材料一覧</p>
+			<%
+			List<MaterialBean> list = new ArrayList<MaterialBean>();
+			List<MaterialBean> nearlist = new ArrayList<MaterialBean>();
+			Date date = new Date();
+
+			Calendar calendar = Calendar.getInstance();
+			calendar.setTime(date);
+			calendar.add(Calendar.DAY_OF_MONTH, 7);
+			Date pastDate = calendar.getTime();
+
+			for (int i = 0; i < expiredList.size(); i++) {
+				Date thatDate = expiredList.get(i).getMaterial_limit();
+				if ((thatDate.compareTo(date) == -1) || (thatDate.compareTo(date) == 0)) {
+
+					list.add(expiredList.get(i));
+
+				} else if ((thatDate.compareTo(pastDate) == -1) || (thatDate.compareTo(pastDate) == 0)) {
+
+					nearlist.add(expiredList.get(i));
+
+				} else {
+
+				}
+			}
+			%>
+
+			<%
+			if (list.size() != 0) {
+			%>
+			<table>
+				<%
+				for (int i = 0; i < list.size(); i++) {
+				%>
+				<tr>
+					<td><%=list.get(i).getMaterial_name()%></td>
+					<td><%=list.get(i).getMaterial_limit()%></td>
+					<td>
+						<form action="expired-delete-confirm" method="post">
+							<input type="hidden" name="material_name"
+								value="<%=list.get(i).getMaterial_name()%>"> <input
+								type="hidden" name="material_name"
+								value="<%=list.get(i).getMaterial_limit()%>"> <input
+								type="submit" value="削除">
+						</form>
+					</td>
+				</tr>
+				<%
+				}
+				%>
+			</table>
+			<%
+			} else {
+			%>
+			消費期限切れの材料はありません。
+			<%
+			}
+			%>
+		</div>
+		<div id="near-expired-material">
+			<p>期限切れの近い材料一覧</p>
+			<%
+			if (nearlist.size() != 0) {
+				long datetimeNow = date.getTime();
+				long one_date_time = 1000 * 60 * 60 * 24;
+				long diffDays;
+				
+			%>
+			<table>
+				<%
+				for (int i = 0; i < nearlist.size(); i++) {
+				long datetimeList = nearlist.get(i).getMaterial_limit().getTime();
+				diffDays = (int)(datetimeList - datetimeNow) / one_date_time;
+				%>
+				<tr>
+					<td><%=nearlist.get(i).getMaterial_name()%></td>
+					<td><%=nearlist.get(i).getMaterial_limit()%></td>
+					<td>　あと<%=diffDays %>日</td>
+				</tr>
+				<%
+				}
+				%>
+			</table>
+			<%
+			} else {
+			%>
+			消費期限切れの近い材料はありません。
+			<%
+			}
+			%>
+		</div>
+
+	</div>
+
+	<script>
+		document.getElementById('searchInput').addEventListener(
+				'keyup',
+				function() {
+					let searchValue = this.value.toLowerCase();
+					let tableRows = document.getElementById('myTable')
+							.getElementsByTagName('tr');
+
+					for (let i = 1; i < tableRows.length; i++) {
+						let rowText = tableRows[i].textContent.toLowerCase();
+						if (rowText.indexOf(searchValue) > -1) {
+							tableRows[i].style.display = '';
+						} else {
+							tableRows[i].style.display = 'none';
+						}
+					}
+				});
+	</script>
+</body>
+</html>
