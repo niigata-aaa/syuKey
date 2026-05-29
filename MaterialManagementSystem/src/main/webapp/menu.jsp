@@ -6,23 +6,30 @@
 <head>
 <%
 request.setCharacterEncoding("UTF-8");
-String user_id = (String)session.getAttribute("user_id");
+String user_id = (String) session.getAttribute("user_id");
 %>
 <meta charset="UTF-8">
-<title><%=user_id %>さんのマイページ</title>
+<title><%=user_id%>さんのマイページ</title>
 <style>
 div {
 	border: 1px solid;
 }
+
 #expired-material tr {
-	color:red;
+	color: red;
 }
 
-#near-expired-material{
-	color:#ff8c00;
+#nearlist1 {
+	color: #ff4500;
 }
-	
 
+#nearlist2 {
+	color: #ffd700;
+}
+
+#nearlist3 {
+	color: #ffff00;
+}
 </style>
 </head>
 <body>
@@ -112,7 +119,7 @@ div {
 					<td><%=list.get(i).getMaterial_name()%></td>
 					<td><%=list.get(i).getMaterial_limit()%></td>
 					<td>
-						<form action="expired-delete-confirm-servlet" method="post">
+						<form action="expired-delete-confirm" method="post">
 							<input type="hidden" name="material_name"
 								value="<%=list.get(i).getMaterial_name()%>"> <input
 								type="hidden" name="material_name"
@@ -140,20 +147,46 @@ div {
 				long datetimeNow = date.getTime();
 				long one_date_time = 1000 * 60 * 60 * 24;
 				long diffDays;
-				
+				int time = 0;
 			%>
 			<table>
 				<%
 				for (int i = 0; i < nearlist.size(); i++) {
-				long datetimeList = nearlist.get(i).getMaterial_limit().getTime();
-				diffDays = (int)(datetimeList - datetimeNow) / one_date_time;
+					long datetimeList = nearlist.get(i).getMaterial_limit().getTime();
+					diffDays = (int) (datetimeList - datetimeNow) / one_date_time + 1;
+					time = (int)diffDays;
+					switch (time) {
+						case 1 :
 				%>
-				<tr>
+				<tr id="nearlist1">
 					<td><%=nearlist.get(i).getMaterial_name()%></td>
 					<td><%=nearlist.get(i).getMaterial_limit()%></td>
-					<td>　あと<%=diffDays %>日</td>
+					<td>あと<%=diffDays%>日
+					</td>
 				</tr>
 				<%
+				break;
+				case 2 :
+				%>
+				<tr id="nearlist2">
+					<td><%=nearlist.get(i).getMaterial_name()%></td>
+					<td><%=nearlist.get(i).getMaterial_limit()%></td>
+					<td>あと<%=diffDays%>日
+					</td>
+				</tr>
+				<%
+				break;
+				default :
+				%>
+				<tr id="nearlist3">
+					<td><%=nearlist.get(i).getMaterial_name()%></td>
+					<td><%=nearlist.get(i).getMaterial_limit()%></td>
+					<td>あと<%=diffDays%>日
+					</td>
+				</tr>
+				<%
+				break;
+				}
 				}
 				%>
 			</table>
