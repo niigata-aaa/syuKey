@@ -9,16 +9,17 @@
 </head>
 <body>
 	<%
-		List<MaterialBean> materialNameList = (List<MaterialBean>)request.getAttribute("materialNameList");
+		List<String> materialNameList = (List<String>)request.getAttribute("nameList");
+		List<String> unitList = (List<String>)request.getAttribute("unitList");	
 	%>
 	<form action="material-regist-confirm" method="post">
 		<div class="item-area">
 			<%
-				for(MaterialBean material_name : materialNameList) {
+				for(int i=0;i<materialNameList.size();i++) {
 			%>
 			<div class="item">
-				<input type="radio" name="material_name" value="<%=material_name.getMaterial_name() %>" onchange="showSelected()">
-				<span><%=material_name.getMaterial_name() %></span>
+				<input type="radio" name="material_name" value="<%=materialNameList.get(i) %>" onchange="showSelected()">
+				<span><%=materialNameList.get(i) %></span>
 			</div>
 			<%
 				}
@@ -29,6 +30,15 @@
 			材料名：<span id="selectedText">----------------</span>&emsp;
 			消費期限：<input type="date" name="material_limit">&emsp;
 			量：<input type="number" name="material_amount">
+			<select name="unit">
+			<%
+			for(int i=0;i<unitList.size();i++){
+			%>
+			<option><%=unitList.get(i) %></option>
+			<%
+			}
+			%>
+			</select>
 			<input type="submit" value="登録確認へ">
 		</div>
 	</form>
