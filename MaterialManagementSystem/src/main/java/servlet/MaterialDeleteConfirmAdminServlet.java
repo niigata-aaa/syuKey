@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,8 +36,14 @@ public class MaterialDeleteConfirmAdminServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+		//リクエストのエンコーディング方式を指定
+				request.setCharacterEncoding("UTF-8");
 
-}
+				//リクエストパラメータ取得
+				String material_name = request.getParameter("material_name");
+				
+				request.setAttribute("material_name", material_name);
+				RequestDispatcher rd = request.getRequestDispatcher("material-delete-confirm-admin.jsp");
+				rd.forward(request, response);
+			}
+		}

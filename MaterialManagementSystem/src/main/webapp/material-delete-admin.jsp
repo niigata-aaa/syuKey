@@ -4,16 +4,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>管理者材料マスタ削除ページ</title>
 </head>
 <body>
-<h2>ユーザ更新ページ</h2>
-    <form action="user-update-confirm" method="POST">
-    	ユーザ名：<input type="text" size="12" name="user_id"><br>
-    	パスワード：<input type="password" size="12" name="user_pass"><br>
-    	<input type="submit" value="更新">
-    	<input type="reset" value="クリア">
-    	
+<h2>管理者材料マスタ削除ページ</h2>
+    <%
+		List<MaterialBean> materialNameList = (List<MaterialBean>)request.getAttribute("materialNameList");
+	%>
+
+	<form action="material-delete-confirm-admin" method="post">
+		<%
+			for(MaterialBean material : materialNameList){
+		%>
+		<input type="radio" name="material_name" value="<%= material.getMaterial_name() %>"> 
+		<span><%= material.getMaterial_name() %></span><br>
+		<%
+			}
+		%>
+		<input type="submit" value="削除確認へ">
     </form>
     <a href="admin-menu.jsp">戻る</a>
 	</table>

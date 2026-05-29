@@ -4,9 +4,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>管理者材料マスタ削除確認ページ</title>
 </head>
 <body>
-
+<%	
+		String material_name = (String)request.getAttribute("material_name");
+	%>
+	以下の材料を削除します<br>
+	材料名：<%=material_name %><br>
+	<form action="material-delete-result" method="post">
+		<input type="hidden" name="material_name" value="<%=material_name%>">
+		<input type="submit" value="削除">
+	</form>
+	
+	<form action="material-delete" method="post">
+		<input type="submit" value="戻る">
 </body>
 </html>

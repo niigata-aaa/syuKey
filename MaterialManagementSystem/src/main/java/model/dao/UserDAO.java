@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import model.entity.MaterialBean;
 import model.entity.UserBean;
 
 public class UserDAO {
@@ -43,7 +44,7 @@ public class UserDAO {
 	 */
 	public int insert(UserBean user) throws ClassNotFoundException,SQLException{
 		int processingNumber = 0; //処理件数
-		
+
 		String sql = "INSERT INTO m_user(user_id, user_pass, admin_flg) VALUES(?,?,?)";
 
 		//データベースへの接続の取得、PreparedStatementの取得
@@ -70,24 +71,24 @@ public class UserDAO {
 	 */
 	public int update(UserBean user) throws ClassNotFoundException,SQLException{
 		int processingNumber = 0; //処理件数
-		
+
 		String sql = "UPDATE m_user SET user_pass = ? WHERE user_id = ?";
-		
+
 		//データベースへの接続の取得、PreparedStatementの取得
 		try (Connection con = ConnectionManager.getConnection();
-			PreparedStatement pstmt = con.prepareStatement(sql)){
+				PreparedStatement pstmt = con.prepareStatement(sql)){
 
-		//DTOからデータの取り出し
-		String user_id = user.getUser_id();
-		String user_pass = user.getUser_pass();
-		
-		//プレースホルダーへの値の設定
-		pstmt.setString(1, user_pass);
-		pstmt.setString(2, user_id);
-		
-		
-		//SQLステートメントの実行
-		processingNumber = pstmt.executeUpdate();
+			//DTOからデータの取り出し
+			String user_id = user.getUser_id();
+			String user_pass = user.getUser_pass();
+
+			//プレースホルダーへの値の設定
+			pstmt.setString(1, user_pass);
+			pstmt.setString(2, user_id);
+
+
+			//SQLステートメントの実行
+			processingNumber = pstmt.executeUpdate();
 		}
 		return processingNumber;
 	}
@@ -105,7 +106,7 @@ public class UserDAO {
 
 			//DTOからデータの取り出し
 			String user_id = user.getUser_id();
-			
+
 			// プレースホルダへの値の設定
 			pstmt.setString(1, user_id);
 
@@ -114,22 +115,38 @@ public class UserDAO {
 		}
 
 		return processingNumber;
-		
-		
+
+
 	}
-	
+
 	/**
 	 *管理者の材料マスタ削除
 	 */
-	
-	
+	public int MaterialDelete(MaterialBean material) throws SQLException, ClassNotFoundException {
+		int cnt = 0;
+		String sql = "delete from m_material where material_name = ?";
+
+		try (Connection con = ConnectionManager.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql)) {
+
+			String material_name = material.getMaterial_name();
+
+			pstmt.setString(1, material_name);
+
+			cnt = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return cnt;
+	}
+
 	/**
 	 * ログインチェック
 	 */
 	public boolean loginCheck(String user_id, String user_pass) throws ClassNotFoundException, SQLException {
 
 		String sql = "SELECT * FROM m_user WHERE user_id = ? AND user_pass = ?";
-		
+
 		//データベースへの接続の取得、PreparedStatementの取得
 		try(Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt =  con.prepareStatement(sql)){
@@ -137,7 +154,7 @@ public class UserDAO {
 			// プレースホルダへの値の設定
 			pstmt.setString(1, user_id);
 			pstmt.setString(2, user_pass);
-			
+
 			//SQLステートメントの実行
 			ResultSet res = pstmt.executeQuery();
 
@@ -161,7 +178,7 @@ public class UserDAO {
 		//データベースへの接続の取得、PreparedStatementの取得
 		try(Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt =  con.prepareStatement(sql)){
-			
+
 			// プレースホルダへの値の設定
 			pstmt.setString(1, user_id);
 
@@ -208,5 +225,5 @@ public class UserDAO {
 
 		return res;
 	}
-	
+
 }
