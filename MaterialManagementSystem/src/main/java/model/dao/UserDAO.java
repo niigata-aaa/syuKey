@@ -113,5 +113,94 @@ public class UserDAO {
 		}
 
 		return count;
+		
+		
 	}
+	
+	/**
+	 * ログインチェック
+	 */
+	public boolean loginCheck(String user_id, String user_pass) throws ClassNotFoundException, SQLException {
+
+		String sql = "SELECT * FROM m_user WHERE user_id = ? AND user_pass = ?";
+		
+		//データベースへの接続の取得、PreparedStatementの取得
+		try(Connection con = ConnectionManager.getConnection();
+				PreparedStatement pstmt =  con.prepareStatement(sql)){
+
+			// プレースホルダへの値の設定
+			pstmt.setString(1, user_id);
+			pstmt.setString(2, user_pass);
+			
+			//SQLステートメントの実行
+			ResultSet res = pstmt.executeQuery();
+
+			//結果の操作
+			if(res.next()) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * アドミンチェック(会員か管理者か)
+	 */
+	public Boolean admin_flg_Check(String user_id) throws ClassNotFoundException, SQLException {
+
+		String sql = "SELECT admin_flg FROM m_user WHERE user_id = ?";
+
+		//初期化
+		Boolean a = null;
+		//データベースへの接続の取得、PreparedStatementの取得
+		try(Connection con = ConnectionManager.getConnection();
+				PreparedStatement pstmt =  con.prepareStatement(sql)){
+			
+			// プレースホルダへの値の設定
+			pstmt.setString(1, user_id);
+
+			//SQLステートメントの実行
+			ResultSet res = pstmt.executeQuery();
+
+			//結果の操作
+			if(res.next()) {
+
+				if(res.getBoolean("admin_flg")) {
+
+					a = true;
+				}
+				else {
+					a = false;
+
+				}
+			}
+		} return a;
+	}
+
+	/**
+	 * DBにログインした日付更新する
+	 */
+	public int Update_date(String user_id) throws ClassNotFoundException, SQLException {
+		String sql = "UPDATE m_user SET last_login_date = ? WHERE user_id = ?";
+
+		//初期化
+		int res = 0;
+		//データベースへの接続の取得、PreparedStatementの取得
+		try(Connection con = ConnectionManager.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql)) {
+
+			//現在の日付を取得
+			java.sql.Date nowDate =
+					new java.sql.Date(System.currentTimeMillis());
+
+			// プレースホルダへの値の設定
+			pstmt.setDate(1, nowDate);
+			pstmt.setString(2, user_id);
+
+			res = pstmt.executeUpdate();
+		}
+
+		return res;
+	}
+	
 }
