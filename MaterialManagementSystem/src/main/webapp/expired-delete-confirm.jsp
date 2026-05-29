@@ -31,50 +31,7 @@
 	<form action="expired-delete-result-servlet" method="POST">
 		<input type="submit" value="OK">
 	</form>  
-<%--
-MaterialBean material =
-    (MaterialBean)request.getAttribute("material");
-%>
 
-<h2>以下の内容を削除します。</h2>
-
-名前：
-<%= material.getMaterial_name() %>
-<br>
-
-ふりがな：
-<%= material.getMaterial_kana() %>
-<br>
-
-消費期限：
-<%= material.getMaterial_limit() %>
-<br>
-
-数量：
-<%= material.getAmount() %>
-<br>
-
-単位：
-<%= material.getMaterial_unit() %>
-<br><br>
-
-<form action="expired-delete-result-servlet"
-      method="post">
-
-    <input type="hidden"
-           name="material_id"
-           value="<%= material.getMaterial_id() %>">
-
-    <input type="submit" value="OK">
-
-</form>
-
-<br>
-
-<a href="menu.jsp">戻る</a>
-
- --%>
-	
 		
 </body>
 </html>
