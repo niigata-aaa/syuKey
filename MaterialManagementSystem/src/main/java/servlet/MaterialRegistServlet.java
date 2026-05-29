@@ -17,7 +17,7 @@ import model.dao.MaterialDAO;
 /**
  * Servlet implementation class MaterialRegistServlet
  */
-@WebServlet("/menu-regist")
+@WebServlet("/material-regist")
 public class MaterialRegistServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
