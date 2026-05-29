@@ -2,7 +2,6 @@ package servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,23 +10,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.dao.UserDAO;
-import model.entity.UserBean;
+import model.dao.MaterialDAO;
+import model.entity.MaterialBean;
 
 /**
- * Servlet implementation class MenuAdminServlet
+ * Servlet implementation class MaterialDeleteResultServlet
  */
-@WebServlet("/menu-admin")
-public class MenuAdminServlet extends HttpServlet {
+@WebServlet("/material-delete-result")
+public class MaterialDeleteResultServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public MenuAdminServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public MaterialDeleteResultServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -41,23 +40,24 @@ public class MenuAdminServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		List<UserBean> userList = null;
-		
-		UserDAO dao = new UserDAO();
-		
+		//リクエストのエンコーディング方式を指定
+		request.setCharacterEncoding("UTF-8");
+
+		int cnt = 0;
+
+		//リクエストパラメータ取得
+		MaterialBean material = new MaterialBean();
+		material.setMaterial_name(request.getParameter("material_name"));
+
+		MaterialDAO dao = new MaterialDAO();
 		try {
-			userList = dao.selectAll();
+			cnt = dao.NewMaterialDelete(material);
+			request.setAttribute("cnt", cnt);
 		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		
-		request.setAttribute("userList",userList);
-		
-		RequestDispatcher rd =
-				request.getRequestDispatcher("menu-admin.jsp");
-
+		System.out.println(cnt);
+		RequestDispatcher rd = request.getRequestDispatcher("material-delete-result.jsp");
 		rd.forward(request, response);
 	}
-
 }

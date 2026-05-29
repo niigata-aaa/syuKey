@@ -1,8 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.sql.SQLException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,23 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.dao.UserDAO;
-import model.entity.UserBean;
-
 /**
- * Servlet implementation class MenuAdminServlet
+ * Servlet implementation class MaterialDeleteConfirmServlet
  */
-@WebServlet("/menu-admin")
-public class MenuAdminServlet extends HttpServlet {
+@WebServlet("/material-delete-confirm")
+public class MaterialDeleteConfirmServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public MenuAdminServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public MaterialDeleteConfirmServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -41,23 +36,14 @@ public class MenuAdminServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		List<UserBean> userList = null;
-		
-		UserDAO dao = new UserDAO();
-		
-		try {
-			userList = dao.selectAll();
-		} catch (SQLException | ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-		
-		request.setAttribute("userList",userList);
-		
-		RequestDispatcher rd =
-				request.getRequestDispatcher("menu-admin.jsp");
+		//リクエストのエンコーディング方式を指定
+		request.setCharacterEncoding("UTF-8");
 
+		//リクエストパラメータ取得
+		String material_name = request.getParameter("material_name");
+		
+		request.setAttribute("material_name", material_name);
+		RequestDispatcher rd = request.getRequestDispatcher("material-delete-confirm.jsp");
 		rd.forward(request, response);
 	}
-
 }

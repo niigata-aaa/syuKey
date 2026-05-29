@@ -11,20 +11,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.dao.UserDAO;
-import model.entity.UserBean;
+import model.dao.MaterialDAO;
+import model.entity.MaterialBean;
 
 /**
- * Servlet implementation class MenuAdminServlet
+ * Servlet implementation class MaterialDeleteDervlet
  */
-@WebServlet("/menu-admin")
-public class MenuAdminServlet extends HttpServlet {
+@WebServlet("/material-delete")
+public class MaterialDeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MenuAdminServlet() {
+    public MaterialDeleteServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,23 +41,17 @@ public class MenuAdminServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		List<UserBean> userList = null;
-		
-		UserDAO dao = new UserDAO();
-		
+		List<MaterialBean> materialNameList = null;
+
+		MaterialDAO dao = new MaterialDAO();
+
 		try {
-			userList = dao.selectAll();
+			materialNameList = dao.selectDeleteName();
+			request.setAttribute("materialNameList", materialNameList);
 		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		
-		request.setAttribute("userList",userList);
-		
-		RequestDispatcher rd =
-				request.getRequestDispatcher("menu-admin.jsp");
-
+		RequestDispatcher rd = request.getRequestDispatcher("material-delete.jsp");
 		rd.forward(request, response);
 	}
-
 }
