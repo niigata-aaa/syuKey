@@ -17,7 +17,7 @@
 	<jsp:setProperty name="material" property="material_name" param="material_name" />
 	<jsp:setProperty name="material" property="material_kana" param="material_kana" />
 	<jsp:setProperty name="material" property="material_limit" param="sdf" />
-	<jsp:setProperty name="material" property="amount" param="Material_amount" />
+	<jsp:setProperty name="material" property="amount" param="amount" />
 	<jsp:setProperty name="material" property="material_unit" param="material_unit" />
 	
 	名前：<jsp:getProperty name="material" property="material_name" /><br>
@@ -26,7 +26,8 @@
 	数量：<jsp:getProperty name="material" property="amount" /><br>
 	単位：<jsp:getProperty name="material" property="material_unit" /><br>
 	
-	<a href="menu.jsp">戻る</a>
+	
+
 	<form action="expired-delete-result-servlet" method="POST">
 		<input type="submit" value="OK">
 	</form>  

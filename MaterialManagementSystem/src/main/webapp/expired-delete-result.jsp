@@ -24,7 +24,7 @@
 %>
 
 		
-	<a href="menu.jsp">トップに戻る</a>
+	<%--<a href="menu.jsp">トップに戻る</a> --%>
 	
 	
 	 <%session.invalidate();%> 

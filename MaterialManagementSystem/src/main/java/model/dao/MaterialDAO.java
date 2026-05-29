@@ -76,36 +76,33 @@ public class MaterialDAO {
 	public MaterialBean  select(String materialName,Date materialLimit) 
 			throws SQLException, ClassNotFoundException {
 		
-		String sql = "SELECT t1.material_unit_id, t2.unit_id "
-				+ "FROM m_material t1 INNER JOIN  m_unit t2 ON t1.material_unit_id = t2.unit_id ";
-		
-		
-		 String sql2 = "SELECT * FROM m_material WHERE Material_name = ? AND material_limit = ?";
+		String sql = "SELECT t1.material_id,t1.material_unit_id, t1.material_name,t1.material_kana,t1.material_amount,t1.material_limit,"
+				+ "t2.unit_name "
+				+ "FROM m_material t1 INNER JOIN  m_unit t2 ON t1.material_unit_id = t2.unit_id WHERE Material_name = ? AND material_limit = ?";
 		
 		 MaterialBean material = new MaterialBean ();
 			
 		
 		try (Connection con = ConnectionManager.getConnection();
-				PreparedStatement pstmt = con.prepareStatement(sql);
-				PreparedStatement pstmt2 = con.prepareStatement(sql2)) {
+				PreparedStatement pstmt = con.prepareStatement(sql)) {
 
 			// プレースホルダへの値の設定
-			pstmt2.setString(1, materialName);
+			pstmt.setString(1, materialName);
 			java.sql.Date dateS = new java.sql.Date(materialLimit.getTime());
 			//java.sql.Date materialLimitS = materialLimit.getTime();
-			pstmt2.setDate(2, dateS);
+			pstmt.setDate(2, dateS);
 
 			
-			ResultSet res2 = pstmt2.executeQuery();
+			ResultSet res = pstmt.executeQuery();
 			
-			while (res2.next()) {
+			while (res.next()) {
 				
-				int material_id = res2.getInt("material_id");
-				String material_name = res2.getString("material_name");
-				String material_kana = res2.getString("material_kana");
-				Date material_limit = res2.getDate("material_limit");
-				int  material_amount = res2.getInt("material_amount");
-				String  material_unit = res2.getString("unit_name");
+				int material_id = res.getInt("material_id");
+				String material_name = res.getString("material_name");
+				String material_kana = res.getString("material_kana");
+				Date material_limit = res.getDate("material_limit");
+				int  material_amount = res.getInt("material_amount");
+				String  material_unit = res.getString("unit_name");
 				
 				
 				material.setMaterial_id(material_id);
