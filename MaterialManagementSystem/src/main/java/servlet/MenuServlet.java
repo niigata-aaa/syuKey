@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,16 +14,16 @@ import javax.servlet.http.HttpSession;
 import model.dao.UserDAO;
 
 /**
- * Servlet implementation class LoginServlet
+ * Servlet implementation class MenuServlet
  */
-@WebServlet("/login-servlet")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/menu-servlet")
+public class MenuServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public LoginServlet() {
+	public MenuServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -39,46 +40,43 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 		String url = null;
 
-		request.setCharacterEncoding("UTF-8");
+		HttpSession session =
+				request.getSession();
 
-		HttpSession session = request.getSession();
 
 
-		String user_id = request.getParameter("user_id");
-		String user_pass = request.getParameter("user_pass");
 
-		try {
+		if(session.getAttribute("user_id") != null) {
 
 			UserDAO dao = new UserDAO();
+			String name = (String) session.getAttribute("user_id");
 
-			if (dao.loginCheck(user_id, user_pass)) {
+			//ログインした人が会員か管理者か判定
 
-				url = "menu-servlet";
+			try {		
+				if (dao.admin_flg_Check(name)) {
+					//アドミンフラグ成功はMenuAdminServletへ
+					url = "menu-admin";
 
-				session.setAttribute("user_id", user_id);
+				}else {
+					//アドミンフラグ失敗はMenuNormalServletへ(パス；menu-normal)
+					url = "menu-normal";
 
-			} else {
+				}
+			}catch(ClassNotFoundException|SQLException e){
+				e.printStackTrace();
+				{
+				}
 
-				url = "login-failure.html";
 			}
 
-		} catch (Exception e) {
-			e.printStackTrace();
+		}else {
+			//user_idがnullの人はログイン画面へ
+			url = "login.html";
 		}
-		try {
 
-			UserDAO dao = new UserDAO();
-
-			dao.Update_date(user_id);
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		
-
-		}
 
 		RequestDispatcher rd =
 				request.getRequestDispatcher(url);
