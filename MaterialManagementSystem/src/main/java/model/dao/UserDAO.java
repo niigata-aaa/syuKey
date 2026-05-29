@@ -34,6 +34,8 @@ public class UserDAO {
 				user.setUser_pass(user_pass);
 				user.setAdmin_flg(admin_flg);
 				user.setLast_login_date(last_login_date);
+				
+				userList.add(user);
 			}
 		}
 		return userList;
