@@ -58,7 +58,7 @@ public class UserDAO {
 			//プレースホルダーへの値の設定
 			pstmt.setString(1, user_id);
 			pstmt.setString(2, user_pass);
-			pstmt.setBoolean(2, admin_flg);
+			pstmt.setBoolean(3, admin_flg);
 
 			//SQLステートメントの実行
 			processingNumber = pstmt.executeUpdate();
