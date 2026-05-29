@@ -42,21 +42,28 @@ public class UserDAO {
 	 * ユーザ登録
 	 */
 	public int insert(UserBean user) throws ClassNotFoundException,SQLException{
-		String sql = "INSERT INTO user(user_id, user_pass) VALUES(?,?)";
-		int result = 0;
+		int processingNumber = 0; //処理件数
+		
+		String sql = "INSERT INTO m_user(user_id, user_pass, admin_flg) VALUES(?,?,?)";
 
 		//データベースへの接続の取得、PreparedStatementの取得
 		try (Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
 
+			//DTOからデータの取り出し
+			String user_id = user.getUser_id();
+			String user_pass = user.getUser_pass();
+			Boolean admin_flg = user.getAdmin_flg();
+
 			//プレースホルダーへの値の設定
-			pstmt.setString(1, user.getUser_id());
-			pstmt.setString(2, user.getUser_pass());
+			pstmt.setString(1, user_id);
+			pstmt.setString(2, user_pass);
+			pstmt.setBoolean(2, admin_flg);
 
 			//SQLステートメントの実行
-			result = pstmt.executeUpdate();
+			processingNumber = pstmt.executeUpdate();
 		}
-		return result;
+		return processingNumber;
 	}
 	/**
 	 * ユーザ更新
@@ -86,12 +93,25 @@ public class UserDAO {
 	/**
 	 * ユーザ削除
 	 */
-	public int delete(String[] userList) throws ClassNotFoundException,SQLException{
-		
-		if (userList == null) {
-			return 0;
+	public int delete(UserBean user) throws ClassNotFoundException,SQLException {
+		int count = 0; //処理件数
+
+		String sql = "DELETE FROM m_user WHERE user_id = ?";
+
+		//データベースへの接続の取得、PreparedStatementの取得
+		try (Connection con = ConnectionManager.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql)) {
+
+			//DTOからデータの取り出し
+			String user_id = user.getUser_id();
+			
+			// プレースホルダへの値の設定
+			pstmt.setString(1, user_id);
+
+			// SQLステートメントの実行
+			count = pstmt.executeUpdate();
 		}
-		//選択されたユーザIDからIN句の条件を作成
-		
+
+		return count;
 	}
 }

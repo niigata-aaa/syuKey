@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ユーザ削除</title>
+<title>ユーザ削除ページ</title>
 </head>
 <body>
 	<h2>ユーザ削除ページ</h2>

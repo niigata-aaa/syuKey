@@ -47,6 +47,7 @@ public class UserRegistServlet extends HttpServlet {
 		UserBean userBean = new UserBean();
 		userBean.setUser_id(request.getParameter("User_id"));
 		userBean.setUser_pass(request.getParameter("User_pass"));
+		userBean.setAdmin_flg(Boolean.valueOf(request.getParameter("Admin_flg")));
 		
 		//DAOの作成
 		UserDAO dao = new UserDAO();

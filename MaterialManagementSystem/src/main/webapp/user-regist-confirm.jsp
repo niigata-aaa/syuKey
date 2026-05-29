@@ -15,9 +15,11 @@
     <jsp:useBean id="user" scope="session" class="model.entity.UserBean"/>
 	<jsp:setProperty name="user" property="user_id" param="user_id"/>
 	<jsp:setProperty name="user" property="user_pass" param="user_pass"/>
+	<jsp:setProperty name="user" property="admin_flg" param="admin_flg"/>
     
     ユーザID：<jsp:getProperty name="user" property="user_id"/><br>
 	パスワード：<jsp:getProperty name="user" property="user_pass"/><br>
+    管理者フラグ：<jsp:getProperty name="user" property="admin_flg"/><br>
     
     <form action="user-regist-result" method="POST">
 		<input type="submit" value="OK">
