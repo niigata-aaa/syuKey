@@ -30,7 +30,7 @@ public class ConnectionManager {
 	
 	public static Connection getConnection() throws SQLException, ClassNotFoundException{
 		//JDBCドライバの読み込み
-		Class.forName("con.mysql.cj.jdbc.Driver");
+		Class.forName("com.mysql.cj.jdbc.Driver");
 		return DriverManager.getConnection(URL, USER, PASSWORD);
 	}
 }
