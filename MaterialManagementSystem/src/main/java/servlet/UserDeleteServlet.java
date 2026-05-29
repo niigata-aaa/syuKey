@@ -46,7 +46,7 @@ public class UserDeleteServlet extends HttpServlet {
     	
 		UserBean userBean = new UserBean();
 		userBean.setUser_id(request.getParameter("User_id"));
-		userBean.setUser_pass(request.getParameter("User_pass"));
+		
 		
 		//DAOの作成
 		UserDAO dao = new UserDAO();

@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,22 +11,21 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.dao.UserDAO;
-import model.entity.UserBean;
 
 /**
- * Servlet implementation class UserUpdateResultServlet
+ * Servlet implementation class LoginServlet
  */
-@WebServlet("/user-update-result")
-public class UserUpdateResultServlet extends HttpServlet {
+@WebServlet("/login-servlet")
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public UserUpdateResultServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public LoginServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -41,23 +39,50 @@ public class UserUpdateResultServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession(); //セッションオブジェクトの取得
-		//セッションスコープからの属性値の取得
-		UserBean user = (UserBean) session.getAttribute("user");
-		//DAOの生成
-		UserDAO dao = new UserDAO();
-		int processingNumber = 0; //処理件数
+
+		String url = null;
+
+		request.setCharacterEncoding("UTF-8");
+
+		HttpSession session = request.getSession();
+
+
+		String user_id = request.getParameter("user_id");
+		String user_pass = request.getParameter("user_pass");
+
 		try {
-			//DAOの利用
-			processingNumber = dao.update(user);
-		}catch (ClassNotFoundException | SQLException e) {
+
+			UserDAO dao = new UserDAO();
+
+			if (dao.loginCheck(user_id, user_pass)) {
+
+				url = "menu-servlet";
+
+				session.setAttribute("user_id", user_id);
+
+			} else {
+
+				url = "login-failure.html";
+			}
+
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		//リクエストスコープへの属性の設定
-		request.setAttribute("processingNumber", processingNumber);
-		//リクエストの転送
-		RequestDispatcher rd = request.getRequestDispatcher("user-update-result.jsp");
+		try {
+
+			UserDAO dao = new UserDAO();
+
+			dao.Update_date(user_id);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		
+
+		}
+
+		RequestDispatcher rd =
+				request.getRequestDispatcher(url);
+
 		rd.forward(request, response);
 	}
-
 }

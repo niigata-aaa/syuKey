@@ -12,22 +12,21 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.dao.UserDAO;
-import model.entity.UserBean;
 
 /**
- * Servlet implementation class UserUpdateResultServlet
+ * Servlet implementation class MenuServlet
  */
-@WebServlet("/user-update-result")
-public class UserUpdateResultServlet extends HttpServlet {
+@WebServlet("/menu-servlet")
+public class MenuServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public UserUpdateResultServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public MenuServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -41,23 +40,47 @@ public class UserUpdateResultServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession(); //セッションオブジェクトの取得
-		//セッションスコープからの属性値の取得
-		UserBean user = (UserBean) session.getAttribute("user");
-		//DAOの生成
-		UserDAO dao = new UserDAO();
-		int processingNumber = 0; //処理件数
-		try {
-			//DAOの利用
-			processingNumber = dao.update(user);
-		}catch (ClassNotFoundException | SQLException e) {
-			e.printStackTrace();
+		String url = null;
+
+		HttpSession session =
+				request.getSession();
+
+
+
+
+		if(session.getAttribute("user_id") != null) {
+
+			UserDAO dao = new UserDAO();
+			String name = (String) session.getAttribute("user_id");
+
+			//ログインした人が会員か管理者か判定
+
+			try {		
+				if (dao.admin_flg_Check(name)) {
+					//アドミンフラグ成功はMenuAdminServletへ
+					url = "menu-admin";
+
+				}else {
+					//アドミンフラグ失敗はMenuNormalServletへ(パス；menu-normal)
+					url = "menu-normal";
+
+				}
+			}catch(ClassNotFoundException|SQLException e){
+				e.printStackTrace();
+				{
+				}
+
+			}
+
+		}else {
+			//user_idがnullの人はログイン画面へ
+			url = "login.html";
 		}
-		//リクエストスコープへの属性の設定
-		request.setAttribute("processingNumber", processingNumber);
-		//リクエストの転送
-		RequestDispatcher rd = request.getRequestDispatcher("user-update-result.jsp");
+
+
+		RequestDispatcher rd =
+				request.getRequestDispatcher(url);
+
 		rd.forward(request, response);
 	}
-
 }

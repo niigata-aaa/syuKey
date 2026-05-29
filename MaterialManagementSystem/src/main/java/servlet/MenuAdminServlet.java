@@ -2,6 +2,7 @@ package servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,22 +10,21 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import model.dao.UserDAO;
 import model.entity.UserBean;
 
 /**
- * Servlet implementation class UserUpdateResultServlet
+ * Servlet implementation class MenuAdminServlet
  */
-@WebServlet("/user-update-result")
-public class UserUpdateResultServlet extends HttpServlet {
+@WebServlet("/menu-admin")
+public class MenuAdminServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UserUpdateResultServlet() {
+    public MenuAdminServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,22 +41,22 @@ public class UserUpdateResultServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession(); //セッションオブジェクトの取得
-		//セッションスコープからの属性値の取得
-		UserBean user = (UserBean) session.getAttribute("user");
-		//DAOの生成
+		
+		List<UserBean> userList = null;
+		
 		UserDAO dao = new UserDAO();
-		int processingNumber = 0; //処理件数
+		
 		try {
-			//DAOの利用
-			processingNumber = dao.update(user);
-		}catch (ClassNotFoundException | SQLException e) {
+			userList = dao.selectAll();
+		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		//リクエストスコープへの属性の設定
-		request.setAttribute("processingNumber", processingNumber);
-		//リクエストの転送
-		RequestDispatcher rd = request.getRequestDispatcher("user-update-result.jsp");
+		
+		request.setAttribute("userList",userList);
+		
+		RequestDispatcher rd =
+				request.getRequestDispatcher("admin-menu.jsp");
+
 		rd.forward(request, response);
 	}
 

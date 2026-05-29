@@ -13,9 +13,7 @@
     	パスワード：<input type="password" size="12" name="user_pass"><br>
     	<input type="submit" value="更新">
     	<input type="reset" value="クリア">
-    	
     </form>
-    <a href="admin-menu.jsp">戻る</a>
 	</table>
 </body>
 </html>

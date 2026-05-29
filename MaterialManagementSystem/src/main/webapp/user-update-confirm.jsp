@@ -22,6 +22,9 @@
 	<form action="user-update-result" method="POST">
 		<input type="submit" value="OK">
 	</form>
-	<a href="user-update.jsp">戻る</a>
+	
+	<form action="user-update" method="POST">
+	<input type="submit" value="戻る">
+	</form>
 </body>
 </html>
