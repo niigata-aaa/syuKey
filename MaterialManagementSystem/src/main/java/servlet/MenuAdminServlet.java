@@ -55,7 +55,7 @@ public class MenuAdminServlet extends HttpServlet {
 		request.setAttribute("userList",userList);
 		
 		RequestDispatcher rd =
-				request.getRequestDispatcher("menu-admin.jsp");
+				request.getRequestDispatcher("admin-menu.jsp");
 
 		rd.forward(request, response);
 	}
