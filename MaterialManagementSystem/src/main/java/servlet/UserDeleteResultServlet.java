@@ -49,7 +49,7 @@ public class UserDeleteResultServlet extends HttpServlet {
 		int processingNumber = 0; //処理件数
 		try {
 			//DAOの利用
-			processingNumber = dao.update(user);
+			processingNumber = dao.delete(user);
 		}catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
