@@ -1,14 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" import="java.util.List, model.entity.MaterialBean"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>管理者材料マスタ削除ページ</title>
 </head>
+
 <body>
-<h2>管理者材料マスタ削除ページ</h2>
-    <%
+	<%
 		List<MaterialBean> materialNameList = (List<MaterialBean>)request.getAttribute("materialNameList");
 	%>
 
@@ -22,9 +23,6 @@
 			}
 		%>
 		<input type="submit" value="削除確認へ">
-    </form>
-    <a href="admin-menu.jsp">戻る</a>
-	</table>
-
+	</form>
 </body>
 </html>
