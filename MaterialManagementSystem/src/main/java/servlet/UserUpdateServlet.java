@@ -52,7 +52,7 @@ public class UserUpdateServlet extends HttpServlet {
 		
 		try {
 			//DAOの利用
-			dao.insert(userBean);
+			dao.update(userBean);
 		}catch(SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}

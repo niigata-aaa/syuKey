@@ -10,7 +10,6 @@
 	<h2>ユーザ削除ページ</h2>
     <form action="user-delete-confirm" method="POST">
     	ユーザ名：<input type="text" size="12" name="user_id"><br>
-    	最終ログイン：<br>
     	<input type="submit" value="削除">
     	<input type="reset" value="クリア">
     	

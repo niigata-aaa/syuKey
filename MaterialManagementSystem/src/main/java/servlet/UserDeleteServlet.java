@@ -46,14 +46,12 @@ public class UserDeleteServlet extends HttpServlet {
     	
 		UserBean userBean = new UserBean();
 		userBean.setUser_id(request.getParameter("User_id"));
-		
-		
 		//DAOの作成
 		UserDAO dao = new UserDAO();
 		
 		try {
 			//DAOの利用
-			dao.insert(userBean);
+			dao.delete(userBean);
 		}catch(SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}

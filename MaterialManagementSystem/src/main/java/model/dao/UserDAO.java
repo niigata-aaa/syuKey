@@ -82,8 +82,9 @@ public class UserDAO {
 		String user_pass = user.getUser_pass();
 		
 		//プレースホルダーへの値の設定
-		pstmt.setString(2, user_id);
 		pstmt.setString(1, user_pass);
+		pstmt.setString(2, user_id);
+		
 		
 		//SQLステートメントの実行
 		processingNumber = pstmt.executeUpdate();
@@ -94,7 +95,7 @@ public class UserDAO {
 	 * ユーザ削除
 	 */
 	public int delete(UserBean user) throws ClassNotFoundException,SQLException {
-		int count = 0; //処理件数
+		int processingNumber = 0; //処理件数
 
 		String sql = "DELETE FROM m_user WHERE user_id = ?";
 
@@ -109,13 +110,18 @@ public class UserDAO {
 			pstmt.setString(1, user_id);
 
 			// SQLステートメントの実行
-			count = pstmt.executeUpdate();
+			processingNumber = pstmt.executeUpdate();
 		}
 
-		return count;
+		return processingNumber;
 		
 		
 	}
+	
+	/**
+	 *管理者の材料マスタ削除
+	 */
+	
 	
 	/**
 	 * ログインチェック
