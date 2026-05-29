@@ -76,29 +76,37 @@ public class MaterialDAO {
 	public MaterialBean  select(String materialName,Date materialLimit) 
 			throws SQLException, ClassNotFoundException {
 		
+		String sql = "SELECT t1.material_unit_id, t2.unit_id "
+				+ "FROM m_material t1 INNER JOIN  m_unit t2 ON t1.material_unit_id = t2.unit_id ";
 		
-
-		String sql = "SELECT * FROM m_material WHERE Material_name = ? AND Material_limit = ?";
-		MaterialBean material = new MaterialBean ();
+		
+		 String sql2 = "SELECT * FROM m_material WHERE Material_name = ? AND material_limit = ?";
+		
+		 MaterialBean material = new MaterialBean ();
+			
+		
 		try (Connection con = ConnectionManager.getConnection();
-				PreparedStatement pstmt = con.prepareStatement(sql)) {
+				PreparedStatement pstmt = con.prepareStatement(sql);
+				PreparedStatement pstmt2 = con.prepareStatement(sql2)) {
 
 			// プレースホルダへの値の設定
-			pstmt.setString(1, materialName);
+			pstmt2.setString(1, materialName);
 			java.sql.Date dateS = new java.sql.Date(materialLimit.getTime());
 			//java.sql.Date materialLimitS = materialLimit.getTime();
-			pstmt.setDate(2, dateS);
+			pstmt2.setDate(2, dateS);
 
-			ResultSet res = pstmt.executeQuery();
 			
-			while (res.next()) {
+			ResultSet res2 = pstmt2.executeQuery();
+			
+			while (res2.next()) {
 				
-				int material_id = res.getInt("material_id");
-				String material_name = res.getString("material_name");
-				String material_kana = res.getString("material_kana");
-				Date material_limit = res.getDate("material_limit");
-				int  material_amount = res.getInt("amount");
-				String  material_unit = res.getString("material_unit");
+				int material_id = res2.getInt("material_id");
+				String material_name = res2.getString("material_name");
+				String material_kana = res2.getString("material_kana");
+				Date material_limit = res2.getDate("material_limit");
+				int  material_amount = res2.getInt("material_amount");
+				String  material_unit = res2.getString("unit_name");
+				
 				
 				material.setMaterial_id(material_id);
 				material.setMaterial_name(material_name);
@@ -119,6 +127,7 @@ public class MaterialDAO {
 				material.setMaterial_unit(material_unit);
 			}
 			
+		
 	} return material;
 	}
 	

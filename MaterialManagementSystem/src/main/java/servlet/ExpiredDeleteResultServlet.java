@@ -68,7 +68,7 @@ public class ExpiredDeleteResultServlet extends HttpServlet {
 		}
 		request.setAttribute("processingNumber", processingNumber);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("employee-alter-result.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("expired-delete-result.jsp");
 		rd.forward(request, response);
 	}
 

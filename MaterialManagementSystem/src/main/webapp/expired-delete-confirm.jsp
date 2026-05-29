@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html;MaterialKana charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -9,13 +9,14 @@
 <body>
 		<%
 		request.setCharacterEncoding("UTF-8");
-	%>
+		%>
+	
 	<br>以下の内容を削除します。<br>
-	<jsp:MaterialBean id="material" scope="session" class="model.entity.MaterialBean" />
+	<jsp:useBean id="material" scope="session" class="model.entity.MaterialBean" />
 	
 	<jsp:setProperty name="material" property="material_name" param="material_name" />
 	<jsp:setProperty name="material" property="material_kana" param="material_kana" />
-	<jsp:setProperty name="material" property="material_limit" param="material_limit" />
+	<jsp:setProperty name="material" property="material_limit" param="sdf" />
 	<jsp:setProperty name="material" property="amount" param="Material_amount" />
 	<jsp:setProperty name="material" property="material_unit" param="material_unit" />
 	
@@ -28,33 +29,32 @@
 	<a href="menu.jsp">戻る</a>
 	<form action="expired-delete-result-servlet" method="POST">
 		<input type="submit" value="OK">
-	</form>
-<%--<%
+	</form>  
+<%--
 MaterialBean material =
-    (MaterialBean)request.getAttribute(
-        "material");
+    (MaterialBean)request.getAttribute("material");
 %>
 
 <h2>以下の内容を削除します。</h2>
 
 名前：
-<%= material.getMaterialName() %>
+<%= material.getMaterial_name() %>
 <br>
 
 ふりがな：
-<%= material.getMaterialKana() %>
+<%= material.getMaterial_kana() %>
 <br>
 
 消費期限：
-<%= material.getMaterialLimit() %>
+<%= material.getMaterial_limit() %>
 <br>
 
 数量：
-<%= material.getMaterialAmount() %>
+<%= material.getAmount() %>
 <br>
 
-単位ID：
-<%= material.getUnitId() %>
+単位：
+<%= material.getMaterial_unit() %>
 <br><br>
 
 <form action="expired-delete-result-servlet"
@@ -62,10 +62,9 @@ MaterialBean material =
 
     <input type="hidden"
            name="material_id"
-           value="<%= material.getMaterialId() %>">
+           value="<%= material.getMaterial_id() %>">
 
-    <input type="submit"
-           value="OK">
+    <input type="submit" value="OK">
 
 </form>
 
@@ -73,8 +72,6 @@ MaterialBean material =
 
 <a href="menu.jsp">戻る</a>
 
-</body>
-</html>
  --%>
 	
 		
