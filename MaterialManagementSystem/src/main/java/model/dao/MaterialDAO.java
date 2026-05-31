@@ -119,10 +119,31 @@ public class MaterialDAO {
 		return nameList;
 	}
 
-	public List<String> selectAllUnit() throws SQLException,ClassNotFoundException{
+//	public List<String> selectAllUnit() throws SQLException,ClassNotFoundException{
+//
+//		List<String> nameList = new ArrayList<String>();
+//		String sql = "select unit_name from m_unit";
+//
+//		try(Connection con = ConnectionManager.getConnection();
+//				PreparedStatement pstmt = con.prepareStatement(sql)){
+//
+//			ResultSet res = pstmt.executeQuery();
+//
+//			while(res.next()) {
+//				String name = res.getString("unit_name");
+//
+//				nameList.add(name);
+//			}
+//
+//		}
+//
+//		return nameList;
+//	}
+	
+	public List<MaterialBean> selectAllUnit() throws SQLException,ClassNotFoundException{
 
-		List<String> nameList = new ArrayList<String>();
-		String sql = "select unit_name from m_unit";
+		List<MaterialBean> unitList = new ArrayList<MaterialBean>();
+		String sql = "select unit_id,unit_name from m_unit";
 
 		try(Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
@@ -130,14 +151,16 @@ public class MaterialDAO {
 			ResultSet res = pstmt.executeQuery();
 
 			while(res.next()) {
-				String name = res.getString("unit_name");
+				MaterialBean materialBean = new MaterialBean();
+				materialBean.setUnit_id(res.getInt("unit_id"));
+				materialBean.setMaterial_unit(res.getString("unit_name"));
 
-				nameList.add(name);
+				unitList.add(materialBean);
 			}
 
 		}
 
-		return nameList;
+		return unitList;
 	}
 
 	public int insert(MaterialBean materialBean) throws SQLException,ClassNotFoundException{
