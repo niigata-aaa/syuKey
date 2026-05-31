@@ -163,20 +163,6 @@ public class MaterialDAO {
 		return unitList;
 	}
 
-	public int insert(MaterialBean materialBean) throws SQLException,ClassNotFoundException{
-
-		String sql="";
-		int cnt = 0;
-
-
-		try(Connection con = ConnectionManager.getConnection();
-				PreparedStatement pstmt = con.prepareStatement(sql)){
-
-
-		}
-		return cnt;
-	}
-
 	public int regist(MaterialBean materialBean) throws SQLException,ClassNotFoundException{
 		String sql="update m_material set material_amount = ?,material_limit = ? where material_name=? AND material_amount is null";
 		int cnt = 0;
@@ -402,6 +388,34 @@ public class MaterialDAO {
 		}
 		
 		return total_amount;
+	}
+	
+	public int insert(String materialName,java.sql.Date materialLimit,int amount,int unitId,String userId) throws SQLException,ClassNotFoundException{
+		int cnt = 0;
+		String sql = "insert into m_material(material_name,material_amount,material_unit_id,material_limit,user_id) values(?,?,?,?,?)";
+		
+		try(Connection con = ConnectionManager.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql)){
+			pstmt.setString(1, materialName);
+			pstmt.setInt(2, amount);
+			pstmt.setInt(3, unitId);
+			pstmt.setDate(4,materialLimit);
+			pstmt.setString(5, userId);
+			
+			cnt += pstmt.executeUpdate();
+		}
+		
+		sql = "insert into m_material(material_name,material_unit_id,user_id) values(?,?,?)";
+		
+		try(Connection con = ConnectionManager.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql)){
+			pstmt.setString(1, materialName);
+			pstmt.setInt(2, unitId);
+			pstmt.setString(3, userId);
+			
+			cnt += pstmt.executeUpdate();
+		}
+		return cnt;
 	}
 
 }
