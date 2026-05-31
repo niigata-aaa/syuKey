@@ -5,8 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>更新確認ページ</title>
+<link rel="stylesheet" href="css/main-style.css">
 </head>
 <body>
+<%@include file=“header.jsp” %>
 <%
 request.setCharacterEncoding("UTF-8");
 List<String> names = (List<String>)request.getAttribute("material_names");
@@ -63,5 +65,6 @@ for(int i = 0; i < amounts.size(); i++){
 <% } %>
 <input type="submit" value="OK">
 </form>
+<%@include file=“footer.jsp” %>
 </body>
 </html>

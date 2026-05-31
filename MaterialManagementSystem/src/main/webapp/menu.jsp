@@ -31,8 +31,10 @@ div {
 	color: #ffff00;
 }
 </style>
+<link rel="stylesheet" href="css/main-style.css">
 </head>
 <body>
+<%@include file=“header.jsp” %>
 	<%
 	//request.setCharacterEncoding("UTF-8");
 	List<MaterialBean> materialList = (List<MaterialBean>) request.getAttribute("materialList");
@@ -200,7 +202,7 @@ div {
 		</div>
 
 	</div>
-
+<%@include file=“footer.jsp” %>
 	<script>
 		document.getElementById('searchInput').addEventListener(
 				'keyup',

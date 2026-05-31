@@ -5,8 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>登録確認</title>
+<link rel="stylesheet" href="css/main-style.css">
 </head>
 <body>
+<%@include file=“header.jsp” %>
 <%
 request.setCharacterEncoding("UTF-8");
 MaterialBean materialBean = (MaterialBean)request.getAttribute("materialBean");
@@ -22,5 +24,6 @@ MaterialBean materialBean = (MaterialBean)request.getAttribute("materialBean");
 
 <input type="submit" value="登録">
 </form>
+<%@include file=“footer.jsp” %>
 </body>
 </html>

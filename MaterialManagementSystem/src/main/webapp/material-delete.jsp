@@ -6,9 +6,11 @@
 <head>
 <meta charset="UTF-8">
 <title>材料削除</title>
+<link rel="stylesheet" href="css/main-style.css">
 </head>
 
 <body>
+<%@include file=“header.jsp” %>
 	<%
 		List<MaterialBean> materialNameList = (List<MaterialBean>)request.getAttribute("materialNameList");
 	%>
@@ -24,5 +26,6 @@
 		%>
 		<input type="submit" value="削除確認へ">
 	</form>
+<%@include file=“footer.jsp” %>
 </body>
 </html>

@@ -14,8 +14,10 @@ div {
 	border: 1px solid;
 }
 </style>
+<link rel="stylesheet" href="css/main-style.css">
 </head>
 <body>
+<%@include file=“header.jsp” %>
 	<div id="main-content">
 
 		<div id="image">
@@ -35,5 +37,6 @@ div {
 	<form action="history-list" method="post">
 		<input type="submit" value="戻る">
 	</form>
+<%@include file=“footer.jsp” %>
 </body>
 </html>

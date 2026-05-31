@@ -5,8 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/main-style.css">
 </head>
 <body>
+<%@include file=“header.jsp” %>
 		<%
 		request.setCharacterEncoding("UTF-8");
 		%>
@@ -32,6 +34,6 @@
 		<input type="submit" value="OK">
 	</form>  
 
-		
+<%@include file=“footer.jsp” %>	
 </body>
 </html>

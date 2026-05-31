@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>削除完了</title>
+<link rel="stylesheet" href="css/main-style.css">
 </head>
 <body>
+<%@include file=“header.jsp” %>
 <%
 	int processingNumber =
     (Integer)request.getAttribute(
@@ -27,6 +29,7 @@
 	<%--<a href="menu.jsp">トップに戻る</a> --%>
 	
 	
-	 <%session.invalidate();%> 
+	 <%//session.invalidate();%> 
+<%@include file=“footer.jsp” %>
 </body>
 </html>
