@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.dao.MaterialDAO;
 import model.entity.MaterialBean;
@@ -42,12 +43,14 @@ public class MaterialDeleteResultServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//リクエストのエンコーディング方式を指定
 		request.setCharacterEncoding("UTF-8");
-
+		HttpSession session = request.getSession();
+		String user_id = (String)session.getAttribute("user_id");
 		int cnt = 0;
 
 		//リクエストパラメータ取得
 		MaterialBean material = new MaterialBean();
 		material.setMaterial_name(request.getParameter("material_name"));
+		material.setUser_id(user_id);
 
 		MaterialDAO dao = new MaterialDAO();
 		try {

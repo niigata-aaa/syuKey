@@ -56,7 +56,7 @@
 					<td class="unitCell"></td>
 				</tr>
 			</table>
-			<button type = "button" onclick="add()">追加（未実装）</button>
+			<button type = "button" onclick="add()">追加</button>
 		</div>
 		<div id="history">
 			お菓子の名前：<input type="text" name="sweets_name"><br>

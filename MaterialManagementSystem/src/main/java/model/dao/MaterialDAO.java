@@ -298,14 +298,16 @@ public class MaterialDAO {
 
 	public int NewMaterialDelete(MaterialBean material) throws SQLException, ClassNotFoundException {
 		int cnt = 0;
-		String sql = "delete from m_material where material_name = ?";
+		String sql = "delete from m_material where material_name = ? AND user_id = ?";
 
 		try (Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)) {
 
 			String material_name = material.getMaterial_name();
+			String user_id = material.getUser_id();
 
 			pstmt.setString(1, material_name);
+			pstmt.setString(2, user_id);
 
 			cnt = pstmt.executeUpdate();
 		} catch (SQLException e) {

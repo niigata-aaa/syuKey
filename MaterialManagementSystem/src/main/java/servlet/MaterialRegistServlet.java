@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.dao.MaterialDAO;
+import model.entity.MaterialBean;
 
 /**
  * Servlet implementation class MaterialRegistServlet
@@ -43,21 +44,19 @@ public class MaterialRegistServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession	session = request.getSession();
-		session.setAttribute("user_id", "h-sasa");
+		
 		if(session.getAttribute("user_id") != null) {
 			MaterialDAO materialDAO = new MaterialDAO();
-			List<String> nameList=null;
-			List<String> unitList=null;
+			List<MaterialBean> nameunitList = null;
 			
 			try {
-				nameList = materialDAO.selectNameList();
-				unitList = materialDAO.selectAllUnit();
+				nameunitList = materialDAO.selectNameUnitList();
+				
 			}catch(SQLException | ClassNotFoundException e) {
 				e.printStackTrace();
 			}
 			
-			request.setAttribute("nameList", nameList);
-			request.setAttribute("unitList", unitList);
+			request.setAttribute("nameunitList", nameunitList);
 
 			RequestDispatcher rd = request.getRequestDispatcher("material-regist.jsp");
 			rd.forward(request, response);
