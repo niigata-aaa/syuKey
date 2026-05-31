@@ -34,7 +34,7 @@ div {
 <link rel="stylesheet" href="css/main-style.css">
 </head>
 <body>
-<%@include file=“header.jsp” %>
+<%@include file="header.jsp" %>
 	<%
 	//request.setCharacterEncoding("UTF-8");
 	List<MaterialBean> materialList = (List<MaterialBean>) request.getAttribute("materialList");
@@ -66,6 +66,7 @@ div {
 			</tr>
 			<%
 			for (int i = 0; i < materialList.size(); i++) {
+				
 			%>
 			<tr>
 				<td><%=materialList.get(i).getMaterial_name()%></td>
@@ -76,6 +77,7 @@ div {
 
 			</tr>
 			<%
+			
 			}
 			%>
 		</table>
@@ -121,10 +123,10 @@ div {
 					<td><%=list.get(i).getMaterial_name()%></td>
 					<td><%=list.get(i).getMaterial_limit()%></td>
 					<td>
-						<form action="expired-delete-confirm-servlet" method="post">
+						<form action="expired-delete-confirm" method="post">
 							<input type="hidden" name="material_name"
 								value="<%=list.get(i).getMaterial_name()%>"> <input
-								type="hidden" name="material_limit"
+								type="hidden" name="material_name"
 								value="<%=list.get(i).getMaterial_limit()%>"> <input
 								type="submit" value="削除">
 						</form>
@@ -156,7 +158,7 @@ div {
 				for (int i = 0; i < nearlist.size(); i++) {
 					long datetimeList = nearlist.get(i).getMaterial_limit().getTime();
 					diffDays = (int) (datetimeList - datetimeNow) / one_date_time + 1;
-					time = (int)diffDays;
+					time = (int) diffDays;
 					switch (time) {
 						case 1 :
 				%>
@@ -202,7 +204,7 @@ div {
 		</div>
 
 	</div>
-<%@include file=“footer.jsp” %>
+<%@include file="footer.jsp" %>
 	<script>
 		document.getElementById('searchInput').addEventListener(
 				'keyup',
