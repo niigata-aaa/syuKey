@@ -16,7 +16,7 @@ public class MaterialDAO {
 	public List<MaterialBean> selectAll() throws SQLException,ClassNotFoundException{
 
 		List<MaterialBean> materialList = new ArrayList<MaterialBean>();
-		String sql = "select m.material_name,sum(m.material_amount) as total_amount ,m.unit_name from ( select * from m_material inner join m_unit on m_material.material_unit_id = m_unit.unit_id) as m group by material_name,unit_name";
+		String sql = "select m.material_name,sum(m.material_amount) as total_amount ,m.unit_name from ( select * from m_material inner join m_unit on m_material.material_unit_id = m_unit.unit_id) as m where m.material_amount is not null group by material_name,unit_name";
 		try(Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
 			ResultSet res = pstmt.executeQuery();
@@ -55,7 +55,7 @@ public class MaterialDAO {
 
 	public List<MaterialBean> selectAllLimit() throws SQLException,ClassNotFoundException {
 		List<MaterialBean> materialList = new ArrayList<MaterialBean>();
-		String sql = "select material_name,material_limit from m_material";
+		String sql = "select material_name,material_limit from m_material where material_amount is not null";
 		try(Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
 			ResultSet res = pstmt.executeQuery();
@@ -312,6 +312,71 @@ public class MaterialDAO {
 			e.printStackTrace();
 		}
 		return cnt;
+	}
+	
+	public List<MaterialBean> selectToUpdate(String material_name) throws SQLException,ClassNotFoundException{
+		List<MaterialBean> materialList = new ArrayList<MaterialBean>();
+		String sql = "select material_id,material_limit,material_amount from m_material where material_name = ? ORDER BY material_limit ASC";
+
+		try(Connection con = ConnectionManager.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql)){
+			pstmt.setString(1, material_name);
+			
+			ResultSet res = pstmt.executeQuery();
+			
+			while(res.next()) {
+				MaterialBean materialBean = new MaterialBean();
+				materialBean.setAmount(res.getInt("material_amount"));
+				materialBean.setMaterial_limit(res.getDate("material_limit"));
+				materialBean.setMaterial_id(res.getInt("material_id"));
+				
+				materialList.add(materialBean);
+			}
+			
+			
+
+		}
+
+
+		return materialList;
+	}
+	
+	public int update(List<MaterialBean> materialList) throws SQLException,ClassNotFoundException {
+		int count = 0;
+		String sql = "update m_material set material_amount = ? where material_id = ?";
+		try(Connection con = ConnectionManager.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql)){
+			
+			for(int i=0;i<materialList.size();i++) {
+				pstmt.setInt(1,materialList.get(i).getAmount());
+				pstmt.setInt(2, materialList.get(i).getMaterial_id());
+				count += pstmt.executeUpdate();
+			}
+		}
+		
+		sql = "update m_material set material_amount = null,material_limit = null where material_amount = 0";
+		try(Connection con = ConnectionManager.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql)){
+			pstmt.executeUpdate();
+		}
+		
+		
+		return count;
+	}
+	
+	public int getTotalAmount(String material_name) throws SQLException,ClassNotFoundException{
+		String sql = "select sum(material_amount) as total_amount from m_material where material_name = ?";
+		int total_amount = 0;
+		try(Connection con = ConnectionManager.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql)){
+			pstmt.setString(1, material_name);
+			ResultSet res = pstmt.executeQuery();
+			if(res.next()) {
+				total_amount=res.getInt("total_amount");
+			}
+		}
+		
+		return total_amount;
 	}
 
 }
