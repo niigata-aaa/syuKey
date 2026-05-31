@@ -10,7 +10,25 @@ public class HistoryBean implements Serializable {
 	private String recipe_url;
 	private String comment;
 	private String image_name;
+	private byte[] image_data;
+	private String contentType;
 	
+	public String getContentType() {
+		return contentType;
+	}
+
+	public void setContentType(String contentType) {
+		this.contentType = contentType;
+	}
+
+	public byte[] getImage_data() {
+		return image_data;
+	}
+
+	public void setImage_data(byte[] image_data) {
+		this.image_data = image_data;
+	}
+
 	public HistoryBean() {
 		
 	}
