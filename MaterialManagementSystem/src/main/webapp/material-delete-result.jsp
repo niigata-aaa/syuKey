@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="css/main-style.css">
 </head>
 <body>
-<%@include file=“header.jsp” %>
+<%@include file="header.jsp" %>
 	<%
 		int cnt = (Integer)request.getAttribute("cnt");
 	%>
@@ -23,6 +23,6 @@
 	<%
 		}
 	%>
-<%@include file=“footer.jsp” %>
+<%@include file="footer.jsp" %>
 </body>
 </html>

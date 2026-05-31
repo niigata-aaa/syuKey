@@ -13,7 +13,7 @@ div {
 <link rel="stylesheet" href="css/main-style.css">
 </head>
 <body>
-<%@include file=“header.jsp” %>
+<%@include file="header.jsp" %>
 	<%
 	request.setCharacterEncoding("UTF-8");
 	List<HistoryBean> historyList = (List<HistoryBean>) request.getAttribute("historyList");
@@ -72,6 +72,6 @@ div {
 					}
 				});
 	</script>
-<%@include file=“footer.jsp” %>
+<%@include file="footer.jsp" %>
 </body>
 </html>

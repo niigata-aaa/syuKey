@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="css/main-style.css">
 </head>
 <body>
-<%@include file=“header.jsp” %>
+<%@include file="header.jsp" %>
 	<%
 		List<String> materialNameList = (List<String>)request.getAttribute("nameList");
 		List<String> unitList = (List<String>)request.getAttribute("unitList");	
@@ -51,7 +51,7 @@
 	<form action="material-delete" method="post">
 		<input type="submit" value="削除">
 	</form>
-	<%@include file=“footer.jsp” %>
+	<%@include file="footer.jsp" %>
 	<script>
 		function showSelected() {
 			const selected = document.querySelector('input[name="material_name"]:checked');

@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="css/main-style.css">
 </head>
 <body>
-<%@include file=“header.jsp” %>
+<%@include file="header.jsp" %>
 	<%	
 		String material_name = (String)request.getAttribute("material_name");
 	%>
@@ -22,6 +22,6 @@
 	<form action="material-delete" method="post">
 		<input type="submit" value="戻る">
 	</form>
-<%@include file=“footer.jsp” %>
+<%@include file="footer.jsp" %>
 </body>
 </html>

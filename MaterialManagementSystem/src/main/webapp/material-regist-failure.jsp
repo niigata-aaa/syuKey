@@ -8,9 +8,9 @@
 <link rel="stylesheet" href="css/main-style.css">
 </head>
 <body>
-<%@include file=“header.jsp” %>
+<%@include file="header.jsp" %>
 失敗
 3つも同じものを買うんじゃあない
-<%@include file=“footer.jsp” %>
+<%@include file="footer.jsp" %>
 </body>
 </html>

@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="css/main-style.css">
 </head>
 <body>
-<%@include file=“header.jsp” %>
+<%@include file="header.jsp" %>
 <%
 	int processingNumber =
     (Integer)request.getAttribute(
@@ -30,6 +30,6 @@
 	
 	
 	 <%//session.invalidate();%> 
-<%@include file=“footer.jsp” %>
+<%@include file="footer.jsp" %>
 </body>
 </html>

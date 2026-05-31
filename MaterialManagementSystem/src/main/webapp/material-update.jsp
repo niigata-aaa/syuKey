@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="css/main-style.css">
 </head>
 <body>
-<%@include file=“header.jsp” %>
+<%@include file="header.jsp" %>
 	<%
 	request.setCharacterEncoding("UTF-8");
 	List<MaterialBean> nameunitList = (List<MaterialBean>) request.getAttribute("nameunitList");
@@ -66,7 +66,7 @@
 		</div>
 	<input type="submit" value="OK">
 	</form>
-<%@include file=“footer.jsp” %>
+<%@include file="footer.jsp" %>
 <script>
 function add() {
     const table = document.getElementById("tb1");

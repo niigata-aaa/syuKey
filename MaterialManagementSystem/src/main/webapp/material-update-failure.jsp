@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="css/main-style.css">
 </head>
 <body>
-<%@include file=“header.jsp” %>
+<%@include file="header.jsp" %>
 更新に失敗しました。
 <%
 request.setCharacterEncoding("UTF-8");
@@ -21,6 +21,6 @@ if(!(msg == null || msg.isEmpty())){
 }
 }
 %>
-<%@include file=“footer.jsp” %>
+<%@include file="footer.jsp" %>
 </body>
 </html>

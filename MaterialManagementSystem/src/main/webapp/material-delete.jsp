@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<%@include file=“header.jsp” %>
+<%@include file="header.jsp" %>
 	<%
 		List<MaterialBean> materialNameList = (List<MaterialBean>)request.getAttribute("materialNameList");
 	%>
@@ -26,6 +26,6 @@
 		%>
 		<input type="submit" value="削除確認へ">
 	</form>
-<%@include file=“footer.jsp” %>
+<%@include file="footer.jsp" %>
 </body>
 </html>
