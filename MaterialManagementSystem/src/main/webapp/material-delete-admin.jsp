@@ -6,23 +6,26 @@
 <head>
 <meta charset="UTF-8">
 <title>管理者材料マスタ削除ページ</title>
+<link rel="stylesheet" href="css/admin-each-start.css">
 </head>
-
 <body>
 	<%
 		List<MaterialBean> materialNameList = (List<MaterialBean>)request.getAttribute("materialNameList");
 	%>
-
-	<form action="material-delete-confirm-admin" method="post">
-		<%
-			for(MaterialBean material : materialNameList){
-		%>
-		<input type="radio" name="material_name" value="<%= material.getMaterial_name() %>"> 
-		<span><%= material.getMaterial_name() %></span><br>
-		<%
-			}
-		%>
-		<input type="submit" value="削除確認へ">
-	</form>
+	<div class="area">
+		<div class="btn-area">
+			<form action="material-delete-confirm-admin" method="post">
+				<%
+					for(MaterialBean material : materialNameList){
+				%>
+				<input type="radio" name="material_name" value="<%= material.getMaterial_name() %>"> 
+				<span><%= material.getMaterial_name() %></span><br>
+				<%
+					}
+				%>
+				<input type="submit" value="削除確認へ" class="btn">
+			</form>
+		</div>
+	</div>
 </body>
 </html>
