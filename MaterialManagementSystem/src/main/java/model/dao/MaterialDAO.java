@@ -254,7 +254,7 @@ public class MaterialDAO {
 	public int delete(int material_id) 
 			throws ClassNotFoundException{
 
-		String sql = "DELETE FROM m_material WHERE material_id = ?";
+		String sql = "update m_material set material_amount = null, material_limit = null WHERE material_id = ?";
 		int cnt = 0;
 		// データベースへの接続の取得、Statementの取得、SQLステートメントの実行
 		try (Connection con = ConnectionManager.getConnection();
