@@ -73,8 +73,6 @@ public class MenuNormalServlet extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("login.html");
 			rd.forward(request,response);
 		}
-
-
 	}
 
 }
