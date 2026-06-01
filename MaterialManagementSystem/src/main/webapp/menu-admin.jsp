@@ -8,6 +8,7 @@
 <title>管理者メニュー</title>
 </head>
 <body>
+	<img src="img/ロゴ.png" alt="在庫見るくん">
 	<h2>メインページ_管理者用</h2>
 
 	<%

@@ -1,9 +1,16 @@
 @charset "UTF-8";
 
 body{
-	color:rgb(151, 245, 253) ;
+	color:black;
 	background-color: rgb(219, 241, 242);
-	margin:0px;
-	padding:0px;
+	margin:-20px;
+	padding:-20px;
 	        
+}
+
+/* ロゴ画像 幅：上に10px開け、下に90px近く*/
+img{
+	width:100px;
+	margin-top:0px;
+	margin-bottom:0px;
 }
