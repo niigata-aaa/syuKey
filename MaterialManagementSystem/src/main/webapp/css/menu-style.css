@@ -4,6 +4,7 @@
 #buttons {
     display: flex;
     gap: 10px;
+	cursor: pointer;
 }
 
     #buttons form {
@@ -22,7 +23,9 @@
     gap: 20px;
 	
 }
-.searchInput{
+#searchInput{
+	width: 100px;
+	height: 30px;
 	margin-right: auto;
 	border-radius: 10px;
 }
@@ -32,19 +35,21 @@ input[value="在庫登録"]{
 	color: white;
 	border: none;
 	border-radius: 10px;
+	
 }
 input[value="在庫更新"]{
 	background-color:#9C6455;
 		color: white;
 		border: none;
 		border-radius: 10px;
+		
 }
 input[value="スウィートメモリー"]{
 	background-color: white;
 			color: #9C6455;
 			border-color: #9C6455;
 			border-radius: 10px;
-	
+			
 }
 input[value="削除"]{
 	
@@ -66,8 +71,12 @@ input[value="削除"]{
 	font-size: 30px;
 	font-weight: bold;
 }
-.serchInput{
+input[type="text"]{
+	text-align: center;
+	width: 80px;
+	height: 50px;
 	display: flex;
+	border-color: #9C6455;
 }
 #material-list {
     flex: 3;
@@ -75,8 +84,8 @@ input[value="削除"]{
     align-items: center;
 }
 .regist-list{
-	margin: 5px 40px 5px 100px; /* 上, 右, 下, 左 の順 */
-	padding: 50px;
+	margin-left: 20px;
+	padding: 10px;
 	    align-items: center;
 }
 #mytable {
