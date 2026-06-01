@@ -46,7 +46,6 @@ public class MenuNormalServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		
-		session.setAttribute("user_id", "h-sasa");
 
 		if(session.getAttribute("user_id") != null) {
 			MaterialDAO materialDAO = new MaterialDAO();
