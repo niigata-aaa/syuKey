@@ -15,16 +15,18 @@
 	<div class="area">
 		<div class="btn-area">
 			<form action="material-delete-confirm-admin" method="post">
-				<%
-					for(MaterialBean material : materialNameList){
-				%>
-				<div class="radio">
-					<input type="radio" name="material_name" value="<%= material.getMaterial_name() %>"> 
-					<span id="radiomate" ><%= material.getMaterial_name() %></span><br>
+				<div class="radio-grid">
+					<%
+						for(MaterialBean material : materialNameList){
+					%>
+					<div class="radio">
+						<input type="radio" name="material_name" value="<%= material.getMaterial_name() %>"> 
+						<span><%= material.getMaterial_name() %></span><br>
+					</div>
+					<%
+						}
+					%>
 				</div>
-				<%
-					}
-				%>
 				<input type="submit" value="削除確認へ" class="btn">
 			</form>
 		</div>
