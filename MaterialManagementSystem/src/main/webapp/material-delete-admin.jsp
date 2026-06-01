@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>管理者材料マスタ削除ページ</title>
-<link rel="stylesheet" href="css/admin-delete-admin.css">
+<link rel="stylesheet" href="css/material-delete-admin.css">
 </head>
 <body>
 	<%
