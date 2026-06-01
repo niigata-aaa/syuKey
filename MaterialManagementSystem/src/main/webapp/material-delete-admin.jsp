@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>管理者材料マスタ削除ページ</title>
-<link rel="stylesheet" href="css/admin-each-start.css">
+<link rel="stylesheet" href="css/admin-delete-admin.css">
 </head>
 <body>
 	<%
@@ -18,8 +18,10 @@
 				<%
 					for(MaterialBean material : materialNameList){
 				%>
-				<input type="radio" name="material_name" value="<%= material.getMaterial_name() %>"> 
-				<span><%= material.getMaterial_name() %></span><br>
+				<div class="radio">
+					<input type="radio" name="material_name" value="<%= material.getMaterial_name() %>"> 
+					<span><%= material.getMaterial_name() %></span><br>
+				</div>
 				<%
 					}
 				%>
