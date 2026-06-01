@@ -6,24 +6,14 @@
 <div id="header">
 <!--<div class="relative">-->
 <img src="img/ヘッダー.png" id="bgimage">
-<!--  <img src="img/ロゴ.png" class="absolute">-->
+<img src="img/ロゴ.png" class="logo-img">
 <!--</div>-->
-
-    ようこそ、<%=session.getAttribute("user_id") %>さん<br> 
-    <form action="logout-servlet" method="post">
-        <input type="submit" value="ログアウト">
-         
-    </form>
-</div>
-
 <!-- <div class="header-content">-->
    <form action="logout-servlet" method="post" class="logout-form">
        <input type="submit" value="ログアウト"><br>
    </form>
- <div class="user-welcome">
+</div>
+<div class="user-welcome">
    ようこそ、<%=session.getAttribute("user_id") %>さん<br>
   
 </div>
-</div>
-
-
