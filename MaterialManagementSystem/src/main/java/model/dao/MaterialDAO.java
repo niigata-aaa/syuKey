@@ -35,7 +35,7 @@ public class MaterialDAO {
 
 	public List<MaterialBean> selectLimits() throws SQLException,ClassNotFoundException {
 		List<MaterialBean> materialList = new ArrayList<MaterialBean>();
-		String sql = "select material_name,group_concat(material_limit) as limits from m_material group by material_name";
+		String sql = "select material_name,group_concat(material_limit) as limits from m_material group by material_name having limits is not null";
 		try(Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
 			ResultSet res = pstmt.executeQuery();

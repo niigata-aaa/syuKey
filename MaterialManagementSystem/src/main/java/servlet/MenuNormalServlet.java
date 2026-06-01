@@ -56,6 +56,7 @@ public class MenuNormalServlet extends HttpServlet {
 			try {
 				materialList = materialDAO.selectAll();
 				materialLimitList = materialDAO.selectLimits();
+				//System.out.println(materialList.size() + "と" +materialLimitList.size());
 				expiredList = materialDAO.selectAllLimit();
 
 			} catch(SQLException | ClassNotFoundException e) {
