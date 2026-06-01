@@ -1,15 +1,102 @@
 @charset "UTF-8";
-body{
-	background-color:#FDEED1;
-	text-align:center;
-	color:#9C6455;
+
+body {
+    background-color: #FDEED1;
+    text-align: center;
+    color: #9C6455;
 }
-#update{
-	
-	flex: 1;
-	padding:20px;
-	
+
+#main-content {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
 }
+
+#update {
+    flex: 1;
+    background-color: #fffdf8;
+    border: 2px solid #c89b6d;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+#tb1 {
+    
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+input[type="submit"] {
+    
+    margin: 30px auto;
+    width: 120px;
+    height: 40px;
+    background-color: #ED7F70;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+    #tb1 th,
+    #tb1 td {
+        padding: 5px 12px;
+    }
+#add {
+   display: block;
+    margin: 20px auto 0;
+
+    width: 90px;
+    height: 30px;
+
+    background-color: #ED7F70;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.history-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+    .history-row label {
+        width: 120px;
+        font-weight: bold;
+        text-align: left;
+    }
+    .history-row input[type="text"],
+    .history-row input[type="url"] {
+        flex: 1;
+        padding: 5px;
+    }
+
+
+
+
+
+
+#history {
+    flex: 1;
+    background-color: #fffdf8;
+    border: 2px solid #c89b6d;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+/*@charset "UTF-8";*/
+/*body{*/
+/*	background-color:#FDEED1;*/
+/*	text-align:center;*/
+/*	color:#9C6455;*/
+/*}*/
+/*#update{*/
+	
+/*	flex: 1;*/
+/*	padding:20px;*/
+	
+/*}*/
 /*#box{*/
 /*	background-color:white;*/
 /*	width:350px;*/
@@ -19,28 +106,28 @@ body{
 /*	margin-top:50px;*/
 /*	border-radius:50px;*/
 /*}*/
-#add{
-	width: 90px;
-	height: 30px;
-	background-color: #ED7F70;
-	border: none;
-	color: white;
-	border-radius: 10px;
-}
-#tb1{
-	padding: 30px;
-	      width: 35%;          /* 幅を指定 */
-	              /* 左右のマージンを自動にして中央寄せ */	    
-}
-tb1 tr{
-	width: 40px;
+/*#add{*/
+/*	width: 90px;*/
+/*	height: 30px;*/
+/*	background-color: #ED7F70;*/
+/*	border: none;*/
+/*	color: white;*/
+/*	border-radius: 10px;*/
+/*}*/
+/*#tb1{*/
+/*	padding: 30px;*/
+/*	      width: 35%;           幅を指定 */
+/*	               左右のマージンを自動にして中央寄せ 	    */
+/*}*/
+/*tb1 tr{*/
+/*	width: 40px;*/
 	
-}
+/*}*/
 
 
 	
 
-#history{
-	flex: 1;
-	padding: 20px;
-}
+/*#history{*/
+/*	flex: 1;*/
+/*	padding: 20px;*/
+/*}*/
