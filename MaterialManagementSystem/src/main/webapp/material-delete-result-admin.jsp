@@ -5,9 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>管理者材料マスタ削除完了ページ</title>
+<link rel="stylesheet" href="css/admin-confirm&result.css">
 </head>
 <body>
-	<%@include file="header.jsp" %>
+	<%@include file="header-admin.jsp" %>
 	<div class="area">
 		<%
 			int cnt = (Integer)request.getAttribute("cnt");

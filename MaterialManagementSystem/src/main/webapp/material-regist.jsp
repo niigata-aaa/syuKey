@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>材料登録</title>
-<link rel="stylesheet" href="css/main-style.css">
+<link rel="stylesheet" href="css/material-regist.css">
 </head>
 <body>
 	<%@include file="header.jsp"%>
@@ -14,11 +14,11 @@
 			
 	%>
 	<form action="material-regist-confirm" method="post">
-		<div class="item-area">
+		<div class="radio-grid">
 			<%
 				for(int i=0;i<nameunitList.size();i++) {
 			%>
-			<div class="item">
+			<div class="radio">
 				<input type="radio" name="material_name"
 					value="<%=nameunitList.get(i).getMaterial_name() %>"
 					onchange="showSelected()"> <span><%=nameunitList.get(i).getMaterial_name() %></span>
@@ -30,19 +30,21 @@
 
 		<div class="selected">
 			材料名：<span id="selectedText">----------------</span>&emsp; 消費期限：<input
-				type="date" name="material_limit">&emsp; 量：<input
-				type="number" name="material_amount"> <span id="unit"></span>
-			<input type="submit" value="登録確認へ">
+				type="date" name="material_limit" class="text-box">&emsp; 量：<input
+				type="number" name="material_amount" class="text-box"> <span id="unit"></span>
+			<input type="submit" value="登録確認へ" class="btn-regist">
 		</div>
 	</form>
-
-	<form action="material-newregist" method="post">
-		<input type="submit" value="新規">
-	</form>
-
-	<form action="material-delete" method="post">
-		<input type="submit" value="削除">
-	</form>
+	
+	<div class="btn-area">
+		<form action="material-newregist" method="post">
+			<input type="submit" value="新規" class="btn">
+		</form>
+	
+		<form action="material-delete" method="post">
+			<input type="submit" value="削除" class="btn">
+		</form>
+	</div>
 	<%@include file="footer.jsp"%>
 	<script>
 	const unitMap = {

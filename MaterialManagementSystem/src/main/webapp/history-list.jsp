@@ -18,7 +18,7 @@
 		if (!(historyList == null || historyList.isEmpty())) {
 		%>
 		<div id="filter">
-		<input type="text" id="searchInput" placeholder="名前で検索">
+		<input type="text" id="searchInput" placeholder="名前か日付で検索">
 		</div>
 		<div id="myTable2">
 			<div id="table-wrapper">
