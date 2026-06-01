@@ -56,6 +56,7 @@ public class MenuNormalServlet extends HttpServlet {
 			try {
 				materialList = materialDAO.selectAll();
 				materialLimitList = materialDAO.selectLimits();
+				//System.out.println(materialList.size() + "と" +materialLimitList.size());
 				expiredList = materialDAO.selectAllLimit();
 
 			} catch(SQLException | ClassNotFoundException e) {
@@ -72,8 +73,6 @@ public class MenuNormalServlet extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("login.html");
 			rd.forward(request,response);
 		}
-
-
 	}
 
 }

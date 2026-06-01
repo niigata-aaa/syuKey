@@ -1,0 +1,40 @@
+@charset "UTF-8";
+body{
+	background-color: rgb(219, 241, 242);
+	text-align:center;
+	font-size: 30px;
+}
+
+.area {
+    background-color: #f5f5f5;
+	width: 60%;;
+	height: 60%;
+	margin: 50px auto;
+	border-radius: 40px;
+	padding: 100px;
+}
+
+.btn-area {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+	margin-top: 80px;
+}
+
+.btn {
+    width: 180px;
+    height: 50px;
+    font-size: 20px;
+	background-color:#ED7F70;
+	color: #f5f5f5;
+	border: none;
+	border-radius: 20px;
+}
+
+.text-box {
+	width: 300px;
+	height: 30px;
+	margin-bottom: 50px;
+	position: relative;
+	top: -6px;
+}

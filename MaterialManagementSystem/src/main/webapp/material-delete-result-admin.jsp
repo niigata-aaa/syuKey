@@ -7,19 +7,21 @@
 <title>管理者材料マスタ削除完了ページ</title>
 </head>
 <body>
-<%
-		int cnt = (Integer)request.getAttribute("cnt");
-	%>
-	<%
-		if(cnt == 0) {
-	%>
-			削除できませんでした。<br>
-	<%
-		} else {
-	%>
-			削除しました。<br>
-	<%
-		}
-	%>
+	<div class="area">
+		<%
+			int cnt = (Integer)request.getAttribute("cnt");
+		%>
+		<%
+			if(cnt == 0) {
+		%>
+				削除できませんでした。<br>
+		<%
+			} else {
+		%>
+				削除しました。<br>
+		<%
+			}
+		%>
+	</div>
 </body>
 </html>
