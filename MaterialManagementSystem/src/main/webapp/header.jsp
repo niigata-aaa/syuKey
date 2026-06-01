@@ -1,6 +1,6 @@
 <%@ page language="java"
-   contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+    contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
   
 <link rel="stylesheet" href="css/header.css">
 
@@ -17,6 +17,6 @@
 </div>
 
 <div class="user-welcome">
-   ようこそ、<%=session.getAttribute("user_id") %>さん<br>
+    ようこそ、<%=session.getAttribute("user_id") %>さん<br>
   
 </div>
