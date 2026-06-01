@@ -59,6 +59,7 @@
 			<button type = "button" onclick="add()">追加</button>
 		</div>
 		<div id="history">
+		履歴を登録する場合は、以下の情報をすべて入力してください。<br>
 			お菓子の名前：<input type="text" name="sweets_name"><br>
 			URL：<input type="url" name="recipe_url"> <br>
 			一言コメント：<input type="text" name="comment"><br>
