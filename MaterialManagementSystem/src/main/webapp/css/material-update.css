@@ -1,0 +1,36 @@
+@charset "UTF-8";
+body{
+	background-color:#FDEED1;
+	text-align:center;
+	color:#9C6455;
+}
+#box{
+	background-color:white;
+	width:350px;
+	height:280px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:50px;
+	border-radius:50px;
+}
+#add{
+	width: 90px;
+	height: 30px;
+	background-color: #ED7F70;
+	border: none;
+	color: white;
+	border-radius: 10px;
+}
+#tb1{
+	padding: 30px;
+	      width: 35%;          /* 幅を指定 */
+	  margin: 0 auto;             /* 左右のマージンを自動にして中央寄せ */	    
+}
+
+#update{
+	align-content: center;
+}
+#tb1 th{
+	 text-align: center;
+	
+}

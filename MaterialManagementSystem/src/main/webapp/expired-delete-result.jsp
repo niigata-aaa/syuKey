@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>削除完了</title>
-<link rel="stylesheet" href="css/main-style.css">
+<link rel="stylesheet" href="css/result.css">
 </head>
 <body>
 <%@include file="header.jsp" %>
@@ -16,15 +16,17 @@
 
 	if(processingNumber != 0){
 %>
-	正常に削除しました
+	<p>正常に削除しました</p>
 <%
 	}else{
 %>
-	削除できませんでした
+	<p>削除できませんでした</p>
 <%
 	}
 %>
-
+<form action="menu-servlet" method="post">
+<input type="submit" value="戻る">
+</form>
 		
 	<%--<a href="menu.jsp">トップに戻る</a> --%>
 	
