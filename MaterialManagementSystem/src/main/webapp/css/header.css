@@ -29,7 +29,7 @@
 
 #bgimage{
 	width:100%;
-	height: 550px;
+	height: 100px;
 	object-fit: cover;
 	position: absolute;
 	top: 0;
@@ -40,8 +40,8 @@
 .logo-img {
   position: absolute;
   left: 30px;          /* 💡左から20px開ける */
-  height: 150px;        /* ロゴの高さ（ヘッダー200pxからはみ出さないサイズ） */
-  width: auto;
+  height: 100px;        /* ロゴの高さ（ヘッダー200pxからはみ出さないサイズ） */
+  width: 250px;
   z-index: 2;          /* 💡画像の上に載せる */
 }
 
