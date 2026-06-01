@@ -7,29 +7,3 @@ img{
 	margin-top:10px;
 	margin-bottom:-90px;
 }
-.frame-box {
-  /* 枠線の画像のサイズを指定 */
-  width: 300px;
-  height: 300px;
-  
-  /* 枠線用の画像を背景として設定 */
-  background-image: url("file:///C:/Users/emtech-user/git/syuKey/MaterialManagementSystem/src/main/webapp/img/ヘッダー.png");
-  background-size: cover;
-  background-position: center;
-  
-  /* 中に入れる画像を中心・枠内に収めるための設定 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  /* 枠の画像と中身の画像との余白（調整用） */
-  padding: 30px; 
-  box-sizing: border-box;
-}
-
-.frame-box img {
-  /* 中の画像のサイズを枠内に収める */
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* または cover */
-}

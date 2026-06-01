@@ -3,10 +3,10 @@
     pageEncoding="UTF-8"%>
     
 <link rel="stylesheet" href="css/header.css">
-<<div class="frame-box">
+
   <img src="img/ロゴ.png" alt="在庫見るくん">
 </div>
-<!--<img src="img/ヘッダー.png" alt="枠">-->
+<img src="img/ヘッダー.png" alt="枠">
 
 </div>
 <body>
