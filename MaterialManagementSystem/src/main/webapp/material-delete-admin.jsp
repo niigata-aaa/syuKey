@@ -20,7 +20,7 @@
 				%>
 				<div class="radio">
 					<input type="radio" name="material_name" value="<%= material.getMaterial_name() %>"> 
-					<span><%= material.getMaterial_name() %></span><br>
+					<span id="radiomate" ><%= material.getMaterial_name() %></span><br>
 				</div>
 				<%
 					}
