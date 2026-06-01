@@ -10,10 +10,11 @@ String user_id = (String) session.getAttribute("user_id");
 %>
 <meta charset="UTF-8">
 <title><%=user_id%>さんのマイページ</title>
-<style>
-div {
-	border: 1px solid;
-}
+<link rel="stylesheet" href="css/menu-style.css">
+<style>-->
+<!--div {-->
+<!--	border: 1px solid;-->
+<!--}-->
 
 #expired-material tr {
 	color: red;
@@ -30,8 +31,15 @@ div {
 #nearlist3 {
 	color: #ffff00;
 }
+body{
+	color:#9C6455 ;
+	
+	margin:0px;
+	padding:0px;
+	        
+}
 </style>
-<link rel="stylesheet" href="css/main-style.css">
+
 </head>
 <body>
 <%@include file="header.jsp" %>
@@ -41,20 +49,23 @@ div {
 	List<MaterialBean> materialLimitList = (List<MaterialBean>) request.getAttribute("materialLimitList");
 	List<MaterialBean> expiredList = (List<MaterialBean>) request.getAttribute("expiredList");
 	%>
+	
+	<div id="main-content">
+	<div id="material-list">
 	<div id="buttons">
-		<form action="material-regist" method="post">
+		<form action="material-regist" method="post" >
 			<input type="submit" value="在庫登録">
 		</form>
 
-		<form action="material-update" method="post">
+		<form action="material-update" method="post" >
 			<input type="submit" value="在庫更新">
 		</form>
 
-		<form action="history-list" method="post">
+		<form action="history-list" method="post" >
 			<input type="submit" value="スウィートメモリー">
 		</form>
 	</div>
-	<div id="material-list">
+		<div class="regist-list">
 		<div class="content-title">在庫一覧</div>
 		<input type="text" id="searchInput" placeholder="キーワードで検索">
 		<table id="myTable">
@@ -82,10 +93,12 @@ div {
 			%>
 		</table>
 	</div>
+	</div>
 	<div id="expired-list">
-		<div class="content-title">もったいないリスト</div>
+		<div class="content-title2">もったいないリスト</div>
+		 <div id="expired-content">
 		<div id="expired-material">
-			<p>期限の切れてしまった材料一覧</p>
+			<p class="expired-title">期限の切れてしまった材料一覧</p>
 			<%
 			List<MaterialBean> list = new ArrayList<MaterialBean>();
 			List<MaterialBean> nearlist = new ArrayList<MaterialBean>();
@@ -145,7 +158,7 @@ div {
 			%>
 		</div>
 		<div id="near-expired-material">
-			<p>期限切れの近い材料一覧</p>
+			<p class="expired-title">期限切れの近い材料一覧</p>
 			<%
 			if (nearlist.size() != 0) {
 				long datetimeNow = date.getTime();
@@ -202,7 +215,10 @@ div {
 			}
 			%>
 		</div>
+		</div>
+		
 
+	</div>
 	</div>
 <%@include file="footer.jsp" %>
 	<script>

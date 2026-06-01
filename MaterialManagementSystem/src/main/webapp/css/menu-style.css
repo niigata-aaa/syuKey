@@ -1,0 +1,129 @@
+@charset "UTF-8";
+@keyframes fadeIn {
+}
+#buttons {
+    display: flex;
+    gap: 10px;
+}
+
+    #buttons form {
+        flex: 1;
+    }
+
+    #buttons input[type="submit"] {
+        width: 100%;
+        height: 45px;
+        box-sizing: border-box;
+		font-size: 19px;
+    }
+
+#main-content {
+    display: flex;
+    gap: 20px;
+	
+}
+input [id="searchInput"]{
+	
+}
+
+input[value="在庫登録"]{
+	background-color: rgb(237,127,112 );
+	color: white;
+	border: none;
+	border-radius: 10px;
+}
+input[value="在庫更新"]{
+	background-color:#9C6455;
+		color: white;
+		border: none;
+		border-radius: 10px;
+}
+input[value="スウィートメモリー"]{
+	background-color: white;
+			color: #9C6455;
+			border-color: #9C6455;
+			border-radius: 10px;
+	
+}
+.content-title{
+	display: flex;
+	font-size: 30px;
+	font-weight: bold;
+}
+.content-title2{
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+}
+.serchInput{
+	display: flex;
+}
+#material-list {
+    flex: 3;
+    padding: 20px;
+    align-items: center;
+}
+.regist-list{
+	margin: 5px 40px 5px 100px; /* 上, 右, 下, 左 の順 */
+	padding: 50px;
+	    align-items: center;
+}
+#mytable {
+	margin: 0 auto;             
+	  border-collapse: collapse;   
+	  
+	text-align: center;
+    width: 60%;
+    height: 600px;
+    border-collapse: collapse;
+    border: 8px solid #c89b6d;
+    background-color: white;
+}
+    #myTable th {
+		font-size: 20px;  
+        background-color: #f7ebcf;
+        border: 2px solid #d8c4aa;
+        padding: 12px;
+        text-align: center;
+    }
+    #myTable td {
+		
+        border: 2px solid #d8c4aa;
+        padding: 12px;
+        text-align: center;
+    }
+    #myTable tr {
+		
+        height: 60px;
+    }
+	
+	.expired-title{
+		text-align: center;
+		font-size: 20px;
+	}
+
+#expired-list {
+    flex: 2;
+	background-color: rgb(255,238,210);
+    padding: 20px;
+}
+    #expired-list .content-title {
+        text-align: center;
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+#expired-content {
+    background-color: white;
+    border-radius: 5px;
+    min-height: 500px;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+#near-expired-material {
+    color: #ff8c00;
+}
+content-title{
+
+}
