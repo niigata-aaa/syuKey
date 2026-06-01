@@ -19,6 +19,7 @@ img{
 .d1{
 	line-height: 1.2;
 	margin-left: 60px;
+	margin-bottom: 40px;
 }
 
 .parent{
@@ -28,9 +29,10 @@ img{
 
 /*ユーザ一覧の部分*/
 .d2{
+	background-color: #f5f5f5;
+	border-radius: 40px;
 	width: 700px;
 	height: 400px;
-	border-style: solid;
 	padding-left: 40px;
 	margin-left: 150px;
 	font-size: 25px;
@@ -38,9 +40,10 @@ img{
 
 /*管理者メニューの部分*/
 .d3{
+	background-color: #f5f5f5;
+	border-radius: 40px;
 	width: 350px;
 	height: 500px;
-	border-style: solid;
 	padding-top: 10px;
 	text-align: center;
 	margin-right: 20px;

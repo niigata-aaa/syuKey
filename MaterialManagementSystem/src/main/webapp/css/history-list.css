@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+::placeholder {
+  color: rgb(255, 255, 255);
+}
+
+#main-wrapper{
+	width: 80%;
+	margin:0 auto;
+	text-align: center;
+}
+
+#filter{
+	padding:10px;
+	text-align: left;
+}
+
+#myTable {
+  margin:0 auto;
+  width: 90%;
+  border: 2px solid #9C6455; 
+  border-collapse: collapse;
+}
+#myTable th, 
+#myTable td {
+  border: none;
+  padding: 10px;
+}
+
+#table-wrapper{
+	max-height: 300px;
+	overflow-y: auto;
+}
+
+#myTable2{
+	background-color: white;
+	width:95%;
+	height:350px;
+	margin:0 auto;
+	padding :10px;
+	padding-top:40px;
+	border : 0px solid;
+	border-radius: 3em;
+}
+
+.button{
+	background-color: #ED7F70 ;
+	color:white;
+	border:none;
+	border-radius: 0.5em;
+}
+
+.button:hover{
+	filter:brightness(70%);
+}
+
+#searchInput{
+	height:15px;
+	width:100px;
+	margin-top: 50px;
+	border: 1px solid #acacac;
+	color: #fff;
+	opacity: .7;
+	border-radius: 10px;
+	padding: 20px;
+	text-align: center;
+	transition: all .3s;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	font-size: 16px;
+	outline: none;
+	background-color: #acacac;
+}
+
+#searchInput:focus{
+	width:150px;
+	outline:none;
+}
+
+body{
+            font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+            margin:0px;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            grid-template-columns: 100%;
+            min-height: 100vh; 
+        }

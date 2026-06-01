@@ -5,56 +5,59 @@
 <head>
 <meta charset="UTF-8">
 <title>スウィートメモリー</title>
-<style>
-div {
-	border: 1px solid;
-}
-</style>
 <link rel="stylesheet" href="css/main-style.css">
+<link rel="stylesheet" href="css/history-list.css">
 </head>
 <body>
-<%@include file="header.jsp" %>
-	<%
-	request.setCharacterEncoding("UTF-8");
-	List<HistoryBean> historyList = (List<HistoryBean>) request.getAttribute("historyList");
+	<%@include file="header.jsp"%>
+	<div id="main-wrapper">
+		<%
+		request.setCharacterEncoding("UTF-8");
+		List<HistoryBean> historyList = (List<HistoryBean>) request.getAttribute("historyList");
 
-	if (!(historyList == null || historyList.isEmpty())) {
-	%>
-	<input type="text" id="searchInput" placeholder="キーワードで検索">
-	<table id="myTable">
-		<tr>
-			<th>名前</th>
-			<th>作成日</th>
-			<th></th>
-		</tr>
-		<%
-		for (int i = 0; i < historyList.size(); i++) {
+		if (!(historyList == null || historyList.isEmpty())) {
 		%>
-		<tr>
-			<td><%=historyList.get(i).getSweets_name()%></td>
-			<td><%=historyList.get(i).getDate()%></td>
-			<td>
-				<form action="history-detail" method="post">
-					<input type="hidden" name="sweets_name"
-						value="<%=historyList.get(i).getSweets_name()%>"> <input
-						type="hidden" name="date"
-						value="<%=historyList.get(i).getDate()%>"> <input
-						type="submit" value="詳細">
-				</form>
-			</td>
-		</tr>
+		<div id="filter">
+		<input type="text" id="searchInput" placeholder="名前で検索">
+		</div>
+		<div id="myTable2">
+			<div id="table-wrapper">
+			<table id="myTable">
+				<tr>
+					<th>名前</th>
+					<th>作成日</th>
+					<th></th>
+				</tr>
+				<%
+				for (int i = 0; i < historyList.size(); i++) {
+				%>
+				<tr>
+					<td><%=historyList.get(i).getSweets_name()%></td>
+					<td><%=historyList.get(i).getDate()%></td>
+					<td>
+						<form action="history-detail" method="post">
+							<input type="hidden" name="sweets_name"
+								value="<%=historyList.get(i).getSweets_name()%>"> <input
+								type="hidden" name="date"
+								value="<%=historyList.get(i).getDate()%>"> <input
+								type="submit" value="詳細" class="button">
+						</form>
+					</td>
+				</tr>
+				<%
+				}
+				%>
+			</table>
+			</div>
+		</div>
 		<%
-		}
-		%>
-	</table>
-	<%
 } else {
 %>
-	<div id="none-history">履歴がないよ。Let's cooking！</div>
-	<%
+		<div id="none-history">履歴がないよ。Let's cooking！</div>
+		<%
 }
 %>
-	<script>
+		<script>
 		document.getElementById('searchInput').addEventListener(
 				'keyup',
 				function() {
@@ -71,7 +74,9 @@ div {
 						}
 					}
 				});
-	</script>
-<%@include file="footer.jsp" %>
+
+</script>
+	</div>
+	<%@include file="footer.jsp"%>
 </body>
 </html>
