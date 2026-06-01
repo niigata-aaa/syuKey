@@ -4,6 +4,7 @@
 #image{
 
 	position: relative;
+	display:block;
 
 }
 
@@ -21,11 +22,25 @@
 	overflow:hidden;
 }
 
-body{
-            font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
-            margin:0px;
-            display: grid;
-            grid-template-rows: auto 1fr auto;
-            grid-template-columns: 100%;
-            min-height: 100vh; 
-        }
+#main-content{
+	position:relative;
+}
+
+#comments{
+	top:50%;
+	left:50%;
+}
+
+#title{
+	top:50%;
+	left:50%;
+}
+
+/*body{*/
+/*            font-family: "Hiragino Sans", "Yu Gothic", sans-serif;*/
+/*            margin:0px;*/
+/*            display: grid;*/
+/*            grid-template-rows: auto 1fr auto;*/
+/*            grid-template-columns: 100%;*/
+/*            min-height: 100vh; */
+/*        }*/

@@ -15,12 +15,13 @@ HistoryBean historyBean = (HistoryBean) request.getAttribute("historyDetail");
 <body>
 <%@include file="header.jsp" %>
 	<div id="main-content">
-
+<div id="images">
 		<div id="image">
 			
 			<img src="show-image?date=<%=historyBean.getDate()%>&name=<%=historyBean.getSweets_name()%>" id="main-image">
 			<img src="img/frame.png" id="frame">
 		</div>
+</div>
 		
 			<div id="title">
 				<%=historyBean.getSweets_name()%>、<%=historyBean.getDate()%>
