@@ -18,6 +18,8 @@
 		font-size: 19px;
     }
 
+
+
 #main-content {
     display: flex;
     gap: 20px;
@@ -37,6 +39,9 @@ input[value="在庫登録"]{
 	border-radius: 10px;
 	
 }
+input[value="在庫登録"]:hover{
+background-color:  rgb(224, 89, 65);/* ホバー時の背景色 */
+}
 input[value="在庫更新"]{
 	background-color:#9C6455;
 		color: white;
@@ -44,22 +49,29 @@ input[value="在庫更新"]{
 		border-radius: 10px;
 		
 }
+input[value="在庫更新"]:hover{
+background-color: rgb(128, 64, 64); /* ホバー時の背景色 */
+}
 input[value="スウィートメモリー"]{
 	background-color: white;
 			color: #9C6455;
 			border-color: #9C6455;
 			border-radius: 10px;
-			
-}
+			}
+input[value="スウィートメモリー"]:hover{
+	background-color: rgb(217, 191, 179); /* ホバー時の背景色 */
+			}
 input[value="削除"]{
-	
+	align-items: right;
 	background-color: rgb(237,127,112 );
 		color: white;
 		border: none;
 		width: 60px;
 		height: 30px;
-		
 		border-radius: 15px;
+}
+input[value="削除"]:hover{
+	background-color: rgb(224, 89, 65); /* ホバー時の背景色 */
 }
 .content-title{
 	display: flex;
@@ -72,7 +84,8 @@ input[value="削除"]{
 	font-weight: bold;
 }
 input[type="text"]{
-	text-align: center;
+	
+	display: flex;
 	width: 80px;
 	height: 50px;
 	display: flex;
@@ -142,6 +155,7 @@ input[type="text"]{
         margin-bottom: 20px;
     }
 #expired-content {
+	
     background-color: white;
     border-radius: 5px;
     min-height: 500px;

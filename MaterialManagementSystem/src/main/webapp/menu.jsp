@@ -67,7 +67,7 @@ body{
 	</div>
 		<div class="regist-list">
 		<div class="content-title">在庫一覧</div>
-		<input type="text" id="searchInput" placeholder="キーワードで検索">
+		<input type="text" id="searchInput" placeholder="キーワードで検索" style="width: 150px; align-content: right;">
 		<table id="myTable">
 			<tr>
 				<th>名前</th>
