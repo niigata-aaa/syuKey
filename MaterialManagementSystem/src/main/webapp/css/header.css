@@ -63,5 +63,4 @@
   box-sizing: border-box;
   font-size: 16px;     /* 文字の大きさ */
   color: #333333;      /* 💡通常の背景（白）で見やすいように文字色は濃いグレー */
-  background-color: #ffffff; /* 必要であれば文字の背景を白に固定 */
 }
