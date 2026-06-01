@@ -46,7 +46,7 @@ public class MaterialDeleteAdminServlet extends HttpServlet {
 		MaterialDAO dao = new MaterialDAO();
 
 		try {
-			materialNameList = dao.selectDeleteName();
+			materialNameList = dao.selectDeleteNameAdmin();
 			request.setAttribute("materialNameList", materialNameList);
 		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();

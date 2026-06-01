@@ -290,6 +290,22 @@ public class MaterialDAO {
 	}
 	public List<MaterialBean> selectDeleteName() throws SQLException,ClassNotFoundException {
 		List<MaterialBean> materialNameList = new ArrayList<MaterialBean>();
+		String sql = "select material_name from m_material group by where material_id > 40 material_name";
+		try(Connection con = ConnectionManager.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql)){
+			ResultSet res = pstmt.executeQuery();
+
+			while(res.next()) {
+				MaterialBean materialBean = new MaterialBean();
+				materialBean.setMaterial_name(res.getString("material_name"));
+
+				materialNameList.add(materialBean);
+			}
+		}
+		return materialNameList;
+	}
+	public List<MaterialBean> selectDeleteNameAdmin() throws SQLException,ClassNotFoundException {
+		List<MaterialBean> materialNameList = new ArrayList<MaterialBean>();
 		String sql = "select material_name from m_material group by material_name";
 		try(Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
@@ -325,6 +341,23 @@ public class MaterialDAO {
 		return cnt;
 	}
 	
+	public int MaterialDelete(MaterialBean material) throws SQLException, ClassNotFoundException {
+		int cnt = 0;
+		String sql = "delete from m_material where material_name = ?";
+
+		try (Connection con = ConnectionManager.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql)) {
+
+			String material_name = material.getMaterial_name();
+
+			pstmt.setString(1, material_name);
+
+			cnt = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return cnt;
+	}
 	public List<MaterialBean> selectToUpdate(String material_name) throws SQLException,ClassNotFoundException{
 		List<MaterialBean> materialList = new ArrayList<MaterialBean>();
 		String sql = "select material_id,material_limit,material_amount from m_material where material_name = ? ORDER BY material_limit ASC";
