@@ -12,9 +12,7 @@ String user_id = (String) session.getAttribute("user_id");
 </head>
 <body>
 	<%@include file="header-admin.jsp" %>
-<div class="d1">
-	<h2><%=user_id%>さん、こんにちは</h2>
-</div>
+
 <div class="parent">
 <div class="d2">
 	<%
