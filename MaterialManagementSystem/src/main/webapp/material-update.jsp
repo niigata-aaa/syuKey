@@ -17,6 +17,7 @@
 	<form action="material-update-confirm" method="post"
 		enctype="multipart/form-data">
 		<div id="update">
+		
 			<table id="tb1">
 				<tr>
 					<th>使った材料</th>

@@ -4,15 +4,21 @@ body{
 	text-align:center;
 	color:#9C6455;
 }
-#box{
-	background-color:white;
-	width:350px;
-	height:280px;
-	margin-left:auto;
-	margin-right:auto;
-	margin-top:50px;
-	border-radius:50px;
+#update{
+	
+	flex: 1;
+	padding:20px;
+	
 }
+/*#box{*/
+/*	background-color:white;*/
+/*	width:350px;*/
+/*	height:280px;*/
+/*	margin-left:auto;*/
+/*	margin-right:auto;*/
+/*	margin-top:50px;*/
+/*	border-radius:50px;*/
+/*}*/
 #add{
 	width: 90px;
 	height: 30px;
@@ -24,13 +30,16 @@ body{
 #tb1{
 	padding: 30px;
 	      width: 35%;          /* 幅を指定 */
-	  margin: 0 auto;             /* 左右のマージンを自動にして中央寄せ */	    
+	              /* 左右のマージンを自動にして中央寄せ */	    
+}
+tb1 tr{
+	
 }
 
-#update{
-	align-content: center;
-}
-#tb1 th{
-	 text-align: center;
+
 	
+
+#history{
+	flex: 1;
+	padding: 20px;
 }
