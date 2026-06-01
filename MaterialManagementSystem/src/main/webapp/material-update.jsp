@@ -92,7 +92,7 @@ function add() {
         </td>
         <td class="unitCell"></td>
     `;
-}
+};
 
 const unitMap = {
 <%for (int i = 0; i < nameunitList.size(); i++) {%>
