@@ -68,6 +68,7 @@ body{
 		<div class="regist-list">
 		<div class="content-title">在庫一覧</div>
 		<input type="text" id="searchInput" placeholder="キーワードで検索" style="width: 150px; align-content: right;">
+		<div id="tablewrapper">
 		<table id="myTable">
 			<tr>
 				<th>名前</th>
@@ -92,6 +93,7 @@ body{
 			}
 			%>
 		</table>
+		</div>
 	</div>
 	</div>
 	<div id="expired-list">
