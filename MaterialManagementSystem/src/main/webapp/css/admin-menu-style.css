@@ -1,16 +1,62 @@
 @charset "UTF-8";
-
+/*管理者のメインページのデザインのCSSです*/
+/* bodyの背景色、文字色、文字サイズ */
 body{
 	color:black;
 	background-color: rgb(219, 241, 242);
-	margin:-20px;
-	padding:-20px;
-	        
+	margin:0px;
+	padding:0px;   
 }
 
 /* ロゴ画像 幅：上に10px開け、下に90px近く*/
 img{
-	width:100px;
-	margin-top:0px;
-	margin-bottom:0px;
+	width:320px;
+	margin-top: -50px;
+	margin-bottom:-150px;
+}
+
+/*user_idさん、こんにちはの部分*/
+.d1{
+	line-height: 1.2;
+	margin-left: 60px;
+}
+
+.parent{
+	display:flex;
+	gap: 100px;
+}
+
+/*ユーザ一覧の部分*/
+.d2{
+	width: 700px;
+	height: 400px;
+	border-style: solid;
+	padding-left: 40px;
+	margin-left: 150px;
+	font-size: 25px;
+}
+
+/*管理者メニューの部分*/
+.d3{
+	width: 350px;
+	height: 500px;
+	border-style: solid;
+	padding-top: 10px;
+	text-align: center;
+	margin-right: 20px;
+	right: -100px;
+	top: -100px;
+	font-size: 25px;
+	
+}
+
+.btn {
+    width: 240px;
+    height: 50px;
+    font-size: 20px;
+	background-color:#ED7F70;
+	color: #f5f5f5;
+	border: none;
+	border-radius: 20px;
+	margin-top: 20px;
 }
