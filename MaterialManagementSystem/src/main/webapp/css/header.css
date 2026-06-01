@@ -17,15 +17,49 @@
 /*}*/
 
 #header {
-  width: 800px;
-  height: 300px;
+  width: 100%;
+  height: 100px;
   background-image: url(img/ヘッダー.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  border: solid 3px #333;
+  /*border: solid 3px #333;*/
+  position: relative;
 }
 
-#bgimg{
+#bgimage{
 	width:100%;
+	height: 550px;
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;  
+}
+/* 3. 左上に重ねるロゴ画像 */
+.logo-img {
+  position: absolute;
+  left: 30px;          /* 💡左から20px開ける */
+  height: 150px;        /* ロゴの高さ（ヘッダー200pxからはみ出さないサイズ） */
+  width: auto;
+  z-index: 2;          /* 💡画像の上に載せる */
+}
+
+/* 4. 右側に重ねるログアウトボタン */
+.logout-form {
+  position: absolute;
+  top: 15px;           /* 💡上から15px開ける */
+  right: 20px;         /* 💡右から20px開ける（右上に固定） */
+  z-index: 2;          /* 💡画像の上に載せる */
+}
+
+/* 5. 画像の下に表示される「ようこそ」の文 */
+.user-welcome {
+  width: 100%;
+  padding: 10px 20px;  /* 上下左右に少し余白を作る */
+  padding-top: 50px;
+  box-sizing: border-box;
+  font-size: 16px;     /* 文字の大きさ */
+  color: #333333;      /* 💡通常の背景（白）で見やすいように文字色は濃いグレー */
+  background-color: #ffffff; /* 必要であれば文字の背景を白に固定 */
 }
