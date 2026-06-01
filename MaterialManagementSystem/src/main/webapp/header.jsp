@@ -4,13 +4,11 @@
     
 <link rel="stylesheet" href="css/header.css">
 
-  <img src="img/ロゴ.png" alt="在庫見るくん">
-</div>
-<img src="img/ヘッダー.png" alt="枠">
-
-</div>
 <body>
-
+<!--<div class="relative">-->
+<!--  <img src="img/ヘッダー.png" >-->
+<!--  <img src="img/ロゴ.png" class="absolute">-->
+<!--</div>-->
     ようこそ、<%=session.getAttribute("user_id") %>さん<br>
 
     
@@ -21,4 +19,4 @@
          
     </form>
 </body>
-</div>
+
