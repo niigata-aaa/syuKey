@@ -98,7 +98,7 @@ body{
 		<div class="content-title2">もったいないリスト</div>
 		 <div id="expired-content">
 		<div id="expired-material">
-			<p class="expired-title">期限の切れてしまった材料一覧</p>
+			<p class="expired-title">---------------------期限の切れてしまった材料--------------------</p>
 			<%
 			List<MaterialBean> list = new ArrayList<MaterialBean>();
 			List<MaterialBean> nearlist = new ArrayList<MaterialBean>();
@@ -112,7 +112,7 @@ body{
 			for (int i = 0; i < expiredList.size(); i++) {
 				Date thatDate = expiredList.get(i).getMaterial_limit();
 				if ((thatDate.compareTo(date) == -1) || (thatDate.compareTo(date) == 0)) {
-
+					
 					list.add(expiredList.get(i));
 
 				} else if ((thatDate.compareTo(pastDate) == -1) || (thatDate.compareTo(pastDate) == 0)) {
@@ -128,13 +128,14 @@ body{
 			<%
 			if (list.size() != 0) {
 			%>
-			<table>
+			<table id="expired">
 				<%
 				for (int i = 0; i < list.size(); i++) {
+					
 				%>
 				<tr>
-					<td><%=list.get(i).getMaterial_name()%></td>
-					<td><%=list.get(i).getMaterial_limit()%></td>
+					<td ><%=list.get(i).getMaterial_name()%></td>
+					<td ><%=list.get(i).getMaterial_limit()%></td>
 					<td>
 						<form action="expired-delete-confirm" method="post">
 							<input type="hidden" name="material_name"
@@ -152,13 +153,13 @@ body{
 			<%
 			} else {
 			%>
-			消費期限切れの材料はありません。
+			<p class="empty-content">消費期限切れの材料はありません。</p>
 			<%
 			}
 			%>
 		</div>
 		<div id="near-expired-material">
-			<p class="expired-title">期限切れの近い材料一覧</p>
+			<p class="expired-title">------------------------期限切れの近い材料------------------------</p>
 			<%
 			if (nearlist.size() != 0) {
 				long datetimeNow = date.getTime();
@@ -210,7 +211,7 @@ body{
 			<%
 			} else {
 			%>
-			消費期限切れの近い材料はありません。
+			<p class="empty-content">消費期限切れの近い材料はありません。</p>
 			<%
 			}
 			%>
