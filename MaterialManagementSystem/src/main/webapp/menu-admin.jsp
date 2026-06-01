@@ -11,7 +11,7 @@ String user_id = (String) session.getAttribute("user_id");
 <title>管理者メインページ</title>
 </head>
 <body>
-	<img src="img/ロゴ.png" alt="在庫見るくん">
+	<%@include file="header.jsp" %>
 <div class="d1">
 	<h2><%=user_id%>さん、こんにちは</h2>
 </div>

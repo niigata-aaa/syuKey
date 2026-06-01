@@ -7,6 +7,7 @@
 <title>管理者材料マスタ削除完了ページ</title>
 </head>
 <body>
+	<%@include file="header.jsp" %>
 	<div class="area">
 		<%
 			int cnt = (Integer)request.getAttribute("cnt");

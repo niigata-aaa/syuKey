@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="css/admin-each-start.css">
 </head>
 <body>
-	<h2>ユーザ削除ページ</h2>
+	<%@include file="header.jsp" %>
 	<div class="area">
 		<div class="btn-area">
 		    <form action="user-delete-confirm" method="POST">

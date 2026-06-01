@@ -9,11 +9,7 @@
 <img src="img/ヘッダー.png" id="bgimage">
 <!--  <img src="img/ロゴ.png" class="absolute">-->
 <!--</div>-->
-    ようこそ、<%=session.getAttribute("user_id") %>さん<br>
-
-    
-    
-    
+    ようこそ、<%=session.getAttribute("user_id") %>さん<br>   
     <form action="logout-servlet" method="post">
         <input type="submit" value="ログアウト">
          

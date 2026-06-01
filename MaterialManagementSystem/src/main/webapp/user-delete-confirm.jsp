@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="css/admin-confirm&result.css">
 </head>
 <body>
-	<h2>ユーザ削除確認ページ</h2>
+	<%@include file="header.jsp" %>
 	<%
 		request.setCharacterEncoding("UTF-8");
 	%>

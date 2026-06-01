@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="css/admin-confirm&result.css">
 </head>
 <body>
- <h2>ユーザ登録完了ページ</h2>
+	<%@include file="header.jsp" %>
  	<div class="area">
 		<%
 		int processingNumber = (Integer) request.getAttribute("processingNumber");

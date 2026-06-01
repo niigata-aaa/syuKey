@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="css/admin-confirm&result.css">
 </head>
 <body>
+	<%@include file="header.jsp" %>
 	<%	
 		String material_name = (String)request.getAttribute("material_name");
 	%>
