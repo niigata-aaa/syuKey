@@ -53,7 +53,7 @@ public class HistoryDAO {
 			if(res.next()) {
 				historyBean.setComment(res.getString("comment"));
 				historyBean.setDate(res.getDate("date"));
-				historyBean.setImage_name(res.getString("image_name"));
+				historyBean.setImage_name(res.getString("image_path"));
 				historyBean.setRecipe_url(res.getString("recipe_url"));
 				historyBean.setImage_data(res.getBytes("data"));
 				historyBean.setSweets_name(res.getString("sweets_name"));

@@ -12,6 +12,7 @@
 <%
 request.setCharacterEncoding("UTF-8");
 List<String> msgList = (List<String>)request.getAttribute("errmsg");
+List<String> msg = (List<String>)request.getAttribute("msg");
 if(!(msgList == null || msgList.isEmpty())){
 %>
 一部更新に成功しました。<br>
@@ -22,7 +23,12 @@ if(!(msgList == null || msgList.isEmpty())){
 }
 } else {
 %>
-正常に登録完了しました。
+正常に登録完了しました。<br>
+<%if(!(msg == null || msg.isEmpty())){ %>
+<%for(int i=0;i<msg.size();i++){ %>
+<%=msg.get(i) %><br>
+<%} %>
+<%} %>
 <%
 }
 %>

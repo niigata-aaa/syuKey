@@ -12,12 +12,12 @@
 	%>
 	以下の材料を削除します<br>
 	材料名：<%=material_name %><br>
-	<form action="material-delete-result" method="post">
+	<form action="material-delete-result-admin" method="post">
 		<input type="hidden" name="material_name" value="<%=material_name%>">
 		<input type="submit" value="削除">
 	</form>
 	
-	<form action="material-delete" method="post">
+	<form action="material-delete-admin" method="post">
 		<input type="submit" value="戻る">
 </body>
 </html>

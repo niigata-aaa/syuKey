@@ -2,23 +2,43 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ログイン</title>
-<link rel="stylesheet" href="css/main-style.css">
+<title>ログイン画面</title>
+<link rel="stylesheet" href="css/login.css">
 </head>
-
 <body>
-	<h1>ログイン</h1>
+	<img src="img/ロゴ.png" alt="在庫見るくん">
+	<h1>ログイン画面</h1>
 	<form action="login-servlet" method="POST">
-		<!-- 10文字まで入力可能 -->
-		ユーザID：<input type="text" name="user_id"required maxlength="10"><br>
-		最大10文字までです<br>
-		<!-- 8文字以上10文字の入力 -->
-		パスワード：<input type="password" name="user_pass"required minlength="8" maxlength="10"><br>
-		8文字以上10文字以下で入力してください<br>
-
-		
+		<table>
+		<tr>
+			<td>ユーザID：</td>
+			<td>
+				<input type="text" name="user_id" required maxlength="10">
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><p>最大10文字までです</p></td>
+		</tr>
+		<tr>
+			<td>パスワード：</td>
+			<td>
+				<input type="password"
+				name="user_pass"
+				required minlength="8">
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><p>8文字以上で入力してください</p></td>
+		</tr>
+		</table>
+		<br>
 		<input type="reset" value="クリア">
+		
+		
 		<input type="submit" value="ログインする">
+		
 	</form>
 </body>
 </html>

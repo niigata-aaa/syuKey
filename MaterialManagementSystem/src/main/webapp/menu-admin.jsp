@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="css/admin-menu-style.css">
 <title>管理者メニュー</title>
 </head>
 <body>
+	<img src="img/ロゴ.png" alt="在庫見るくん">
 	<h2>メインページ_管理者用</h2>
 
 	<%
@@ -23,15 +25,15 @@
 	<% }%>
 	
 	<form action="user-regist" method="POST">
-		<input type="submit" value="登録">
+		<input type="submit" value="ユーザ登録">
 	</form>
 
 	<form action="user-update" method="POST">
-		<input type="submit" value="更新">
+		<input type="submit" value="ユーザのパスワード更新">
 	</form>
 
 	<form action="user-delete" method="POST">
-		<input type="submit" value="削除">
+		<input type="submit" value="ユーザ削除">
 	</form>
 
 	<form action="material-regist" method="POST">

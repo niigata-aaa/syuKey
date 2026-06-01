@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/* bodyの背景色、文字色、文字サイズ */
+
+/* ロゴ画像 幅：上に10px開け、下に90px近く*/
+img{
+	width:320px;
+	margin-top:10px;
+	margin-bottom:-90px;
+}
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+}

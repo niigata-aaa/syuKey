@@ -78,6 +78,7 @@ public class MaterialUpdateResultServlet extends HttpServlet {
 		String image_name = request.getParameter("fileName");
 		String image_path = request.getParameter("filePath");
 		String contentType = request.getParameter("contentType");
+		List<String> msg = new ArrayList<String>();
 		
 		int count = 0;
 		MaterialDAO materialDAO = new MaterialDAO();
@@ -101,6 +102,7 @@ public class MaterialUpdateResultServlet extends HttpServlet {
 						listForUpdate.get(0).setAmount(0);
 						sub = listForUpdate.get(1).getAmount() - amounts.get(i);
 						listForUpdate.get(1).setAmount(sub);
+						msg.add(names.get(i) + "を1つ使い切りました！");
 					}
 					count += materialDAO.update(listForUpdate);
 					//materialDAOのSQL文どうしようかな。
@@ -124,7 +126,7 @@ public class MaterialUpdateResultServlet extends HttpServlet {
 		}catch(SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		
+		request.setAttribute("msg",msg);
 		request.setAttribute("errmsg", msgList);
 		
 		

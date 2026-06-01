@@ -36,7 +36,7 @@ if(!(sweets_name == null || sweets_name.isEmpty())){
 }
 %>
 
-<form action ="material-update" method="psot">
+<form action ="material-update" method="post">
 <input type="submit" value="戻る">
 </form>
 <form action="material-update-result" method="post">

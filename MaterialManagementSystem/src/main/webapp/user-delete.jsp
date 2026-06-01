@@ -12,8 +12,6 @@
     	ユーザ名：<input type="text" size="12" name="user_id"><br>
     	<input type="submit" value="削除">
     	<input type="reset" value="クリア">
-    	
     </form>
-	</table>
 </body>
 </html>

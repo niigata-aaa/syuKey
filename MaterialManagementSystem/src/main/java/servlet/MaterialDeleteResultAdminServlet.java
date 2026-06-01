@@ -51,7 +51,7 @@ public class MaterialDeleteResultAdminServlet extends HttpServlet {
 
 				MaterialDAO dao = new MaterialDAO();
 				try {
-					cnt = dao.NewMaterialDelete(material);
+					cnt = dao.MaterialDelete(material);
 					request.setAttribute("cnt", cnt);
 				} catch (SQLException | ClassNotFoundException e) {
 					e.printStackTrace();

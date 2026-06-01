@@ -8,13 +8,14 @@
 <link rel="stylesheet" href="css/main-style.css">
 </head>
 <body>
-<%@include file="header.jsp" %>
+	<%@include file="header.jsp"%>
 	<%
 	request.setCharacterEncoding("UTF-8");
 	List<MaterialBean> nameunitList = (List<MaterialBean>) request.getAttribute("nameunitList");
 	%>
 
-	<form action="material-update-confirm" method="post" enctype="multipart/form-data">
+	<form action="material-update-confirm" method="post"
+		enctype="multipart/form-data">
 		<div id="update">
 			<table id="tb1">
 				<tr>
@@ -22,8 +23,8 @@
 					<th>消費量</th>
 				</tr>
 				<tr>
-					<td><input type="text" list="lists" name="material_name" onchange="showUnit(this)" required> <datalist
-							id="lists">
+					<td><input type="text" list="lists" name="material_name"
+						onchange="showUnit(this)" required> <datalist id="lists">
 							<%
 							for (int i = 0; i < nameunitList.size(); i++) {
 							%>
@@ -36,38 +37,43 @@
 					<td class="unitCell"></td>
 				</tr>
 				<tr>
-					<td><input type="text" list="lists" name="material_name" onchange="showUnit(this)"></td>
+					<td><input type="text" list="lists" name="material_name"
+						onchange="showUnit(this)"></td>
 					<td><input type="number" name="amount"></td>
 					<td class="unitCell"></td>
 				</tr>
 				<tr>
-					<td><input type="text" list="lists" name="material_name" onchange="showUnit(this)"></td>
+					<td><input type="text" list="lists" name="material_name"
+						onchange="showUnit(this)"></td>
 					<td><input type="number" name="amount"></td>
 					<td class="unitCell"></td>
 				</tr>
 				<tr>
-					<td><input type="text" list="lists" name="material_name" onchange="showUnit(this)"></td>
+					<td><input type="text" list="lists" name="material_name"
+						onchange="showUnit(this)"></td>
 					<td><input type="number" name="amount"></td>
 					<td class="unitCell"></td>
 				</tr>
 				<tr>
-					<td><input type="text" list="lists" name="material_name" onchange="showUnit(this)"></td>
+					<td><input type="text" list="lists" name="material_name"
+						onchange="showUnit(this)"></td>
 					<td><input type="number" name="amount"></td>
 					<td class="unitCell"></td>
 				</tr>
 			</table>
-			<button type = "button" onclick="add()">追加</button>
+			<button type="button" onclick="add()">追加</button>
 		</div>
 		<div id="history">
-			お菓子の名前：<input type="text" name="sweets_name"><br>
-			URL：<input type="url" name="recipe_url"> <br>
-			一言コメント：<input type="text" name="comment"><br>
-			画像：<input type="file" name="history_image"><br>
+			履歴を登録する場合は、以下の情報をすべて入力してください。<br> お菓子の名前：<input type="text"
+				name="sweets_name" id="sweets_name" onchange="setRequired(this)"><br>
+			URL：<input type="url" name="recipe_url"> <br> 一言コメント：<input
+				type="text" name="comment"><br> 画像：<input type="file"
+				name="history_image"><br>
 		</div>
-	<input type="submit" value="OK">
+		<input type="submit" value="OK">
 	</form>
-<%@include file="footer.jsp" %>
-<script>
+	<%@include file="footer.jsp"%>
+	<script>
 function add() {
     const table = document.getElementById("tb1");
 
@@ -88,9 +94,7 @@ function add() {
 }
 
 const unitMap = {
-<%
-for (int i = 0; i < nameunitList.size(); i++) {
-%>
+<%for (int i = 0; i < nameunitList.size(); i++) {%>
     "<%=nameunitList.get(i).getMaterial_name()%>": "<%=nameunitList.get(i).getMaterial_unit()%>",
 <%
 }
@@ -103,7 +107,26 @@ function showUnit(input) {
 
     const row = input.closest("tr");
     row.querySelector(".unitCell").textContent = unit;
+};
+
+function setRequired(input){
+	const parentElement = document.getElementById('history');
+	const links = parentElement.getElementsByTagName('input');
+	if(!(input.value == "")){
+	for(let i=0;i<links.length;i++){
+		
+	links[i].setAttribute('required', 'true');
+};
+	}else {
+		for(let i=0;i<links.length;i++){
+			
+			links[i].required = false;
+		};
 }
+	
+
+};
+
 
 </script>
 </body>
