@@ -23,23 +23,3 @@ body{
 #rink{
 	font-size:25px;
 }
-/* ボタン全体 */
-/*#buttonArea{*/
-/*	margin-top:20px;*/
-/*}*/
-/* 共通ボタン */
-/*input{*/
-/*	width:170px;*/
-/*	height:45px;*/
-/*}*/
-/* 左ボタン */
-/*input[type="submit"]{*/
-/*	background-color:#ED7F70;*/
-/*	color:white;*/
-/*	margin-right:50px;*/
-/*}*/
-/* 右ボタン */
-/*input[type="button"]{*/
-/*	background-color:white;*/
-/*	color:#9C6455;*/
-/*}*/
