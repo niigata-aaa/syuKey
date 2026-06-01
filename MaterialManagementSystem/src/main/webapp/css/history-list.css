@@ -45,6 +45,7 @@
 
 .button{
 	background-color: #ED7F70 ;
+	height:35px;
 	color:white;
 	border:none;
 	border-radius: 0.5em;
