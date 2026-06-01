@@ -123,7 +123,7 @@ div {
 					<td><%=list.get(i).getMaterial_name()%></td>
 					<td><%=list.get(i).getMaterial_limit()%></td>
 					<td>
-						<form action="expired-delete-confirm" method="post">
+						<form action="expired-delete-confirm-servlet" method="post">
 							<input type="hidden" name="material_name"
 								value="<%=list.get(i).getMaterial_name()%>"> <input
 								type="hidden" name="material_name"
