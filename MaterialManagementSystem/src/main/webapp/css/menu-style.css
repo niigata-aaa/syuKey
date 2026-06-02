@@ -42,29 +42,33 @@ input[value="在庫登録"]{
 	color: white;
 	border: none;
 	border-radius: 10px;
-	
+	transition: all 0.2s;
 }
 input[value="在庫登録"]:hover{
 background-color:  rgb(224, 89, 65);/* ホバー時の背景色 */
+transform: translateY(-2px);
 }
 input[value="在庫更新"]{
 	background-color:#9C6455;
 		color: white;
 		border: none;
 		border-radius: 10px;
-		
+		transition: all 0.2s;
 }
 input[value="在庫更新"]:hover{
 background-color: rgb(128, 64, 64); /* ホバー時の背景色 */
+transform: translateY(-2px);
 }
 input[value="スウィートメモリー"]{
 	background-color: white;
 			color: #9C6455;
 			border-color: #9C6455;
 			border-radius: 10px;
+			transition: all 0.2s;
 			}
 input[value="スウィートメモリー"]:hover{
 	background-color: rgb(217, 191, 179); /* ホバー時の背景色 */
+	transform: translateY(-2px);
 			}
 input[value="削除"]{
 	align-items: right;
@@ -77,6 +81,7 @@ input[value="削除"]{
 }
 input[value="削除"]:hover{
 	background-color: rgb(224, 89, 65); /* ホバー時の背景色 */
+	
 }
 .content-title{
 	display: flex;
@@ -118,7 +123,7 @@ input[type="text"]{
 }
     #myTable th {
 		font-size: 20px;  
-        background-color: #f7ebcf;
+        background-color: rgb(255,238,210);
         border: 2px solid #d8c4aa;
         padding: 12px;
         text-align: center;
