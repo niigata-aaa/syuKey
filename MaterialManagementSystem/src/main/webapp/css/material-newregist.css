@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+body{
+            font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+            margin:0px;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            grid-template-columns: 100%;
+            min-height: 100vh; 
+        }
+		

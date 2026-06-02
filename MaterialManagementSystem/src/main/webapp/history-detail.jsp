@@ -14,7 +14,7 @@ HistoryBean historyBean = (HistoryBean) request.getAttribute("historyDetail");
 </head>
 <body>
 <%@include file="header.jsp" %>
-	<div id="main-content">
+<div id="main-content">
 
     <div id="title">
         <%=historyBean.getSweets_name()%>、<%=historyBean.getDate()%>
