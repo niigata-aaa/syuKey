@@ -14,7 +14,7 @@
 	<%
 		List<MaterialBean> materialNameList = (List<MaterialBean>)request.getAttribute("materialNameList");
 	%>
-
+	<%if(materialNameList.size() != 0){ %>
 	<form action="material-delete-confirm" method="post">
 		<%
 			for(MaterialBean material : materialNameList){
@@ -26,6 +26,9 @@
 		%>
 		<input type="submit" value="削除確認へ">
 	</form>
+	<%} else { %>
+	削除できる材料はありません。
+	<%} %>
 <%@include file="footer.jsp" %>
 </body>
 </html>
