@@ -24,11 +24,13 @@
     gap: 20px;
 	
 }
+
 #searchInput{
 	width: 100px;
 	height: 30px;
 	margin-right: auto;
 	border-radius: 10px;
+	margin-bottom: 10px;
 }
 
 .tablewrapper{
@@ -188,7 +190,6 @@ input[type="text"]{
 
 body{
 	padding: 0;
-            font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
             margin:0px;
             display: grid;
             grid-template-rows: auto 1fr auto;
