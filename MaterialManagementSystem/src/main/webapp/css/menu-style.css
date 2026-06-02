@@ -2,6 +2,7 @@
 @keyframes fadeIn {
 }
 #buttons {
+	padding-left: 30px;
 	height: 40px;
     display: flex;
     gap: 5px;
