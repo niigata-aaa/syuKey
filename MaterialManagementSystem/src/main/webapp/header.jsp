@@ -20,9 +20,10 @@
    <form action="logout-servlet" method="post" class="logout-form">
        <input type="submit" value="ログアウト"><br>
    </form>
-</div>
-<div class="user-welcome">
+ <div class="user-welcome">
    ようこそ、<%=session.getAttribute("user_id") %>さん<br>
   
 </div>
+</div>
+
 

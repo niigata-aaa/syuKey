@@ -29,20 +29,20 @@
 
 #bgimage{
 	width:100%;
-	height: 550px;
+	height: 400px;
 	object-fit: cover;
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 1;  
+	z-index: -10;  
 }
 /* 3. 左上に重ねるロゴ画像 */
 .logo-img {
   position: absolute;
   left: 30px;          /* 💡左から20px開ける */
-  height: 150px;        /* ロゴの高さ（ヘッダー200pxからはみ出さないサイズ） */
-  width: auto;
-  z-index: 2;          /* 💡画像の上に載せる */
+  height: 100px;        /* ロゴの高さ（ヘッダー200pxからはみ出さないサイズ） */
+  width: 250px;
+  z-index: 20;          /* 💡画像の上に載せる */
 }
 
 /* 4. 右側に重ねるログアウトボタン */

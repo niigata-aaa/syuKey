@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>材料更新ページ</title>
-<link rel="stylesheet" href="css/main-style.css">
+<link rel="stylesheet" href="css/material-update.css">
 </head>
 <body>
 	<%@include file="header.jsp"%>
@@ -61,7 +61,7 @@
 					<td class="unitCell"></td>
 				</tr>
 			</table>
-			<button type="button" onclick="add()">追加</button>
+			<button type="button" onclick="add()" id="add">追加</button>
 		</div>
 		<div id="history">
 			履歴を登録する場合は、以下の情報をすべて入力してください。<br> お菓子の名前：<input type="text"

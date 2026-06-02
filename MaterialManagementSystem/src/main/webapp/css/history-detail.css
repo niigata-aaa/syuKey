@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+
+#image{
+
+	position: relative;
+
+}
+
+#frame{
+	position:absolute;
+	height:249px;
+	width:382px;
+}
+
+#main-image{
+	position: absolute;
+	height:249px;
+	width:382px;
+	border-radius: 1em;
+	overflow:hidden;
+}
+
+body{
+            font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+            margin:0px;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            grid-template-columns: 100%;
+            min-height: 100vh; 
+        }

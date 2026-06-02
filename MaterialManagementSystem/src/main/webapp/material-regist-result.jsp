@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>登録成功</title>
-<link rel="stylesheet" href="css/main-style.css">
+<link rel="stylesheet" href="css/material-regist-result.css">
 </head>
 <body>
 <%@include file="header.jsp" %>
