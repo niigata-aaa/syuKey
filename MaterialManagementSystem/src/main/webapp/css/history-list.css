@@ -18,7 +18,7 @@
 #myTable {
   margin:0 auto;
   width: 90%;
-  border: 2px solid #9C6455; 
+  border: none;
   border-collapse: collapse;
 }
 #myTable th, 
@@ -28,14 +28,17 @@
 }
 
 #table-wrapper{
-	max-height: 300px;
+	margin:0 auto;
+	width:90%;
+	border: 2px solid #9C6455; 
+	max-height: 320px;
 	overflow-y: auto;
 }
 
 #myTable2{
 	background-color: white;
 	width:95%;
-	height:350px;
+	height:380px;
 	margin:0 auto;
 	padding :10px;
 	padding-top:40px;
@@ -57,7 +60,7 @@
 
 #searchInput{
 	height:15px;
-	width:100px;
+	width:200px;
 	margin-top: 50px;
 	border: 1px solid #acacac;
 	color: #fff;

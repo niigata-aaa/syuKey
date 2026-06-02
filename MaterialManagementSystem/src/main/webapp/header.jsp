@@ -4,33 +4,33 @@
   
 <style>
 #header{
-	width:100%;
-	height:120px;
-	background-image:url(img/header.png);
-	background-repeat: repeat-x;
-	padding:20px;
-	margin-bottom:20px;
+    width:100%;
+    height:80px;
+    background-image:url(img/header.png);
+    background-repeat: repeat-x;
+    padding:3px;
+    margin-bottom:20px;
+    background-size:auto 80px;
 }
 
 #logo-image{
-	width:240px;
-	height:100px;
-	float:left;
+    width:170px;
+    height:auto;
+    float:left;
 }
 
 #logoutbtn{
 	position: absolute;
 	right: 20px;
-    top: 7%;
+    top: 5%;
 	transform: translateY(-50%);
 }
 
 .user-welcome{
-	font-size:24px;
-	margin-left:20px;
-	margin-top:40px;
-    display: inline-block;
-    height: 100px;
+    font-size:20px;
+    margin-left:20px;
+    margin-top:20px;
+    display:inline-block;
 }
 
 #btn{

@@ -16,7 +16,7 @@ public class MaterialDAO {
 	public List<MaterialBean> selectAll() throws SQLException,ClassNotFoundException{
 
 		List<MaterialBean> materialList = new ArrayList<MaterialBean>();
-		String sql = "select m.material_name,sum(m.material_amount) as total_amount ,m.unit_name,group_concat(material_limit) as limits from ( select * from m_material inner join m_unit on m_material.material_unit_id = m_unit.unit_id) as m where m.material_amount is not null group by material_name,unit_name";
+		String sql = "select m.material_name,sum(m.material_amount) as total_amount ,m.unit_name,group_concat(material_limit order by material_limit asc) as limits from ( select * from m_material inner join m_unit on m_material.material_unit_id = m_unit.unit_id) as m where m.material_amount is not null group by material_name,unit_name";
 		try(Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
 			ResultSet res = pstmt.executeQuery();
@@ -456,7 +456,7 @@ public class MaterialDAO {
 	public List<String> getAmounts() throws SQLException,ClassNotFoundException{
 		List<String> amounts = new ArrayList<String>();
 		
-		String sql = "select GROUP_CONCAT(material_amount SEPARATOR '/') as amounts from m_material group by material_name having amounts is not null";
+		String sql = "select GROUP_CONCAT(material_amount SEPARATOR '/') as amounts from (select * from m_material order by material_limit asc) as m group by material_name having amounts is not null";
 
 		try(Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
