@@ -2,7 +2,29 @@
     pageEncoding="UTF-8"%>
  
 
-<link rel="stylesheet" href="footer.css">
+<style>
+#footer{
+	height:100px;
+	background-color: #9C6455;
+	text-align: left;
+	padding:20px;
+	margin-top:20px;
+}
+
+#footer input{
+	width: 200px;
+	height: 50px;
+	background-color: #ED7F70;
+	border: none;
+	color: white;
+	border-radius: 10px;
+}
+
+#footer input:hover{
+	filter:brightness(60%);
+	
+}
+</style>
 
   <div id="footer">
 
