@@ -14,17 +14,19 @@ img{
 }
 /* 見出し 幅：上に60px近く*/
 h1{
-	margin-top:-60px;
+	margin-top:-30px;
 	font-size:40px;
 }
 /* ログインフォーム 形、角を丸く*/
-form{
+.main-content{
 	background-color:white;
 	width:600px;
+	margin-top: 110px;
 	margin-left:auto;
 	margin-right:auto;
 	border-radius:30px;
 	padding:40px;
+	
 }
 /* テーブル位置調整 */
 table{
@@ -61,9 +63,9 @@ input[type="reset"]{
 /* ログインボタン */
 input[type="submit"]{
 	background-color:#ED7F70;
+	border: none;
 	color:white;
 	border-radius:30px;
-	border:1px solid #9C6455;
 	width:160px;
 	height:50px;
 	font-size:18px;
