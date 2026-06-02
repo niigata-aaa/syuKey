@@ -7,12 +7,7 @@ body{
 	margin:0px;
 	padding:0px;  
 }
-/* ロゴ画像 幅：上に10px開け、下に90px近く*/
-img{
-	width:320px;
-	margin-top: -50px;
-	margin-bottom:-150px;
-}
+
 .parent{
 	display:flex;
 	gap: 100px;
