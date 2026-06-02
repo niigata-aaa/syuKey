@@ -62,7 +62,7 @@ input[type="reset"]{
 	margin-right:15px;
 }
 input[type="reset"]:hover{
-	filter:brightness(60%);
+	filter:brightness(80%);
 }
 /* ログインボタン */
 input[type="submit"]{
