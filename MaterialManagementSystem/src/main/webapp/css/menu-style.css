@@ -117,16 +117,17 @@ input[type="text"]{
 	padding-left: 80px;
 	    align-items: center;
 }
-#mytable {
+#myTable {
 	   
 	padding: 30px; 
 	text-align: center;
-    width: 60%;
+    width: 100%;
     height: 500px;
     border-collapse: collapse;
     border: 8px solid #c89b6d;
     background-color: white;
 }
+
     #myTable th {
 		
 		    position: sticky;
@@ -138,6 +139,7 @@ input[type="text"]{
         border: 2px solid #d8c4aa;
         padding: 12px;
         text-align: center;
+		margin:0px;
     }
     #myTable td {
 		

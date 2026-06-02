@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>材料削除</title>
 <link rel="stylesheet" href="css/main-style.css">
+<link rel="stylesheet" href="css/material-delete.css">
 </head>
 
 <body>
