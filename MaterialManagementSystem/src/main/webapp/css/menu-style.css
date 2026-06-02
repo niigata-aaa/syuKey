@@ -19,7 +19,6 @@
         box-sizing: border-box;
 		font-size: 19px;
     }
-
 #main-content {
     display: flex;
     gap: 20px;
