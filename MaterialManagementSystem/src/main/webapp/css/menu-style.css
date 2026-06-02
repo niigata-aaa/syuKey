@@ -32,11 +32,11 @@
 }
 
 .tablewrapper{
-	max-height: 500px;
+	height: 90px;
 	overflow-y: auto;
 }
 .exe-tablewrapper{
-	max-height: 380px;
+	height: 90px;
 	overflow-y: auto;
 }
 

@@ -46,6 +46,11 @@ input[value="決定"]{
 	position: relative;
 	top: -6px;
 }
+#footer{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
 /*body{*/
 /*            font-family: "Hiragino Sans", "Yu Gothic", sans-serif;*/
 /*            margin:0px;*/

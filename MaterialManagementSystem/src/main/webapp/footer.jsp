@@ -4,7 +4,7 @@
 
 <style>
 #footer{
-	height:60px;
+	height:40px;
 	background-color: #9C6455;
 	text-align: left;
 	padding:20px;
