@@ -166,16 +166,13 @@ public class MaterialDAO {
 	}
 
 	public int regist(MaterialBean materialBean) throws SQLException,ClassNotFoundException{
-		String sql="update m_material set material_amount = ?,material_limit = ? where material_name=? AND material_amount is null";
+		
+		String sql="update m_material set material_amount = ?,material_limit = ? where material_name=? AND material_amount is null limit 1";
 		int cnt = 0;
 
 
 		try(Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
-			//System.out.println(materialBean.getLimits());
-			//java.sql.Date sqlDate = new java.sql.Date(materialBean.getMaterial_limit().getTime());
-
-			System.out.println(materialBean.getAmount() + "と" +materialBean.getMaterial_name()+ "と" + "と");
 
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			java.sql.Date sqlDate = null;
@@ -290,11 +287,12 @@ public class MaterialDAO {
 		}
 		return materialNameList;
 	}
-	public List<MaterialBean> selectDeleteName() throws SQLException,ClassNotFoundException {
+	public List<MaterialBean> selectDeleteName(String user_id) throws SQLException,ClassNotFoundException {
 		List<MaterialBean> materialNameList = new ArrayList<MaterialBean>();
-		String sql = "select material_name from m_material where material_id > 40 group by material_name";
+		String sql = "select material_name from m_material where user_id=? group by material_name";
 		try(Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
+			pstmt.setString(1, user_id);
 			ResultSet res = pstmt.executeQuery();
 
 			while(res.next()) {
