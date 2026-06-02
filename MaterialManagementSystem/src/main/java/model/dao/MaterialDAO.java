@@ -291,7 +291,7 @@ public class MaterialDAO {
 	}
 	public List<MaterialBean> selectDeleteName() throws SQLException,ClassNotFoundException {
 		List<MaterialBean> materialNameList = new ArrayList<MaterialBean>();
-		String sql = "select material_name from m_material group by where material_id > 40 material_name";
+		String sql = "select material_name from m_material where material_id > 40 group by material_name";
 		try(Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
 			ResultSet res = pstmt.executeQuery();
