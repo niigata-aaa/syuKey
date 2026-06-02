@@ -169,7 +169,7 @@ public class UserDAO {
 	}
 
 	/**
-	 * アドミンチェック(会員か管理者か)
+	 * アドミンチェック(会員か管理者のどっちでログインするか)
 	 */
 	public Boolean admin_flg_Check(String user_id) throws ClassNotFoundException, SQLException {
 
