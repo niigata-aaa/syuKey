@@ -51,9 +51,13 @@ img{
 	border-radius: 20px;
 	margin-top: 20px;
 }
+
+.btn:hover {
+	background-color:rgb(255, 147, 147);
+}
 .userList{
    width: 650px;
-   height: 200px;
+   height: 226px;
    overflow-y: scroll;
    overflow-x: hidden;
    border: 1px solid #ccc;
