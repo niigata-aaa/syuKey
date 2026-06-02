@@ -21,7 +21,7 @@ MaterialBean materialBean = (MaterialBean)request.getAttribute("materialBean");
 <div id="sample">
 <%=materialBean.getMaterial_name()%><br>
 <%=materialBean.getLimits()%><br>
-<%=materialBean.getAmount()%><br>
+<%=materialBean.getAmount()%><%=materialBean.getMaterial_unit() %><br>
 </div>
 </div>
 
