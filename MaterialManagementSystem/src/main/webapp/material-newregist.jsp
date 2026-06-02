@@ -15,6 +15,7 @@ request.setCharacterEncoding("UTF-8");
 List<MaterialBean> unitList = (List<MaterialBean>) request.getAttribute("unitList");
 %>
 <div id="main-content">
+<div id="content">
 <form action="material-newregist-confirm" method="post">
 名前：<input type="text" name="material_name"><br>
 消費期限：<input type="date" name="material_limit"><br>
@@ -28,6 +29,7 @@ for(int i=0;i<unitList.size();i++){
 }
 %>
 </select>
+</div>
 <input type="submit" value="決定">
 </form>
 </div>
