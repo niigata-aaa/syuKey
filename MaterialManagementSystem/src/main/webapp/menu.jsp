@@ -46,7 +46,6 @@ body{
 	<%
 	//request.setCharacterEncoding("UTF-8");
 	List<MaterialBean> materialList = (List<MaterialBean>) request.getAttribute("materialList");
-	List<MaterialBean> materialLimitList = (List<MaterialBean>) request.getAttribute("materialLimitList");
 	List<MaterialBean> expiredList = (List<MaterialBean>) request.getAttribute("expiredList");
 	%>
 	
@@ -68,6 +67,7 @@ body{
 		<div class="regist-list">
 		<div class="content-title">在庫一覧</div>
 		<input type="text" id="searchInput" placeholder="キーワードで検索" style="width: 150px; align-content: right;">
+		<div id="tablewrapper">
 		<table id="myTable">
 			<tr>
 				<th>名前</th>
@@ -84,7 +84,7 @@ body{
 				<td><%=materialList.get(i).getAmount()%></td>
 				<td><%=materialList.get(i).getMaterial_unit()%></td>
 
-				<td><%=materialLimitList.get(i).getLimits()%></td>
+				<td><%=materialList.get(i).getLimits()%></td>
 
 			</tr>
 			<%
@@ -92,6 +92,7 @@ body{
 			}
 			%>
 		</table>
+		</div>
 	</div>
 	</div>
 	<div id="expired-list">

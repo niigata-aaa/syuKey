@@ -4,15 +4,21 @@ body{
 	text-align:center;
 	color:#9C6455;
 }
-#box{
-	background-color:white;
-	width:350px;
-	height:280px;
-	margin-left:auto;
-	margin-right:auto;
-	margin-top:50px;
-	border-radius:50px;
+#update{
+	
+	flex: 1;
+	padding:20px;
+	
 }
+/*#box{*/
+/*	background-color:white;*/
+/*	width:350px;*/
+/*	height:280px;*/
+/*	margin-left:auto;*/
+/*	margin-right:auto;*/
+/*	margin-top:50px;*/
+/*	border-radius:50px;*/
+/*}*/
 #add{
 	width: 90px;
 	height: 30px;
@@ -21,16 +27,95 @@ body{
 	color: white;
 	border-radius: 10px;
 }
+
+#add:hover{
+	filter:brightness(60%);
+}
+
 #tb1{
 	padding: 30px;
 	      width: 35%;          /* 幅を指定 */
-	  margin: 0 auto;             /* 左右のマージンを自動にして中央寄せ */	    
+	              /* 左右のマージンを自動にして中央寄せ */	    
+}
+tb1 tr{
+	width: 40px;
+	
 }
 
-#update{
-	align-content: center;
+#history{
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 30px;
+
+    background: #fffdf9;
+    border: 2px solid #f0e6d2;
+    border-radius: 20px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+    line-height: 2;
 }
-#tb1 th{
-	 text-align: center;
+
+#history input[type="text"],
+#history input[type="url"],
+#history textarea{
+    width: 100%;
+    padding: 12px;
+
+    border: 1px solid #d8d8d8;
+    border-radius: 10px;
+
+    font-size: 16px;
+    box-sizing: border-box;
+
+    transition: all 0.2s;
+}
+
+#history textarea{
+    min-height: 150px;
+    resize: vertical;
+}
+
+#history input:focus,
+#history textarea:focus{
+    outline: none;
+    border-color: #e9b96e;
+    box-shadow: 0 0 0 3px rgba(233,185,110,0.2);
+}
+
+#history input[type="file"]{
+    margin-top: 8px;
+}
+
+#history-title{
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #7a5c3e;
+}
+
+#historyBtn{
+    padding: 12px 24px;
+    border: none;
+    border-radius: 999px;
+
+    background: #ED7F70;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+#historyBtn:hover{
+    background: #e7a53a;
+    transform: translateY(-2px);
+}
 	
+
+#history{
+	flex: 1;
+	padding: 20px;
 }

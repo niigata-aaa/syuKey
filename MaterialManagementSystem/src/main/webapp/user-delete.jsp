@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="css/admin-each-start.css">
 </head>
 <body>
-	<%@include file="header.jsp" %>
+	<%@include file="header-admin.jsp" %>
 	<div class="area">
 		<div class="btn-area">
 		    <form action="user-delete-confirm" method="POST">

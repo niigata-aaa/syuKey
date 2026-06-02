@@ -16,7 +16,7 @@ public class MaterialDAO {
 	public List<MaterialBean> selectAll() throws SQLException,ClassNotFoundException{
 
 		List<MaterialBean> materialList = new ArrayList<MaterialBean>();
-		String sql = "select m.material_name,sum(m.material_amount) as total_amount ,m.unit_name from ( select * from m_material inner join m_unit on m_material.material_unit_id = m_unit.unit_id) as m where m.material_amount is not null group by material_name,unit_name";
+		String sql = "select m.material_name,sum(m.material_amount) as total_amount ,m.unit_name,group_concat(material_limit) as limits from ( select * from m_material inner join m_unit on m_material.material_unit_id = m_unit.unit_id) as m where m.material_amount is not null group by material_name,unit_name";
 		try(Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
 			ResultSet res = pstmt.executeQuery();
@@ -25,6 +25,7 @@ public class MaterialDAO {
 				materialBean.setAmount(res.getInt("total_amount"));
 				materialBean.setMaterial_name(res.getString("material_name"));
 				materialBean.setMaterial_unit(res.getString("unit_name"));
+				materialBean.setLimits(res.getString("limits"));
 				//materialBean.setMaterial_limit(res.getDate("material_limit")); 
 				materialList.add(materialBean);
 			}
