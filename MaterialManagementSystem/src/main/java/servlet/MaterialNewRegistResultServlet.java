@@ -3,6 +3,8 @@ package servlet;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.dao.MaterialDAO;
+import model.entity.MaterialBean;
 
 /**
  * Servlet implementation class MaterialNewRegistResultServlet
@@ -53,6 +56,7 @@ public class MaterialNewRegistResultServlet extends HttpServlet {
 		    int amount        = Integer.parseInt(request.getParameter("amount"));
 		    int unitId        = Integer.parseInt(request.getParameter("unit_id"));
 		    int cnt = 0;
+		    List<MaterialBean> tf = new ArrayList<MaterialBean>();
 		    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			java.sql.Date sqlDate = null;
 			
@@ -67,7 +71,12 @@ public class MaterialNewRegistResultServlet extends HttpServlet {
 			MaterialDAO materialDAO = new MaterialDAO();
 			
 			try {
-				cnt = materialDAO.insert(materialName,sqlDate,amount,unitId,user_id);
+				tf = materialDAO.selectToUpdate(materialName);
+				if(tf.size() == 0) {
+					System.out.println(tf.size());
+					cnt = materialDAO.insert(materialName,sqlDate,amount,unitId,user_id);
+				}
+				
 				
 			}catch(SQLException | ClassNotFoundException e) {
 				e.printStackTrace();
