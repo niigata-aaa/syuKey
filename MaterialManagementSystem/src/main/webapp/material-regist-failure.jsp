@@ -5,17 +5,18 @@
 <head>
 <meta charset="UTF-8">
 <title>登録エラー</title>
-<link rel="stylesheet" href="css/material-regist-result.css">
+<link rel="stylesheet" href="css/material-regist-failure.css">
 </head>
 <body>
-<div id="box">
 <%@include file="header.jsp" %>
+<div id="box">
 <div id="big">
 失敗
 </div>
-3つも同じものを買うんじゃあない
+<div id="A">
+3つも同じものを買うん<br>じゃあない！！！
 </div>
-
+</div>
 <%@include file="footer.jsp" %>
 </body>
 </html>
