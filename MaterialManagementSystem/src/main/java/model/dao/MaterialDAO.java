@@ -120,27 +120,27 @@ public class MaterialDAO {
 		return nameList;
 	}
 
-//	public List<String> selectAllUnit() throws SQLException,ClassNotFoundException{
-//
-//		List<String> nameList = new ArrayList<String>();
-//		String sql = "select unit_name from m_unit";
-//
-//		try(Connection con = ConnectionManager.getConnection();
-//				PreparedStatement pstmt = con.prepareStatement(sql)){
-//
-//			ResultSet res = pstmt.executeQuery();
-//
-//			while(res.next()) {
-//				String name = res.getString("unit_name");
-//
-//				nameList.add(name);
-//			}
-//
-//		}
-//
-//		return nameList;
-//	}
-	
+	//	public List<String> selectAllUnit() throws SQLException,ClassNotFoundException{
+	//
+	//		List<String> nameList = new ArrayList<String>();
+	//		String sql = "select unit_name from m_unit";
+	//
+	//		try(Connection con = ConnectionManager.getConnection();
+	//				PreparedStatement pstmt = con.prepareStatement(sql)){
+	//
+	//			ResultSet res = pstmt.executeQuery();
+	//
+	//			while(res.next()) {
+	//				String name = res.getString("unit_name");
+	//
+	//				nameList.add(name);
+	//			}
+	//
+	//		}
+	//
+	//		return nameList;
+	//	}
+
 	public List<MaterialBean> selectAllUnit() throws SQLException,ClassNotFoundException{
 
 		List<MaterialBean> unitList = new ArrayList<MaterialBean>();
@@ -341,7 +341,7 @@ public class MaterialDAO {
 		}
 		return cnt;
 	}
-	
+
 	public int MaterialDelete(MaterialBean material) throws SQLException, ClassNotFoundException {
 		int cnt = 0;
 		String sql = "delete from m_material where material_name = ?";
@@ -366,49 +366,49 @@ public class MaterialDAO {
 		try(Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
 			pstmt.setString(1, material_name);
-			
+
 			ResultSet res = pstmt.executeQuery();
-			
+
 			while(res.next()) {
 				MaterialBean materialBean = new MaterialBean();
 				materialBean.setAmount(res.getInt("material_amount"));
 				materialBean.setMaterial_limit(res.getDate("material_limit"));
 				materialBean.setMaterial_id(res.getInt("material_id"));
-				
+
 				materialList.add(materialBean);
 			}
-			
-			
+
+
 
 		}
 
 
 		return materialList;
 	}
-	
+
 	public int update(List<MaterialBean> materialList) throws SQLException,ClassNotFoundException {
 		int count = 0;
 		String sql = "update m_material set material_amount = ? where material_id = ?";
 		try(Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
-			
+
 			for(int i=0;i<materialList.size();i++) {
 				pstmt.setInt(1,materialList.get(i).getAmount());
 				pstmt.setInt(2, materialList.get(i).getMaterial_id());
 				count += pstmt.executeUpdate();
 			}
 		}
-		
+
 		sql = "update m_material set material_amount = null,material_limit = null where material_amount = 0";
 		try(Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
 			pstmt.executeUpdate();
 		}
-		
-		
+
+
 		return count;
 	}
-	
+
 	public int getTotalAmount(String material_name) throws SQLException,ClassNotFoundException{
 		String sql = "select sum(material_amount) as total_amount from m_material where material_name = ?";
 		int total_amount = 0;
@@ -420,14 +420,14 @@ public class MaterialDAO {
 				total_amount=res.getInt("total_amount");
 			}
 		}
-		
+
 		return total_amount;
 	}
-	
+
 	public int insert(String materialName,java.sql.Date materialLimit,int amount,int unitId,String userId) throws SQLException,ClassNotFoundException{
 		int cnt = 0;
 		String sql = "insert into m_material(material_name,material_amount,material_unit_id,material_limit,user_id) values(?,?,?,?,?)";
-		
+
 		try(Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
 			pstmt.setString(1, materialName);
@@ -435,21 +435,37 @@ public class MaterialDAO {
 			pstmt.setInt(3, unitId);
 			pstmt.setDate(4,materialLimit);
 			pstmt.setString(5, userId);
-			
+
 			cnt += pstmt.executeUpdate();
 		}
-		
+
 		sql = "insert into m_material(material_name,material_unit_id,user_id) values(?,?,?)";
-		
+
 		try(Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
 			pstmt.setString(1, materialName);
 			pstmt.setInt(2, unitId);
 			pstmt.setString(3, userId);
-			
+
 			cnt += pstmt.executeUpdate();
 		}
 		return cnt;
+	}
+
+	public List<String> getAmounts() throws SQLException,ClassNotFoundException{
+		List<String> amounts = new ArrayList<String>();
+		
+		String sql = "select group_concat(material_amount) as amounts from m_material group by material_name having amounts is not null";
+
+		try(Connection con = ConnectionManager.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql)){
+			ResultSet res =  pstmt.executeQuery();
+			while(res.next()) {
+				amounts.add(res.getString("amounts"));
+			}
+		}
+		
+		return amounts;
 	}
 
 }

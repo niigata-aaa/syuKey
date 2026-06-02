@@ -12,7 +12,14 @@ public class MaterialBean implements Serializable {
 	private String limits;
 	private int material_id;
 	private int unit_id;
+	private String amounts;
 	
+	public String getAmounts() {
+		return amounts;
+	}
+	public void setAmounts(String amounts) {
+		this.amounts = amounts;
+	}
 	public int getUnit_id() {
 		return unit_id;
 	}

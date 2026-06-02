@@ -51,18 +51,23 @@ public class MenuNormalServlet extends HttpServlet {
 			MaterialDAO materialDAO = new MaterialDAO();
 			List<MaterialBean> materialList = new ArrayList<MaterialBean>();
 			List<MaterialBean> expiredList = new ArrayList<MaterialBean>();
+			List<String> amounts = new ArrayList<String>();
 			
 			try {
 				materialList = materialDAO.selectAll();
 				//System.out.println(materialList.size() + "と" +materialLimitList.size());
 				expiredList = materialDAO.selectAllLimit();
+				amounts = materialDAO.getAmounts();
 
 			} catch(SQLException | ClassNotFoundException e) {
 				e.printStackTrace();
 			}
+			
+			//System.out.println(amounts.size());
 
 			request.setAttribute("materialList", materialList);
 			request.setAttribute("expiredList", expiredList);
+			request.setAttribute("amounts", amounts);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("menu.jsp");
 			rd.forward(request,response);

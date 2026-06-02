@@ -45,6 +45,7 @@ body{
 	//request.setCharacterEncoding("UTF-8");
 	List<MaterialBean> materialList = (List<MaterialBean>) request.getAttribute("materialList");
 	List<MaterialBean> expiredList = (List<MaterialBean>) request.getAttribute("expiredList");
+	List<String> amounts = (List<String>) request.getAttribute("amounts");
 	%>
 	
 	<div id="main-content">
@@ -64,6 +65,7 @@ body{
 	</div>
 		<div class="regist-list">
 		<div class="content-title">在庫一覧</div>
+		<div class="tyu">※消費期限の違う材料が２つあると、数量も２つ表示されます</div>
 		<input type="text" id="searchInput" placeholder="キーワードで検索" style="width: 150px; align-content: right;">
 		<div class="tablewrapper">
 		<table id="myTable">
@@ -79,7 +81,7 @@ body{
 			%>
 			<tr>
 				<td><%=materialList.get(i).getMaterial_name()%></td>
-				<td><%=materialList.get(i).getAmount()%></td>
+				<td><%=amounts.get(i)%></td>
 				<td><%=materialList.get(i).getMaterial_unit()%></td>
 
 				<td><%=materialList.get(i).getLimits()%></td>

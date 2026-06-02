@@ -5,15 +5,11 @@
 <style>
 #header{
 	width:100%;
-	height:150px;
+	height:120px;
 	background-image:url(img/header.png);
 	background-repeat: repeat-x;
 	padding:20px;
 	margin-bottom:20px;
-}
-
-#content{
-	height:90%;
 }
 
 #logo-image{
@@ -52,7 +48,6 @@
 
 </style>
 <div id="header">
-	<div id="content">
 		<img src="img/logo.png" id="logo-image">
 		<span class="user-welcome">
 		   ようこそ、<%=session.getAttribute("user_id") %>さん
@@ -63,6 +58,4 @@
 		       <input type="submit" value="ログアウト" id="btn"><br>
 		   </form>
 	   </span>
-
-	</div>
 </div>
