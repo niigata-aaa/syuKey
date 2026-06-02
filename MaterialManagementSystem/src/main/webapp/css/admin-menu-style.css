@@ -5,22 +5,18 @@ body{
 	color:black;
 	background-color: rgb(219, 241, 242);
 	margin:0px;
-	padding:0px;   
+	padding:0px;  
 }
-
 /* ロゴ画像 幅：上に10px開け、下に90px近く*/
 img{
 	width:320px;
 	margin-top: -50px;
 	margin-bottom:-150px;
 }
-
-
 .parent{
 	display:flex;
 	gap: 100px;
 }
-
 /*ユーザ一覧の部分*/
 .d2{
 	background-color: #f5f5f5;
@@ -31,7 +27,6 @@ img{
 	margin-left: 150px;
 	font-size: 25px;
 }
-
 /*管理者メニューの部分*/
 .d3{
 	background-color: #f5f5f5;
@@ -46,14 +41,49 @@ img{
 	font-size: 25px;
 	
 }
-
 .btn {
-    width: 240px;
-    height: 50px;
-    font-size: 20px;
+   width: 240px;
+   height: 50px;
+   font-size: 20px;
 	background-color:#ED7F70;
 	color: #f5f5f5;
 	border: none;
 	border-radius: 20px;
 	margin-top: 20px;
 }
+
+.btn:hover {
+	background-color:rgb(255, 147, 147);
+}
+.userList{
+   width: 650px;
+   height: 226px;
+   overflow-y: scroll;
+   overflow-x: hidden;
+   border: 1px solid #ccc;
+}
+.userList table{
+   width: 100%;
+   border-collapse: collapse;
+}
+.userList td{
+   white-space: nowrap;
+   border-right: 1px solid #999;
+   border-bottom: 1px solid #999;
+   background: #FFF;
+   padding: 5px;
+}
+.userList tr:first-child th{
+   border-top: 1px solid #999;
+}
+.userList th:first-child{
+   border-left: 1px solid #999;
+}
+.userList tr:first-child th:first-child{
+   z-index: 1;
+}
+#table_title{
+   font-weight: bold;
+   font-size: larger;
+}
+

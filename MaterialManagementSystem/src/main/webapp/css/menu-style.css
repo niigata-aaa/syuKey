@@ -5,10 +5,7 @@
     display: flex;
     gap: 10px;
 	cursor: pointer;
-	
-	
 }
-
 
     #buttons form {
         flex: 1;
@@ -45,37 +42,29 @@ input[value="在庫登録"]{
 	color: white;
 	border: none;
 	border-radius: 10px;
-	cursor: pointer;
-		transition: .2s; 
 	
 }
 input[value="在庫登録"]:hover{
 background-color:  rgb(224, 89, 65);/* ホバー時の背景色 */
-transform: translateY(-2px);
 }
 input[value="在庫更新"]{
 	background-color:#9C6455;
 		color: white;
 		border: none;
 		border-radius: 10px;
-		cursor: pointer;
-		transition: .2s; 
+		
 }
 input[value="在庫更新"]:hover{
 background-color: rgb(128, 64, 64); /* ホバー時の背景色 */
-transform: translateY(-2px);
 }
 input[value="スウィートメモリー"]{
 	background-color: white;
 			color: #9C6455;
 			border-color: #9C6455;
 			border-radius: 10px;
-			cursor: pointer;
-			transition: .2s; 
 			}
 input[value="スウィートメモリー"]:hover{
 	background-color: rgb(217, 191, 179); /* ホバー時の背景色 */
-	transform: translateY(-2px);
 			}
 input[value="削除"]{
 	align-items: right;
@@ -111,7 +100,6 @@ input[type="text"]{
     flex: 3;
     padding: 20px;
     align-items: center;
-	
 }
 .regist-list{
 	margin-left: 20px;
@@ -127,11 +115,10 @@ input[type="text"]{
     border-collapse: collapse;
     border: 8px solid #c89b6d;
     background-color: white;
-	
 }
     #myTable th {
 		font-size: 20px;  
-        background-color: rgb(255,238,210);
+        background-color: #f7ebcf;
         border: 2px solid #d8c4aa;
         padding: 12px;
         text-align: center;
@@ -160,7 +147,6 @@ input[type="text"]{
     flex: 2;
 	background-color: rgb(255,238,210);
     padding: 20px;
-	
 }
 .empty-content{
 	text-align: center;
@@ -186,3 +172,11 @@ input[type="text"]{
     color: #ff8c00;
 }
 
+body{
+            font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+            margin:0px;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            grid-template-columns: 100%;
+            min-height: 100vh; 
+        }
