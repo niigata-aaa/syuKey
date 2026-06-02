@@ -11,7 +11,7 @@ String user_id = (String) session.getAttribute("user_id");
 <title>管理者メインページ</title>
 </head>
 <body>
-	<%@include file="header-admin.jsp" %>
+	<%@include file="header.jsp" %>
 	<div class="parent">
 		<div class="d2">
 			<%
