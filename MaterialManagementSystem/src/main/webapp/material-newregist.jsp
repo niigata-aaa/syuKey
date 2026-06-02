@@ -15,11 +15,16 @@ request.setCharacterEncoding("UTF-8");
 List<MaterialBean> unitList = (List<MaterialBean>) request.getAttribute("unitList");
 %>
 <div id="main-content">
-<div id="content">
+<div id="newregist">
+<p id="info">材料の情報を入力してください♡</p>
+
 <form action="material-newregist-confirm" method="post">
-名前：<input type="text" name="material_name"><br>
-消費期限：<input type="date" name="material_limit"><br>
-数量：<input type="number" name="amount"><br>
+<div id="form">
+名前：<input type="text" name="material_name"><br></div>
+<div id="form">
+消費期限：<input type="date" name="material_limit"><br></div>
+<div id="form">
+数量：<input type="number" name="amount">
 <select name="unit">
 <%
 for(int i=0;i<unitList.size();i++){
@@ -30,7 +35,9 @@ for(int i=0;i<unitList.size();i++){
 %>
 </select>
 </div>
+
 <input type="submit" value="決定">
+</div>
 </form>
 </div>
 <%@include file="footer.jsp" %>
