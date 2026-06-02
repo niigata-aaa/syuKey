@@ -34,8 +34,7 @@ for(int i=0;i<names.size();i++){
 if(!(sweets_name == null || sweets_name.isEmpty())){
 %>
 作ったお菓子の名前：<%=sweets_name %><br>
-参考レシピのURL：<%=url %><br>
-保存する画像：<%=image_name %><br>
+
 <%
 }
 %>
