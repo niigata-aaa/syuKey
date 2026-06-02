@@ -50,12 +50,10 @@ public class MenuNormalServlet extends HttpServlet {
 		if(session.getAttribute("user_id") != null) {
 			MaterialDAO materialDAO = new MaterialDAO();
 			List<MaterialBean> materialList = new ArrayList<MaterialBean>();
-			List<MaterialBean> materialLimitList = new ArrayList<MaterialBean>();
 			List<MaterialBean> expiredList = new ArrayList<MaterialBean>();
 			
 			try {
 				materialList = materialDAO.selectAll();
-				materialLimitList = materialDAO.selectLimits();
 				//System.out.println(materialList.size() + "と" +materialLimitList.size());
 				expiredList = materialDAO.selectAllLimit();
 
@@ -64,7 +62,6 @@ public class MenuNormalServlet extends HttpServlet {
 			}
 
 			request.setAttribute("materialList", materialList);
-			request.setAttribute("materialLimitList",materialLimitList);
 			request.setAttribute("expiredList", expiredList);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("menu.jsp");

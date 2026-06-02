@@ -46,7 +46,6 @@ body{
 	<%
 	//request.setCharacterEncoding("UTF-8");
 	List<MaterialBean> materialList = (List<MaterialBean>) request.getAttribute("materialList");
-	List<MaterialBean> materialLimitList = (List<MaterialBean>) request.getAttribute("materialLimitList");
 	List<MaterialBean> expiredList = (List<MaterialBean>) request.getAttribute("expiredList");
 	%>
 	
@@ -85,7 +84,7 @@ body{
 				<td><%=materialList.get(i).getAmount()%></td>
 				<td><%=materialList.get(i).getMaterial_unit()%></td>
 
-				<td><%=materialLimitList.get(i).getLimits()%></td>
+				<td><%=materialList.get(i).getLimits()%></td>
 
 			</tr>
 			<%

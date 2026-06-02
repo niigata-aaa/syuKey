@@ -33,49 +33,75 @@
 							<%
 							}
 							%>
-						</datalist> </select></td>
-					<td><input type="number" name="amount" required></td>
+						</datalist> </td>
+					<td><input type="number" name="amount" min="0" step="1" required></td>
 					<td class="unitCell"></td>
 				</tr>
 				<tr>
 					<td><input type="text" list="lists" name="material_name"
 						onchange="showUnit(this)"></td>
-					<td><input type="number" name="amount"></td>
+					<td><input type="number" name="amount" min="0" step="1"></td>
 					<td class="unitCell"></td>
 				</tr>
 				<tr>
 					<td><input type="text" list="lists" name="material_name"
 						onchange="showUnit(this)"></td>
-					<td><input type="number" name="amount"></td>
+					<td><input type="number" name="amount" min="0" step="1"></td>
 					<td class="unitCell"></td>
 				</tr>
 				<tr>
 					<td><input type="text" list="lists" name="material_name"
 						onchange="showUnit(this)"></td>
-					<td><input type="number" name="amount"></td>
+					<td><input type="number" name="amount" min="0" step="1"></td>
 					<td class="unitCell"></td>
 				</tr>
 				<tr>
 					<td><input type="text" list="lists" name="material_name"
 						onchange="showUnit(this)"></td>
-					<td><input type="number" name="amount"></td>
+					<td><input type="number" name="amount" min="0" step="1"></td>
 					<td class="unitCell"></td>
 				</tr>
 			</table>
-			<button type="button" onclick="add()" id="add">追加</button>
+			<button type="button" onclick="addRow()" id="add">行の追加</button>
 		</div>
-		<div id="history">
-			履歴を登録する場合は、以下の情報をすべて入力してください。<br> お菓子の名前：<input type="text"
-				name="sweets_name" id="sweets_name" onchange="setRequired(this)"><br>
-			URL：<input type="url" name="recipe_url"> <br> 一言コメント：<input
-				type="text" name="comment"><br> 画像：<input type="file"
-				name="history_image"><br>
+<button type="button" id="historyBtn" onclick="toggleHistory()">
+    履歴を登録
+</button>
+
+<div id="history" style="display:none;">
+    <div id="history-title">
+        履歴を登録する場合は、以下の情報を入力してください
+    </div>
+
+    <label>
+        お菓子の名前
+        <input type="text"
+               name="sweets_name"
+               id="sweets_name"
+               onchange="setRequired(this)">
+    </label>
+
+    <label>
+        URL
+        <input type="url" name="recipe_url">
+    </label>
+
+    <label>
+        コメント
+        <textarea name="comment"></textarea>
+    </label>
+
+    <label>
+        画像
+        <input type="file" name="history_image">
+    </label>
+</div>
 		</div>
 		<input type="submit" value="OK">
 	</form>
 	<%@include file="footer.jsp"%>
 	<script>
-function add() {
+function addRow() {
     const table = document.getElementById("tb1");
 
     const row = table.insertRow();
@@ -88,10 +114,23 @@ function add() {
                    onchange="showUnit(this)">
         </td>
         <td>
-            <input type="number" name="amount">
+            <input type="number" name="amount" min="0" step="1">
         </td>
         <td class="unitCell"></td>
     `;
+}
+
+function toggleHistory() {
+    const history = document.getElementById("history");
+    const button = document.getElementById("historyBtn");
+
+    if (history.style.display === "none") {
+        history.style.display = "block";
+        button.textContent = "履歴登録を閉じる";
+    } else {
+        history.style.display = "none";
+        button.textContent = "履歴を登録";
+    }
 }
 
 const unitMap = {
