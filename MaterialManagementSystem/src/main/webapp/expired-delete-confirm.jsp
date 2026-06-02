@@ -5,15 +5,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<<<<<<< HEAD
+<link rel="stylesheet" href="css/expired-delete-confirm.css">
+=======
 <link rel="stylesheet" href="css/result.css">
+>>>>>>> branch 'master' of https://github.com/niigata-aaa/syuKey.git
 </head>
 <body>
 <%@include file="header.jsp" %>
 		<%
 		request.setCharacterEncoding("UTF-8");
 		%>
-	
-	<br>以下の内容を削除します。<br>
+<div id ="box">
+	<div id ="big">
+	以下の内容を削除します。
+	</div>
 	<jsp:useBean id="material" scope="session" class="model.entity.MaterialBean" />
 	
 	<jsp:setProperty name="material" property="material_name" param="material_name" />
@@ -22,18 +28,25 @@
 	<jsp:setProperty name="material" property="amount" param="amount" />
 	<jsp:setProperty name="material" property="material_unit" param="material_unit" />
 	
+	<div id="sample">
 	名前：<jsp:getProperty name="material" property="material_name" /><br>
 	ふりがな：<jsp:getProperty name="material" property="material_kana" /><br>
 	消費期限：<jsp:getProperty name="material" property="material_limit" /><br>
 	数量：<jsp:getProperty name="material" property="amount" /><br>
 	単位：<jsp:getProperty name="material" property="material_unit" /><br>
-	
-	
+    </div>
+
+</div>	
+<div id="btn-area">
+  <form action="menu-servlet" method="POST">
+		<input type="submit" value="戻る">
+	</form>
 
 	<form action="expired-delete-result-servlet" method="POST">
 		<input type="submit" value="OK">
 	</form>  
 
+</div>
 <%@include file="footer.jsp" %>	
 </body>
 </html>

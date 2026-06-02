@@ -5,11 +5,16 @@
 <head>
 <meta charset="UTF-8">
 <title>登録成功</title>
-<link rel="stylesheet" href="css/main-style.css">
+<link rel="stylesheet" href="css/material-regist-result.css">
 </head>
 <body>
+
 <%@include file="header.jsp" %>
+<div id="box">
+<div id="big">
 登録成功
+</div>
+</div>
 <%@include file="footer.jsp" %>
 </body>
 </html>

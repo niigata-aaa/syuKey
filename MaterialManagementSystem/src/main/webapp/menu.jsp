@@ -11,10 +11,8 @@ String user_id = (String) session.getAttribute("user_id");
 <meta charset="UTF-8">
 <title><%=user_id%>さんのマイページ</title>
 <link rel="stylesheet" href="css/menu-style.css">
-<style>-->
-<!--div {-->
-<!--	border: 1px solid;-->
-<!--}-->
+
+<style>
 
 #expired-material tr {
 	color: red;

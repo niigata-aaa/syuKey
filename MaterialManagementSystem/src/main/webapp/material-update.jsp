@@ -118,7 +118,7 @@ function addRow() {
         </td>
         <td class="unitCell"></td>
     `;
-}
+};
 
 function toggleHistory() {
     const history = document.getElementById("history");

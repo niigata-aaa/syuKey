@@ -7,3 +7,23 @@ body{
 	padding:0px;
 	        
 }
+
+#footer{
+	height:200px;
+	background-color: #9C6455;
+	text-align: left;
+}
+
+#footer input{
+	width: 90px;
+	height: 30px;
+	background-color: #ED7F70;
+	border: none;
+	color: white;
+	border-radius: 10px;
+}
+
+#footer input:hover{
+	filter:brightness(60%);
+	
+}
