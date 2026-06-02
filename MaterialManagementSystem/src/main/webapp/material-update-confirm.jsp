@@ -5,10 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>更新確認ページ</title>
-<link rel="stylesheet" href="css/main-style.css">
+<link rel="stylesheet" href="css/material-update-confirm.css">
 </head>
 <body>
 <%@include file="header.jsp" %>
+<div id="box">
+<div id="big">
 <%
 request.setCharacterEncoding("UTF-8");
 List<String> names = (List<String>)request.getAttribute("material_names");
@@ -21,6 +23,8 @@ String image_path = (String)request.getAttribute("filePath");
 String contentType = (String)request.getAttribute("contentType");
 %>
 以下の内容で登録します。<br>
+</div>
+<div id="sample">
 <%
 for(int i=0;i<names.size();i++){
 %>
@@ -35,7 +39,9 @@ if(!(sweets_name == null || sweets_name.isEmpty())){
 <%
 }
 %>
-
+</div>
+</div>
+<div id="btn-area">
 <form action ="material-update" method="post">
 <input type="submit" value="戻る">
 </form>
@@ -65,6 +71,7 @@ for(int i = 0; i < amounts.size(); i++){
 <% } %>
 <input type="submit" value="OK">
 </form>
+</div>
 <%@include file="footer.jsp" %>
 </body>
 </html>

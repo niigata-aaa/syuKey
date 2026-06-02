@@ -1,0 +1,21 @@
+@charset "UTF-8";
+ 背景 
+body{
+	background-color:#FDEED1;
+	text-align:center;
+	color:#9C6455;
+}
+ 四角背景 
+#box{
+	background-color:white;
+	width:300px;
+	height:50px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:60px;
+	border-radius:50px;
+}
+#big{
+	font-size:25px;
+	margin-top:70px;
+}

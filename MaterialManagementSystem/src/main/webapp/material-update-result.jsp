@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>更新完了</title>
-<link rel="stylesheet" href="css/main-style.css">
+<link rel="stylesheet" href="css/material-update-result.css">
 </head>
 <body>
 <%@include file="header.jsp" %>
@@ -23,6 +23,9 @@ if(!(msgList == null || msgList.isEmpty())){
 }
 } else {
 %>
+<div id="box">
+<div id="big">
+
 正常に登録完了しました。<br>
 <%if(!(msg == null || msg.isEmpty())){ %>
 <%for(int i=0;i<msg.size();i++){ %>
@@ -32,6 +35,9 @@ if(!(msgList == null || msgList.isEmpty())){
 <%
 }
 %>
+</div>
+</div>
+
 <form action="menu-servlet" method="post">
 <input type="submit" value="戻る">
 </form>
