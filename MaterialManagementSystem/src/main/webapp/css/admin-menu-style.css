@@ -57,3 +57,38 @@ img{
 	border-radius: 20px;
 	margin-top: 20px;
 }
+
+.userList{
+    width: 650px;
+    height: 200px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: 1px solid #ccc;
+}
+
+.userList table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.userList td{
+    white-space: nowrap;
+    border-right: 1px solid #999;
+    border-bottom: 1px solid #999;
+    background: #FFF;
+    padding: 5px;
+}
+
+.userList tr:first-child th{
+    border-top: 1px solid #999;
+}
+.userList th:first-child{
+    border-left: 1px solid #999;
+}
+.userList tr:first-child th:first-child{
+    z-index: 1;
+}
+#table_title{
+    font-weight: bold; 
+    font-size: larger;
+}
