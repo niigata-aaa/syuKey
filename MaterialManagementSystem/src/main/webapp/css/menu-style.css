@@ -32,8 +32,12 @@
 	border-radius: 10px;
 }
 
-#tablewrapper{
+.tablewrapper{
 	max-height: 500px;
+	overflow-y: auto;
+}
+.exe-tablewrapper{
+	max-height: 380px;
 	overflow-y: auto;
 }
 
@@ -185,3 +189,4 @@ body{
             grid-template-columns: 100%;
             min-height: 100vh; 
         }
+

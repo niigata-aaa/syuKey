@@ -65,7 +65,7 @@ body{
 		<div class="regist-list">
 		<div class="content-title">在庫一覧</div>
 		<input type="text" id="searchInput" placeholder="キーワードで検索" style="width: 150px; align-content: right;">
-		<div id="tablewrapper">
+		<div class="tablewrapper">
 		<table id="myTable">
 			<tr>
 				<th>名前</th>
@@ -97,7 +97,7 @@ body{
 		<div class="content-title2">もったいないリスト</div>
 		 <div id="expired-content">
 		<div id="expired-material">
-			<p class="expired-title">---------------------期限の切れてしまった材料--------------------</p>
+			<p class="expired-title">----------------期限の切れてしまった材料---------------</p>
 			<%
 			List<MaterialBean> list = new ArrayList<MaterialBean>();
 			List<MaterialBean> nearlist = new ArrayList<MaterialBean>();
@@ -127,6 +127,7 @@ body{
 			<%
 			if (list.size() != 0) {
 			%>
+			<div class="exe-tablewrapper">
 			<table id="expired">
 				<%
 				for (int i = 0; i < list.size(); i++) {
@@ -149,6 +150,7 @@ body{
 				}
 				%>
 			</table>
+			</div>
 			<%
 			} else {
 			%>
@@ -158,7 +160,7 @@ body{
 			%>
 		</div>
 		<div id="near-expired-material">
-			<p class="expired-title">------------------------期限切れの近い材料------------------------</p>
+			<p class="expired-title">-------------------期限切れの近い材料-------------------</p>
 			<%
 			if (nearlist.size() != 0) {
 				long datetimeNow = date.getTime();
@@ -166,6 +168,7 @@ body{
 				long diffDays;
 				int time = 0;
 			%>
+			<div class="exe-tablewrapper">
 			<table>
 				<%
 				for (int i = 0; i < nearlist.size(); i++) {
@@ -207,6 +210,7 @@ body{
 				}
 				%>
 			</table>
+			
 			<%
 			} else {
 			%>
@@ -214,6 +218,7 @@ body{
 			<%
 			}
 			%>
+		</div>
 		</div>
 		</div>
 		
