@@ -5,46 +5,62 @@ body{
 	color:#9C6455;
 }
 #update{
-	
-	flex: 1;
-	padding:20px;
+		margin:10px auto;
+		width: 500px;
+		display: block;
+	    background-color: #fffdf8;
+	    border: none;
+	    border-radius: 30px;
+	    padding: 30px;
+	    text-align: center;
 	
 }
-/*#box{*/
-/*	background-color:white;*/
-/*	width:350px;*/
-/*	height:280px;*/
-/*	margin-left:auto;*/
-/*	margin-right:auto;*/
-/*	margin-top:50px;*/
-/*	border-radius:50px;*/
-/*}*/
+#tb1 {
+    
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+#update input[type="submit"] {
+    
+    margin: 30px auto;
+    width: 120px;
+    height: 40px;
+    background-color: #ED7F70;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
 #add{
-	width: 90px;
-	height: 30px;
-	background-color: #ED7F70;
-	border: none;
-	color: white;
-	border-radius: 10px;
+	display: block;
+	   margin: 20px auto 0;
+
+	   width: 20%;
+	   height: 35px;
+		font-size: 15px;
+	   background-color: #9C6455;
+	   color: white;
+	   border: none;
+	   border-radius: 10px;
 }
+
 
 #add:hover{
 	filter:brightness(60%);
 }
 
-#tb1{
-	padding: 30px;
-	      width: 35%;          /* 幅を指定 */
-	              /* 左右のマージンを自動にして中央寄せ */	    
-}
-tb1 tr{
-	width: 40px;
+#tb1 th,
+   #tb1 td {
 	
-}
+       padding: 12px 12px;
+   }
+   #tb1 th{
+	font-size: 20px;
+   }
 
 #history{
+	margin: 20px;
     max-width: 700px;
-    margin: 30px auto;
+    
     padding: 30px;
 
     background: #fffdf9;
@@ -107,15 +123,28 @@ tb1 tr{
 
     cursor: pointer;
     transition: .2s;
+	margin: 30px;
 }
 
 #historyBtn:hover{
-    background: #e7a53a;
+    background: rgb(227, 77, 55);
     transform: translateY(-2px);
 }
-	
-
-#history{
-	flex: 1;
-	padding: 20px;
+input[value="OK"]{
+	width: 20%;
+	height: 40px;
+	background: #ED7F70;
+	    color: white;
+	    font-size: 16px;
+	    font-weight: bold;
+		border: none;
+	    cursor: pointer;
+	    transition: .2s;
+		border-radius: 999px;
+		margin: 30px;
 }
+input[value="OK"]:hover{
+	filter:brightness(60%);
+}
+
+

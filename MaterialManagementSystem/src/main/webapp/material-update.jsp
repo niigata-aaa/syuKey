@@ -16,12 +16,13 @@
 
 	<form action="material-update-confirm" method="post"
 		enctype="multipart/form-data">
+		<div id="main-content">
 		<div id="update">
 		
 			<table id="tb1">
 				<tr>
-					<th>使った材料</th>
-					<th>消費量</th>
+					<th>使った材料：</th>
+					<th>消費量：</th>
 				</tr>
 				<tr>
 					<td><input type="text" list="lists" name="material_name"
@@ -64,6 +65,7 @@
 			</table>
 			<button type="button" onclick="addRow()" id="add">行の追加</button>
 		</div>
+	
 <button type="button" id="historyBtn" onclick="toggleHistory()">
     履歴を登録
 </button>
@@ -72,7 +74,7 @@
     <div id="history-title">
         履歴を登録する場合は、以下の情報を入力してください
     </div>
-
+ <div class="history-row"><br>
     <label>
         お菓子の名前
         <input type="text"
@@ -96,6 +98,7 @@
         <input type="file" name="history_image">
     </label>
 </div>
+		</div>
 		</div>
 		<input type="submit" value="OK">
 	</form>
