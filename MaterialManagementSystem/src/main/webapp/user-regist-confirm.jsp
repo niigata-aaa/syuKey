@@ -21,7 +21,17 @@
 	    
 	    ユーザID：<jsp:getProperty name="user" property="user_id"/><br>
 		パスワード：<jsp:getProperty name="user" property="user_pass"/><br>
-	    管理者フラグ：<jsp:getProperty name="user" property="admin_flg"/><br>
+		<%
+		Boolean admin_flg = user.getAdmin_flg();
+		String flg_name = "";
+		
+		if(admin_flg) {
+			flg_name = "付与";	
+		} else {
+			flg_name = "付与しない";
+		}
+		%>
+	    管理者権限：<%=flg_name %>
 	    
 	    <div class="btn-area">
 	    	<form action="user-regist" method="POST">

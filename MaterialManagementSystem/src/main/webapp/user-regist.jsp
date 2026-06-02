@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,18 +8,24 @@
 <link rel="stylesheet" href="css/admin-each-start.css">
 </head>
 <body>
-	<%@include file="header.jsp" %>
+	<%@include file="header.jsp"%>
 	<div class="area">
 		<div class="btn-area">
-		    <form action="user-regist-confirm" method="POST">
-		    	　　ユーザ名：<input type="text" size="12" name="user_id" class="text-box"><br>
-		    	　パスワード：<input type="password" size="12" name="user_pass" class="text-box"><br>
-		    	管理者フラグ：<input type="flg" size="12" name="admin_flg" class="text-box"><br>
-		    	<input type="submit" value="登録" class="btn">
-		    	<input type="reset" value="クリア" class="btn">
-		    </form>
-	    </div>
+			<form action="user-regist-confirm" method="POST">
+				ユーザ名：<input type="text" size="12" name="user_id" class="text-box"
+					required maxlength="10"><br>
+				<p>最大10文字までです</p>
+				パスワード：<input type="password" size="12" name="user_pass"
+					class="text-box" required minlength="8"><br>
+				<p>8文字以上で入力してください</p>
+				管理者権限：<select name="admin_flg">
+					<option value="true">付与</option>
+					<option value="false">付与しない</option>
+				</select><br> <input type="submit" value="登録" class="btn"> <input
+					type="reset" value="クリア" class="btn">
+			</form>
+		</div>
 	</div>
-	<%@include file="footer.jsp" %>
+	<%@include file="footer.jsp"%>
 </body>
 </html>

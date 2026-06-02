@@ -81,4 +81,10 @@ body{
    font-weight: bold;
    font-size: larger;
 }
-
+.userList th{
+	position: sticky;
+	top: 0;
+	text-align: center;
+	z-index: 2;
+	
+}
