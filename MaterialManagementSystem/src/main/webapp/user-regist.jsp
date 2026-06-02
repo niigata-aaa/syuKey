@@ -14,11 +14,11 @@
 			<form action="user-regist-confirm" method="POST">
 				ユーザ名：<input type="text" size="12" name="user_id" class="text-box"
 					required maxlength="10"><br>
-				<p>最大10文字までです</p>
+				<!-- <p>最大10文字までです</p> -->
 				パスワード：<input type="password" size="12" name="user_pass"
 					class="text-box" required minlength="8"><br>
-				<p>8文字以上で入力してください</p>
-				管理者権限：<select name="admin_flg">
+				<!-- <p>8文字以上で入力してください</p> -->
+				管理者権限：<select name="admin_flg" class="text-box-flg">
 					<option value="true">付与</option>
 					<option value="false">付与しない</option>
 				</select><br> <input type="submit" value="登録" class="btn"> <input
