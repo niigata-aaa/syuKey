@@ -5,15 +5,23 @@ body{
 	color:#9C6455;
 }
 #update{
-		margin:10px auto;
-		width: 700px;
-		display: block;
+	flex: 1;
+	
 	    background-color: #fffdf8;
-	    border: none;
-	    border-radius: 30px;
-	    padding: 30px;
+	    border: 2px solid #c89b6d;
+	    border-radius: 10px;
+	    padding: 20px;
 	    text-align: center;
 	
+}
+#main-content{
+	display: flex;
+	    justify-content: center;
+	    align-items: stretch;
+	    gap: 40px;
+	    width: 90%;
+	    max-width: 1200px;
+	    margin: 50px auto;
 }
 #tb1 {
     
@@ -45,7 +53,7 @@ body{
 
 
 #add:hover{
-	filter:brightness(60%);
+	filter:brightness(10%);
 }
 
 #tb1 th,

@@ -70,7 +70,7 @@
     履歴を登録
 </button>
 
-<div id="history" style="display:none;">
+<div id="history">
     <div id="history-title">
         履歴を登録する場合は、以下の情報を入力してください
     </div>
