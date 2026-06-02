@@ -20,13 +20,24 @@ String user_id = (String) session.getAttribute("user_id");
      if(userList.size()!=0){
     %>
 	<h2>ユーザ一覧</h2>
-	<%for(UserBean user : userList){ %>
-		<%=user.getUser_id()%>さん（最終ログイン：<%=user.getLast_login_date() %>）<br>
-	<%} %>
-	<% 
-     } else { %>
-		aaaaaaaa
-	<% }%>
+	<div class="userList">
+		<table border="1">
+		<tr>
+		<th>ユーザID</th>
+		<th>最終ログイン</th>
+		</tr>
+			<%for(UserBean user : userList){ %>
+				<tr>
+					<td><%=user.getUser_id()%>さん</td>
+					<td>（<%=user.getLast_login_date() %>）<br></td>
+				</tr>
+			<%} %>
+			<% 
+		     } else { %>
+				登録されているユーザはいません。
+			<% }%>
+		</table>
+	</div>
 </div>
 
 <div class="d3">
