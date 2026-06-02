@@ -8,8 +8,6 @@
 
 <link rel="stylesheet" href="css/expired-delete-confirm.css">
 
-<link rel="stylesheet" href="css/result.css">
-
 </head>
 <body>
 <%@include file="header.jsp" %>
