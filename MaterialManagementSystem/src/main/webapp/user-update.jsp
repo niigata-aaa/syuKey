@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="css/admin-each-start.css">
 </head>
 <body>
-	<%@include file="header-admin.jsp" %>
+	<%@include file="header.jsp" %>
 	<div class="area">
 		<div class="btn-area">
 		    <form action="user-update-confirm" method="POST">

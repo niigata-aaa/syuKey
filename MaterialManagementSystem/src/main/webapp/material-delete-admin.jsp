@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="css/material-delete-admin.css">
 </head>
 <body>
-	<%@include file="header-admin.jsp" %>
+	<%@include file="header.jsp" %>
 	<%
 		List<MaterialBean> materialNameList = (List<MaterialBean>)request.getAttribute("materialNameList");
 	%>

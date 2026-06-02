@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="css/admin-confirm&result.css">
 </head>
 <body>
-	<%@include file="header-admin.jsp" %>
+	<%@include file="header.jsp" %>
 	<%
 		request.setCharacterEncoding("UTF-8");
 	%>
