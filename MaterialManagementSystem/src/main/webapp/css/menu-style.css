@@ -111,6 +111,7 @@ input[type="text"]{
     flex: 3;
     padding: 20px;
     align-items: center;
+	
 }
 .regist-list{
 	margin-left: 20px;
@@ -126,10 +127,11 @@ input[type="text"]{
     border-collapse: collapse;
     border: 8px solid #c89b6d;
     background-color: white;
+	
 }
     #myTable th {
 		font-size: 20px;  
-        background-color: #f7ebcf;
+        background-color: rgb(255,238,210);
         border: 2px solid #d8c4aa;
         padding: 12px;
         text-align: center;
@@ -158,6 +160,7 @@ input[type="text"]{
     flex: 2;
 	background-color: rgb(255,238,210);
     padding: 20px;
+	
 }
 .empty-content{
 	text-align: center;
