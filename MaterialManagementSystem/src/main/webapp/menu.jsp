@@ -138,6 +138,7 @@ body{
 				<tr>
 					<td ><%=list.get(i).getMaterial_name()%></td>
 					<td ><%=list.get(i).getMaterial_limit()%></td>
+					<td><%=list.get(i).getAmount() %><%=list.get(i).getMaterial_unit() %></td>
 					<td>
 						<form action="expired-delete-confirm-servlet" method="post">
 							<input type="hidden" name="material_name"
@@ -183,6 +184,7 @@ body{
 				<tr id="nearlist1">
 					<td><%=nearlist.get(i).getMaterial_name()%></td>
 					<td><%=nearlist.get(i).getMaterial_limit()%></td>
+					<td><%=nearlist.get(i).getAmount() %><%=nearlist.get(i).getMaterial_unit() %></td>
 					<td>あと<%=diffDays%>日
 					</td>
 				</tr>
@@ -193,6 +195,7 @@ body{
 				<tr id="nearlist2">
 					<td><%=nearlist.get(i).getMaterial_name()%></td>
 					<td><%=nearlist.get(i).getMaterial_limit()%></td>
+					<td><%=nearlist.get(i).getAmount() %><%=nearlist.get(i).getMaterial_unit() %></td>
 					<td>あと<%=diffDays%>日
 					</td>
 				</tr>
@@ -203,6 +206,7 @@ body{
 				<tr id="nearlist3">
 					<td><%=nearlist.get(i).getMaterial_name()%></td>
 					<td><%=nearlist.get(i).getMaterial_limit()%></td>
+					<td><%=nearlist.get(i).getAmount() %><%=nearlist.get(i).getMaterial_unit() %></td>
 					<td>あと<%=diffDays%>日
 					</td>
 				</tr>
@@ -227,7 +231,6 @@ body{
 
 	</div>
 	</div>
-<%@include file="footer.jsp" %>
 	<script>
 		document.getElementById('searchInput').addEventListener(
 				'keyup',
