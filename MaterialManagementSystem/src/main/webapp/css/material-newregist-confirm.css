@@ -1,0 +1,70 @@
+@charset "UTF-8";
+/* 背景 */
+body{
+	background-color:#FDEED1;
+	text-align:center;
+	color:#9C6455;
+}
+/* 四角背景 */
+#box{
+	background-color:white;
+	width:350px;
+	height:200px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:60px;
+	border-radius:50px;
+}
+#big{
+	font-size:25px;
+	margin-top:45px;
+}
+/* メッセージ */
+#sample{
+	font-size:25px;
+	margin-top:35px;
+}
+
+/* ボタン全体 */
+#buttonArea{
+	margin-top:20px;
+}
+/* 共通ボタン */
+input{
+	width:80px;
+	height:45px;
+}
+
+input[type="submit"][value = "戻る"]{
+	    background-color:white;
+		color:#9C6455;
+		border-radius:30px;
+		border:1px solid #9C6455;
+		width:120px;
+		height:50px;
+		font-size:18px;
+		margin-top:15px;
+		margin-right:10px;
+}
+
+input[type="submit"][value="OK"]{
+	    background-color:#ED7F70;
+		color:white;
+		border-radius:30px;
+		width:120px;
+		height:50px;
+		font-size:18px;
+		margin-top:15px;
+		justify-content:space-around;
+		margin-right:10px;
+}
+#btn-area {
+	display: flex;
+	justify-content:center;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

@@ -5,10 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>削除完了</title>
-<link rel="stylesheet" href="css/result.css">
+<link rel="stylesheet" href="css/expired-delete-result.css">
 </head>
 <body>
 <%@include file="header.jsp" %>
+<div id="box">
+<div id="big">
 <%
 	int processingNumber =
     (Integer)request.getAttribute(
@@ -24,6 +26,8 @@
 <%
 	}
 %>
+</div>
+</div>
 <form action="menu-servlet" method="post">
 <input type="submit" value="戻る">
 </form>
