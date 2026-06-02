@@ -30,8 +30,9 @@ h1{
 }
 /* テーブル位置調整 */
 table{
+	 
 	position:relative;
-	right:20px;
+	
 }
 /* テーブル内の余白 */
 td{
