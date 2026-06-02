@@ -12,7 +12,7 @@ body{
 	height:250px;
 	margin-left:auto;
 	margin-right:auto;
-	margin-top:75px;
+	margin-top:10px;
 	border-radius:50px;
 }
 #big{
@@ -59,12 +59,21 @@ input[type="submit"][value = "OK"]{
 }
 
 #btn-area {
+	
 	display: flex;
 	justify-content:center;
 }
 
 #footer {
-  position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+body{
+    font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+    margin:0px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 100%;
+    min-height: 100vh; 
 }
