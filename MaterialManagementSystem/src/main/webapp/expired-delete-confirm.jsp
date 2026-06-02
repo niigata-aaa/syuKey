@@ -5,11 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<<<<<<< HEAD
+
 <link rel="stylesheet" href="css/expired-delete-confirm.css">
-=======
-<link rel="stylesheet" href="css/result.css">
->>>>>>> branch 'master' of https://github.com/niigata-aaa/syuKey.git
+
 </head>
 <body>
 <%@include file="header.jsp" %>
