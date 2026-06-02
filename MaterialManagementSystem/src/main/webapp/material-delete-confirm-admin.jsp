@@ -22,7 +22,7 @@
 			
 			<form action="material-delete-result-admin" method="post">
 				<input type="hidden" name="material_name" value="<%=material_name%>">
-				<input type="submit" value="削除確認へ" class="btn">
+				<input type="submit" value="削除" class="btn">
 			</form>
 		</div>
 	</div>
