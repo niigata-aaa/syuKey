@@ -66,9 +66,7 @@
 			<button type="button" onclick="addRow()" id="add">行の追加</button>
 		</div>
 	
-<button type="button" id="historyBtn" onclick="toggleHistory()">
-    履歴を登録
-</button>
+
 
 <div id="history">
     <div id="history-title">
