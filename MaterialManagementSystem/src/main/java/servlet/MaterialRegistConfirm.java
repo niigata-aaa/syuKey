@@ -47,12 +47,14 @@ public class MaterialRegistConfirm extends HttpServlet {
 			String material_name = request.getParameter("material_name");
 			String material_limit = request.getParameter("material_limit");
 			int material_amount = Integer.parseInt(request.getParameter("material_amount"));
+			String material_unit = request.getParameter("unit");
 			
 			MaterialBean materialBean = new MaterialBean();
 			
 			materialBean.setAmount(material_amount);
 			materialBean.setLimits(material_limit);
 			materialBean.setMaterial_name(material_name);
+			materialBean.setMaterial_unit(material_unit);
 			materialBean.setUser_id(user_id);
 
 			request.setAttribute("materialBean", materialBean);
