@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="css/admin-confirm&result.css">
 </head>
 <body>
-	<%@include file="header-admin.jsp" %>
+	<%@include file="header.jsp" %>
 	<%	
 		String material_name = (String)request.getAttribute("material_name");
 	%>
@@ -26,5 +26,6 @@
 			</form>
 		</div>
 	</div>
+	<%@include file="footer.jsp" %>
 </body>
 </html>
