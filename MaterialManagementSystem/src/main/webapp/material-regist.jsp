@@ -32,7 +32,7 @@
 			材料名：<span id="selectedText">----------------</span>&emsp; 消費期限：<input
 				type="date" name="material_limit" class="text-box" required>&emsp; 
 				数量：<input type="number" name="material_amount" class="text-box" min="0" step="1" required> <span id="unit"></span>
-				<input type="hidden" name="unit">
+				<input type="hidden" name="unit_id" id="unit_id">
 			<input type="submit" value="登録確認へ" class="btn-regist">
 		</div>
 	</form>
@@ -62,6 +62,7 @@
 			const text = selected ? selected.value:"----------------";
 			const unit = unitMap[text] || "";
 			document.getElementById("unit").innerText = unit;
+			document.getElementById("unit_id").value = unit;
 			document.getElementById("selectedText").innerText = text;
 		}
 
