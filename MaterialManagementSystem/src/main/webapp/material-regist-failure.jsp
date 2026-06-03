@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>登録エラー</title>
+<link rel="stylesheet" href="css/main-style.css">
 <link rel="stylesheet" href="css/material-regist-failure.css">
 </head>
 <body>

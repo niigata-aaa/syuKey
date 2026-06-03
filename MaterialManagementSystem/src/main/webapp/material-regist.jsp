@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>材料登録</title>
+<link rel="stylesheet" href="css/main-style.css">
 <link rel="stylesheet" href="css/material-regist.css">
 </head>
 <body>
@@ -21,7 +22,7 @@
 			<div class="radio">
 				<input type="radio" name="material_name"
 					value="<%=nameunitList.get(i).getMaterial_name() %>"
-					onchange="showSelected()"> <span><%=nameunitList.get(i).getMaterial_name() %></span>
+					onchange="showSelected()" required> <span><%=nameunitList.get(i).getMaterial_name() %></span>
 			</div>
 			<%
 				}

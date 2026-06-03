@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>材料登録完了ページ</title>
+<link rel="stylesheet" href="css/main-style.css">
 <link rel="stylesheet" href="css/material-regist-result.css">
 </head>
 <body>
