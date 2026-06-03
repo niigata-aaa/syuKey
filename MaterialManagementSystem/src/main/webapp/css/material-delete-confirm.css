@@ -1,5 +1,8 @@
 @charset "UTF-8";@charset "UTF-8";
 
+body{
+	padding-bottom:80px;
+}
 .confirm-container{
 	text-align:center;
 	margin:40px auto;

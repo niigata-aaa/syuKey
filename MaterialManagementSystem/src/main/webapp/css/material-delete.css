@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+body{
+	padding-bottom:80px;
+}
 .delete-container{
 	width: 70%;
 	margin: 30px auto;
@@ -102,7 +105,7 @@
 	margin-top:10px;
 }
 #footer {
-	position: absolute;
+	position: fixed;
 
   bottom: 0;
   width: 100%;

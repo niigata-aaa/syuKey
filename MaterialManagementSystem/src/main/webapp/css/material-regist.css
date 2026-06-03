@@ -5,6 +5,7 @@ body{
 	margin:0px;
 	padding:0px;
 	display: grid;
+	padding-bottom:80px;
 	grid-template-rows: auto 1fr auto;
 	grid-template-columns: 100%;
 	min-height: 100vh; 
@@ -85,4 +86,9 @@ body{
 	margin-top: 30px;
 	margin-bottom:20px;
 	text-align: center;
+}
+#footer {
+	position: fixed;
+  bottom: 0;
+  width: 100%;
 }
