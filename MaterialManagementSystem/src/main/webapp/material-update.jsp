@@ -93,8 +93,9 @@
 
     <label>
         画像
-        <input type="file" name="history_image">
     </label>
+        <input type="file" name="history_image" class="file-button">
+    
 </div>
 		</div>
 		</div>
