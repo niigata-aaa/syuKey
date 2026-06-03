@@ -26,7 +26,7 @@ if(!(msgList == null || msgList.isEmpty())){
 <div id="box">
 <div id="big">
 
-正常に登録完了しました。<br>
+正常に更新完了しました。<br>
 <%if(!(msg == null || msg.isEmpty())){ %>
 <%for(int i=0;i<msg.size();i++){ %>
 <%=msg.get(i) %><br>
@@ -38,8 +38,8 @@ if(!(msgList == null || msgList.isEmpty())){
 </div>
 </div>
 
-<form action="menu-servlet" method="post">
-<input type="submit" value="戻る">
+<form action="material-update-servlet" method="post">
+<input type="submit" value="続けて更新する">
 </form>
 <%@include file="footer.jsp" %>
 </body>
