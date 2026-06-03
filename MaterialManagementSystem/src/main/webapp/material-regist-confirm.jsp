@@ -19,9 +19,9 @@ MaterialBean materialBean = (MaterialBean)request.getAttribute("materialBean");
 以下の内容で登録します。<br>
 </div>
 <div id="sample">
-<%=materialBean.getMaterial_name()%><br>
-<%=materialBean.getLimits()%><br>
-<%=materialBean.getAmount()%><br>
+材料名：<%=materialBean.getMaterial_name()%><br>
+消費期限：<%=materialBean.getLimits()%><br>
+数量：<%=materialBean.getAmount()%><br>
 </div>
 </div>
 

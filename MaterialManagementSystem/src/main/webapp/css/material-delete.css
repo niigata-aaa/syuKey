@@ -90,3 +90,19 @@
 	font-size: 20px;
 	margin-top: 30px;
 }
+
+#confirm-card{
+	width:500px;
+	margin:0 auto 25px auto;
+	background:rgb(255, 255, 255);
+	border-radius:40px;
+	padding:30px;
+	box-sizing:border-box;
+	font-size:35px;
+	margin-top:10px;
+}
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

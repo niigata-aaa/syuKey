@@ -65,10 +65,11 @@
 
 	<%} else { %>
 
+<div id="confirm-card">
 	<p class="empty-message">
 		削除できる材料はありません。
 	</p>
-
+</div>
 	<%} %>
 
 </div>

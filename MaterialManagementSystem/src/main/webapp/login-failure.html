@@ -3,28 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <title>ログイン失敗</title>
-<link rel="stylesheet" href="css/main-style.css">
+<link rel="stylesheet" href="css/login-failure.css">
 </head>
 <body>
-	<div class="main">
+	<div id="box">
 
-	    <h1>
+		    <div id="big">
 	        ログインに失敗しました
-	    </h1>
+	        </div>
 
-	    <p>
+		    <div id="confirm-card">
 	        IDまたはパスワードが違います
-	    </p>
+			</div>
+	    </div>
+	    <form action="login.html" method="POST">
 
-	    <form action="login.html" method="get">
-
-	        <button type="submit">
-	            ログイン画面へ戻る
-	        </button>
+			<div id="btn-area">
+	        <input type="submit" value ="ログイン画面へ戻る">
+			</div>
 
 	    </form>
-
-	</div>
 
 	</body>
 	</html>
