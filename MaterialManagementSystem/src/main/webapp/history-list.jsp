@@ -53,7 +53,7 @@
 		<%
 } else {
 %>
-		<div id="none-history">履歴がないよ。Let's cooking！</div>
+		<div id="none-history">履歴がないよ。<br>Let's cooking！</div>
 		<%
 }
 %>
