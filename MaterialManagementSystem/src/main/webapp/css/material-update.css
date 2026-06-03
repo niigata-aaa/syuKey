@@ -7,6 +7,7 @@ body{
 	padding:0px;
 	margin:0px;
 	overflow-x: hidden;
+	font-size:1.5vw;
 }
 
 #update,#history{
@@ -31,7 +32,7 @@ body{
 	    gap: 80px;
 	    width: 70%;
 	    max-width: 1200px;
-	    margin: 50px auto;
+	    margin: 30px auto;
 }
 #tb1 {
     
@@ -70,14 +71,14 @@ input[type="text"]{
 	border: 1.5px solid rgb(203, 188, 156);
 	   border-radius: 10px;
 	resize: both;
-	height: 20px;
+	height: 30px;
 	width: 200px;
 	
 	
 }
 input[type="number"]{
 	border: 1.5px solid rgb(203, 188, 156);
-	   border-radius: 10px;
+	   border-radius: 5px;
 	resize: both;
 	height: 20px;
 	width: 60px;
@@ -201,6 +202,21 @@ input[value="OK"]:hover{
   border-radius: 10em;
   padding: 8px 16px;
   text-align: center;
+}
+
+.btn{
+	font-weight: bold;
+	color: white;
+	background: #ED7F70;
+	font-size: 14px;
+	border: 0;
+	border-radius: 10em;
+	padding: 8px 16px;
+	text-align: center;
+}
+
+.btn:hover{
+	filter:brightness(60%);
 }
 
 /*.file-button::file-selector-button {*/
