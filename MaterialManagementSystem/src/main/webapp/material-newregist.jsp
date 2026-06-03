@@ -20,11 +20,11 @@ List<MaterialBean> unitList = (List<MaterialBean>) request.getAttribute("unitLis
 
 <form action="material-newregist-confirm" method="post">
 <div id="form">
-名前：<input type="text" name="material_name"><br></div>
+名前：<input type="text" name="material_name" required><br></div>
 <div id="form">
-消費期限：<input type="date" name="material_limit"><br></div>
+消費期限：<input type="date" name="material_limit" required><br></div>
 <div id="form">
-数量：<input type="number" name="amount">
+数量：<input type="number" name="amount" required>
 <select name="unit">
 <%
 for(int i=0;i<unitList.size();i++){
