@@ -110,7 +110,21 @@ public class UserDAO {
 			pstmt.setString(1, user_id);
 
 			// SQLステートメントの実行
-			processingNumber = pstmt.executeUpdate();
+			processingNumber += pstmt.executeUpdate();
+		}
+		
+		sql = "DELETE FROM history WHERE user_id = ?";
+		try (Connection con = ConnectionManager.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql)) {
+
+			//DTOからデータの取り出し
+			String user_id = user.getUser_id();
+
+			// プレースホルダへの値の設定
+			pstmt.setString(1, user_id);
+
+			// SQLステートメントの実行
+			processingNumber += pstmt.executeUpdate();
 		}
 		
 		
@@ -127,7 +141,7 @@ public class UserDAO {
 			pstmt.setString(1, user_id);
 
 			// SQLステートメントの実行
-			processingNumber = pstmt.executeUpdate();
+			processingNumber += pstmt.executeUpdate();
 		}
 
 		return processingNumber;
