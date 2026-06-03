@@ -18,9 +18,14 @@ request.setCharacterEncoding("UTF-8");
 int cnt = (Integer)request.getAttribute("cnt");
 if(cnt == 2){
 %>
-
-正常に完了しました。<br>
+<div class="check-mark success-mark">
+				✔
+			</div>
+登録が完了しました。<br>
 <%} else { %>
+<div class="check-mark error-mark">
+				✖
+			</div>
 <p id="fail">登録が完了できませんでした。<br>
 または、同じ材料が登録されています。<br></p>
 <%} %>
