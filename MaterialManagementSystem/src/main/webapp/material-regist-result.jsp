@@ -13,7 +13,10 @@
 <div id="result-card">
 <div id="box">
 <div id="big">
-登録成功
+<div class="check-mark success-mark">
+				✔
+			</div>
+登録が完了しました。
 </div>
 </div>
 </div>
