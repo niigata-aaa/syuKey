@@ -41,7 +41,7 @@
 
 				<input type="checkbox"
 					   name="material_name"
-					   value="<%= material.getMaterial_name() %>">
+					   value="<%= material.getMaterial_name() %>" class="materials">
 
 				<span class="material-name">
 					<%= material.getMaterial_name() %>
@@ -75,6 +75,31 @@
 </div>
 
 <%@include file="footer.jsp" %>
+<script>
+(() => {
+    // チェックボックスのinputタグを取得
+    const checkBoxElements = Array.from(document.getElementsByClassName("materials"));
 
+    const errorMessage = "1つ以上の選択肢を選択してください。";
+    checkBoxElements
+        .forEach(m => {
+            // エラーメッセージを、カスタムなものに変更
+            m.setCustomValidity(errorMessage);
+
+            // 各チェックボックスのチェックのオン・オフ時に、以下の処理が実行されるようにする
+            m.addEventListener("change", () => {
+                // 1つ以上チェックがされているかどうかを判定
+                const isCheckedAtLeastOne = document.querySelector(".materials:checked") !== null;
+
+                // 1つもチェックがされていなかったら、すべてのチェックボックスを required にする
+                // 加えて、エラーメッセージも変更する
+                checkBoxElements.forEach(n => {
+                    n.required = !isCheckedAtLeastOne
+                    n.setCustomValidity(isCheckedAtLeastOne ? "" : errorMessage);
+                });
+            });
+        });
+})();
+</script>
 </body>
 </html>
