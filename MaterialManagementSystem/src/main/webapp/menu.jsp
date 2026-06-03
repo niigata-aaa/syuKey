@@ -138,7 +138,7 @@ body{
 				<tr>
 					<td ><%=list.get(i).getMaterial_name()%>：</td>
 					<td ><%=list.get(i).getMaterial_limit()%></td>
-					<td>残<%=list.get(i).getAmount() %><%=list.get(i).getMaterial_unit() %></td>
+					<td>　残<%=list.get(i).getAmount() %><%=list.get(i).getMaterial_unit() %></td>
 					<td>
 						<form action="expired-delete-confirm-servlet" method="post">
 							<input type="hidden" name="material_name"

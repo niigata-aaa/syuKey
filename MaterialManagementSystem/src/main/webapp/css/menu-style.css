@@ -58,6 +58,7 @@
 input[value="在庫登録"]{
 	background-color: rgb(237,127,112 );
 	color: white;
+	font-size: 40px;
 	border: none;
 	border-radius: 10px;
 	transition: all 0.2s;
