@@ -15,8 +15,8 @@
 		    <form action="user-update-confirm" method="POST">
 		    	　ユーザ名：<input type="text" size="12" name="user_id" class="text-box" required><br>
 		    	パスワード：<input type="password" size="12" name="user_pass" class="text-box" required><br>
-		    	<input type="submit" value="更新" class="btn">
 		    	<input type="reset" value="クリア" class="btn">
+		    	<input type="submit" value="更新確認へ" class="btn">
 		    </form>
 	    </div>
 	</div>

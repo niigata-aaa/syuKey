@@ -36,7 +36,7 @@ for(int i=0;i<unitList.size();i++){
 </select>
 </div>
 
-<input type="submit" value="決定">
+<input type="submit" value="登録確認へ">
 </div>
 </form>
 </div>

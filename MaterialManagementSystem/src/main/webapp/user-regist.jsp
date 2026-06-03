@@ -23,8 +23,10 @@
 					<option value="false">付与しない</option>
 					<option value="true">付与</option>
 					
-				</select><br> <input type="submit" value="登録" class="btn"> <input
-					type="reset" value="クリア" class="btn">
+				</select><br> 
+				<input type="reset" value="クリア" class="btn">
+				<input type="submit" value="登録確認へ" class="btn">
+				
 			</form>
 		</div>
 	</div>

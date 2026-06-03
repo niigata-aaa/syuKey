@@ -14,8 +14,8 @@
 		<div class="btn-area">
 		    <form action="user-delete-confirm" method="POST">
 		    	ユーザ名：<input type="text" size="12" name="user_id" class="text-box" required><br>
-		    	<input type="submit" value="削除" class="btn">
 		    	<input type="reset" value="クリア" class="btn">
+		    	<input type="submit" value="削除確認へ" class="btn">
 		    </form>
 	    </div>
     </div>
