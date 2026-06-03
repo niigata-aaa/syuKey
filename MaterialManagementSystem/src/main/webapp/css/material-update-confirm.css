@@ -5,6 +5,17 @@ body{
 	text-align:center;
 	color:#9C6455;
 }
+
+
+#confirm-card{
+	width:500px;
+	margin:0 auto 25px auto;
+	background:rgb(255, 255, 255);
+	border-radius:40px;
+	box-sizing:border-box;
+	font-size:25px;
+	margin-top:30px;
+}
 /* 四角背景 */
 .result-card{
 
@@ -19,21 +30,13 @@ body{
 	padding:35px;
 
 	box-sizing:border-box;
+
 }
 #big{
-	font-size:25px;
+	font-size:30px;
 	margin-top:45px;
 }
-/* メッセージ */
-#sample{
-	font-size:23px;
-	margin-top:35px;
-}
 
-/* ボタン全体 */
-#buttonArea{
-	margin-top:20px;
-}
 /* 共通ボタン */
 input{
 	width:80px;
@@ -49,7 +52,7 @@ input[type="submit"][value = "戻る"]{
 		width:120px;
 		height:50px;
 		font-size:18px;
-		margin-top:15px;
+		margin-top:40px;
 		margin-right:10px;
 		
 }
@@ -65,7 +68,7 @@ input[type="submit"][value="OK"]{
 		width:120px;
 		height:50px;
 		font-size:18px;
-		margin-top:15px;
+		margin-top:40px;
 		justify-content:space-around;
 		margin-right:10px;
 }

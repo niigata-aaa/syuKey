@@ -1,3 +1,4 @@
+material-update-confirm.jsp
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.util.List"%>
 <!DOCTYPE html>
@@ -9,7 +10,7 @@
 </head>
 <body>
 <%@include file="header.jsp" %>
-<div id="box">
+<div id="confirm-card">
 <div id="big">
 <div class="result-card">
 <%
@@ -25,7 +26,11 @@ String contentType = (String)request.getAttribute("contentType");
 %>
 以下の内容で更新します。<br>
 
+</div>
+
+
 <div id="sample">
+
 
 <%
 for(int i=0;i<names.size();i++){
@@ -42,7 +47,7 @@ if(!(sweets_name == null || sweets_name.isEmpty())){
 }
 %>
 </div>
-</div>
+
 <div id="btn-area">
 <form action ="material-update" method="post">
 <input type="submit" value="戻る">
