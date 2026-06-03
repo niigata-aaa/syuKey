@@ -22,12 +22,19 @@
 		<%
 			} else {
 		%>
-				削除しました。<br>
+				正常に削除しました。<br>
 		<%
 			}
 		%>
+		
+		<form action="material-delete-admin" method="POST">
+			<input type="submit" value="材料削除を続ける" class="btn">
+		</form>
 	</div>
 	</div>
+	
+	
+	
 	<%@include file="footer.jsp" %>
 </body>
 </html>

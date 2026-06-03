@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>登録成功</title>
+<title>材料登録完了ページ</title>
 <link rel="stylesheet" href="css/material-regist-result.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
 <div id="result-card">
 <div id="box">
 <div id="big">
-登録成功
+正常に登録しました。
 </div>
 </div>
 </div>
