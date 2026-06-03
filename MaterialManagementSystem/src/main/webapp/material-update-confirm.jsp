@@ -28,7 +28,7 @@ String contentType = (String)request.getAttribute("contentType");
 <%
 for(int i=0;i<names.size();i++){
 %>
-名前：<%=names.get(i) %>　量：<%=amounts.get(i) %><br>
+材料名：<%=names.get(i) %>　消費量：<%=amounts.get(i) %><br>
 <%
 }
 if(!(sweets_name == null || sweets_name.isEmpty())){

@@ -21,7 +21,7 @@ MaterialBean materialBean = (MaterialBean)request.getAttribute("materialBean");
 <div id="sample">
 材料名：<%=materialBean.getMaterial_name()%><br>
 消費期限：<%=materialBean.getLimits()%><br>
-数量：<%=materialBean.getAmount()%><br>
+数量：<%=materialBean.getAmount()%><%=materialBean.getMaterial_unit()%><br>
 </div>
 </div>
 
