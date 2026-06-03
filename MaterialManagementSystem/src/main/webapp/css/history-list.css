@@ -20,6 +20,7 @@
   width: 90%;
   border: none;
   border-collapse: collapse;
+  font-size:1.7vw;
 }
 #myTable th, 
 #myTable td {

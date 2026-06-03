@@ -454,7 +454,7 @@ public class MaterialDAO {
 	public List<String> getAmounts() throws SQLException,ClassNotFoundException{
 		List<String> amounts = new ArrayList<String>();
 		
-		String sql = "select GROUP_CONCAT(material_amount SEPARATOR '/') as amounts from (select * from m_material order by material_limit asc) as m group by material_name having amounts is not null";
+		String sql = "select GROUP_CONCAT(material_amount order by material_limit asc SEPARATOR '/') as amounts from (select * from m_material) as m group by material_name HAVING GROUP_CONCAT(material_amount) IS NOT NULL";
 
 		try(Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
