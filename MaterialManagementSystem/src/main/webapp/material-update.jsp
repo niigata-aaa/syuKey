@@ -99,7 +99,7 @@
 </div>
 		</div>
 		</div>
-		<input type="submit" value="OK">
+		<input type="submit" value="確認へ">
 	</form>
 	<%@include file="footer.jsp"%>
 	<script>
