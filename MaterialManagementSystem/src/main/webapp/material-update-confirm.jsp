@@ -11,6 +11,7 @@
 <%@include file="header.jsp" %>
 <div id="box">
 <div id="big">
+<div class="result-card">
 <%
 request.setCharacterEncoding("UTF-8");
 List<String> names = (List<String>)request.getAttribute("material_names");
@@ -23,8 +24,9 @@ String image_path = (String)request.getAttribute("filePath");
 String contentType = (String)request.getAttribute("contentType");
 %>
 以下の内容で更新します。<br>
-</div>
+
 <div id="sample">
+
 <%
 for(int i=0;i<names.size();i++){
 %>
@@ -71,6 +73,8 @@ for(int i = 0; i < amounts.size(); i++){
 <% } %>
 <input type="submit" value="OK">
 </form>
+</div>
+</div>
 </div>
 <%@include file="footer.jsp" %>
 </body>
