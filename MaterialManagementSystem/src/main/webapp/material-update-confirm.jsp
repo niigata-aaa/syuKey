@@ -22,13 +22,14 @@ String image_name = (String)request.getAttribute("fileName");
 String image_path = (String)request.getAttribute("filePath");
 String contentType = (String)request.getAttribute("contentType");
 %>
-以下の内容で登録します。<br>
+以下の内容で更新します。<br>
 </div>
 <div id="sample">
 <%
 for(int i=0;i<names.size();i++){
 %>
-材料名：<%=names.get(i) %>　消費量：<%=amounts.get(i) %><br>
+材料名：<%=names.get(i) %><br>
+消費量：<%=amounts.get(i) %><br>
 <%
 }
 if(!(sweets_name == null || sweets_name.isEmpty())){
