@@ -43,11 +43,11 @@ if(!(msgList == null || msgList.isEmpty())){
 %>
 </div>
 </div>
-
-<form action="material-update-servlet" method="post">
+</div>
+<form action="material-update" method="post">
 <input type="submit" value="続けて更新する">
 </form>
-</div>
+
 <%@include file="footer.jsp" %>
 </body>
 </html>
