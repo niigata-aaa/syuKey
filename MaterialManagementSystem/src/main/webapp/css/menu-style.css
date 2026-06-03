@@ -125,7 +125,7 @@ input[type="text"]{
 	    align-items: center;
 }
 #myTable {
-	   
+	font-size: 1.8vw;
 	padding: 30px; 
 	text-align: center;
     width: 100%;
@@ -155,7 +155,7 @@ input[type="text"]{
     }
     #myTable tr {
 		
-        height: 50px;
+        height: 58px;
     }
 	
 	.expired-title{
@@ -190,6 +190,7 @@ input[type="text"]{
     height:450px;
     padding: 20px;
     overflow-y: auto;
+	font-size:1.7vw;
 }
 #expired-material{
 	height:200px;
