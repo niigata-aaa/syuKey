@@ -5,15 +5,21 @@ body{
 	text-align:center;
 	color:#9C6455;
 }
+
 /* 四角背景 */
-#box{
-	background-color:white;
-	width:350px;
-	height:275px;
-	margin-left:auto;
-	margin-right:auto;
-	margin-top:10px;
-	border-radius:50px;
+#confirm-card{
+
+	width:500px;
+
+	margin:0 auto;
+
+	background:rgb(255, 255, 255);
+
+	border-radius:40px;
+
+	padding:35px;
+
+	box-sizing:border-box;
 }
 #big{
 	font-size:25px;
@@ -27,7 +33,7 @@ body{
 
 /* ボタン全体 */
 #buttonArea{
-	margin-top:20px;
+	margin-top:10px;
 }
 /* 共通ボタン */
 input{
@@ -39,6 +45,7 @@ input[type="submit"][value="戻る"]{
 	    background-color:white;
 		color:#9C6455;
 	    border-radius:30px;
+		border-color:#9C6455;
 		width:120px;
 		height:50px;
 		font-size:18px;
@@ -46,16 +53,22 @@ input[type="submit"][value="戻る"]{
 		justify-content:space-around;
 		margin-right:10px;
 }
+input[type="submit"][value = "戻る"]:hover{
+	filter:brightness(80%);
+}
 input[type="submit"][value = "OK"]{
 	    background-color:#ED7F70;
 		color:white;
+		border:none;
 		border-radius:30px;
-		border:1px solid #9C6455;
 		width:120px;
 		height:50px;
 		font-size:18px;
 		margin-top:15px;
 		margin-right:10px;
+}
+nput[type="submit"][value="OK"]:hover{
+	background-color: rgb(224, 89, 65);
 }
 
 #btn-area {
