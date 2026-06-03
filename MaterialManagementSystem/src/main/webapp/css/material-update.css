@@ -6,7 +6,6 @@ body{
 }
 #update{
 	flex: 1;
-	
 	    background-color: #fffdf8;
 	   
 	    border-radius: 10px;
@@ -19,7 +18,7 @@ body{
 	    justify-content: center;
 	    align-items: stretch;
 	    gap: 40px;
-	    width: 90%;
+	    width: 70%;
 	    max-width: 1200px;
 	    margin: 50px auto;
 }
@@ -83,7 +82,7 @@ body{
 #history input[type="text"],
 #history input[type="url"],
 #history textarea{
-    width: 100%;
+    width: 90%;
     padding: 12px;
 
     border: 1px solid #d8d8d8;
@@ -149,7 +148,7 @@ input[value="OK"]{
 	    cursor: pointer;
 	    transition: .2s;
 		border-radius: 999px;
-		margin: 30px;
+		margin: 10px;
 }
 input[value="OK"]:hover{
 	filter:brightness(60%);

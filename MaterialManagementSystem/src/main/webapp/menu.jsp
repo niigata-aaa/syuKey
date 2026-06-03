@@ -171,7 +171,7 @@ body{
 				long diffDays;
 				int time = 0;
 			%>
-			<div class="exe-tablewrapper">
+			<div class="exe-tablewrapper2">
 			<table>
 				<%
 				for (int i = 0; i < nearlist.size(); i++) {
