@@ -57,10 +57,10 @@
 
 		<% if(cnt > 0){ %>
 
-			<form action="menu-servlet" method="post">
+			<form action="material-delete" method="post">
 
 				<input type="submit"
-					   value="メインページへ戻る"
+					   value="削除を続ける"
 					   class="menu-btn">
 
 			</form>

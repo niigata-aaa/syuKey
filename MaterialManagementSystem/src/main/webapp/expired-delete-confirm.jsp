@@ -24,14 +24,12 @@
 	<jsp:useBean id="material" scope="session" class="model.entity.MaterialBean" />
 	
 	<jsp:setProperty name="material" property="material_name" param="material_name" />
-	<jsp:setProperty name="material" property="material_kana" param="material_kana" />
 	<jsp:setProperty name="material" property="material_limit" param="sdf" />
 	<jsp:setProperty name="material" property="amount" param="amount" />
 	<jsp:setProperty name="material" property="material_unit" param="material_unit" />
 	
 	<div id="sample">
 	名前：<jsp:getProperty name="material" property="material_name" /><br>
-	ふりがな：<jsp:getProperty name="material" property="material_kana" /><br>
 	消費期限：<jsp:getProperty name="material" property="material_limit" /><br>
 	数量：<jsp:getProperty name="material" property="amount" /><br>
 	単位：<jsp:getProperty name="material" property="material_unit" /><br>

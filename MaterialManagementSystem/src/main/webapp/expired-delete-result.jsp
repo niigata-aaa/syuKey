@@ -38,9 +38,7 @@ if(processingNumber != 0){
 </div>
 </div>
 </div>
-<form action="menu-servlet" method="post">
-<input type="submit" value="戻る">
-</form>
+
 		
 	<%--<a href="menu.jsp">トップに戻る</a> --%>
 	
