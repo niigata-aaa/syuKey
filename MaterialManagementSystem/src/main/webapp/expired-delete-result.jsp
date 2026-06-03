@@ -11,21 +11,31 @@
 <%@include file="header.jsp" %>
 <div id="box">
 <div id="big">
+
 <%
 	int processingNumber =
     (Integer)request.getAttribute(
             "processingNumber");
-
-	if(processingNumber != 0){
 %>
+<div class="result-card">
+<%
+if(processingNumber != 0){
+%>
+<div class="check-mark success-mark">
+✔
+			</div>
 	<p>正常に削除しました</p>
 <%
 	}else{
 %>
+<div class="check-mark error-mark">
+				✖
+			</div>
 	<p>削除できませんでした</p>
 <%
 	}
 %>
+</div>
 </div>
 </div>
 <form action="menu-servlet" method="post">
