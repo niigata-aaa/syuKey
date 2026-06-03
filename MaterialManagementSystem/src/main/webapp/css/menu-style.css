@@ -50,6 +50,7 @@
 	
 }
 #exe-tablewrapper2{
+	text-align: right;
 	max-height: 170px;
 	overflow-y: auto;
 }
@@ -168,7 +169,7 @@ input[type="text"]{
 		font-size: 20px;
 	}
 	#expired tr{
-		text-align: center;
+		text-align: right;
 		padding: 5px;
 	}
 #expired-list {
@@ -203,6 +204,9 @@ input[type="text"]{
 #near-expired-material {
     color: #ff8c00;
 	
+}
+#nearlist1 tr{
+	text-align: right;
 }
 
 body{

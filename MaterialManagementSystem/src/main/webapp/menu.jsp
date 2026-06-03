@@ -185,10 +185,10 @@ body{
 				%>
 				
 				<tr id="nearlist1">
-					<td><%=nearlist.get(i).getMaterial_name()%></td>
+					<td><%=nearlist.get(i).getMaterial_name()%>：</td>
 					<td><%=nearlist.get(i).getMaterial_limit()%></td>
 					<td><%=nearlist.get(i).getAmount() %><%=nearlist.get(i).getMaterial_unit() %></td>
-					<td>あと<%=diffDays%>日
+					<td>　あと<%=diffDays%>日
 					</td>
 				</tr>
 				<%
@@ -196,10 +196,10 @@ body{
 				case 2 :
 				%>
 				<tr id="nearlist2">
-					<td><%=nearlist.get(i).getMaterial_name()%></td>
+					<td><%=nearlist.get(i).getMaterial_name()%>：</td>
 					<td><%=nearlist.get(i).getMaterial_limit()%></td>
 					<td><%=nearlist.get(i).getAmount() %><%=nearlist.get(i).getMaterial_unit() %></td>
-					<td>あと<%=diffDays%>日
+					<td>　あと<%=diffDays%>日
 					</td>
 				</tr>
 				<%
@@ -207,10 +207,10 @@ body{
 				default :
 				%>
 				<tr id="nearlist3">
-					<td><%=nearlist.get(i).getMaterial_name()%></td>
+					<td><%=nearlist.get(i).getMaterial_name()%>：</td>
 					<td><%=nearlist.get(i).getMaterial_limit()%></td>
 					<td><%=nearlist.get(i).getAmount() %><%=nearlist.get(i).getMaterial_unit() %></td>
-					<td>あと<%=diffDays%>日
+					<td>　あと<%=diffDays%>日
 					</td>
 				</tr>
 				<%
