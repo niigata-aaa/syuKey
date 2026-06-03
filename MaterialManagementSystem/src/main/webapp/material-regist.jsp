@@ -40,11 +40,11 @@
 	
 	<div class="btn-area">
 		<form action="material-newregist" method="post">
-			<input type="submit" value="材料登録" class="btn">
+			<input type="submit" value="材料登録 >" class="btn">
 		</form>
 	
 		<form action="material-delete" method="post">
-			<input type="submit" value="材料削除" class="btn">
+			<input type="submit" value="材料削除 >" class="btn">
 		</form>
 	</div>
 	</div>

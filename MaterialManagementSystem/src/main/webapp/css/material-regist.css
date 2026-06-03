@@ -61,7 +61,7 @@ body{
 	filter:brightness(70%);
 }
 
-input[value="材料削除"]{
+input[value="材料削除 >"]{
     width: 150px;
     height: 50px;
     font-size: 20px;
@@ -73,7 +73,7 @@ input[value="材料削除"]{
 	flex-direction: column;
 	
 }
-input[value="材料登録"]{
+input[value="材料登録 >"]{
 	width: 150px;
 	    height: 50px;
 	    font-size: 20px;
