@@ -13,11 +13,14 @@
 <%@include file="header.jsp" %>
 		<%
 		request.setCharacterEncoding("UTF-8");
+		
 		%>
+		<div id="main-content">
 <div id ="box">
 	<div id ="big">
+	<div id="confirm-card">
 	以下の内容を削除します。
-	</div>
+	
 	<jsp:useBean id="material" scope="session" class="model.entity.MaterialBean" />
 	
 	<jsp:setProperty name="material" property="material_name" param="material_name" />
@@ -33,8 +36,9 @@
 	数量：<jsp:getProperty name="material" property="amount" /><br>
 	単位：<jsp:getProperty name="material" property="material_unit" /><br>
     </div>
-
+</div>
 </div>	
+</div>
 <div id="btn-area">
   <form action="menu-servlet" method="POST">
 		<input type="submit" value="戻る">
@@ -44,6 +48,7 @@
 		<input type="submit" value="OK">
 	</form>  
 
+</div>
 </div>
 <%@include file="footer.jsp" %>	
 </body>
