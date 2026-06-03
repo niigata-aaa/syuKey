@@ -44,8 +44,14 @@
 	border-radius: 10px;
 	background: white;
 }
-.exe-tablewrapper{
-	height: 540px;
+#exe-tablewrapper{
+	max-height: 170px;
+	overflow-y: auto;
+	
+}
+#exe-tablewrapper2{
+	text-align: right;
+	max-height: 170px;
 	overflow-y: auto;
 }
 
@@ -163,7 +169,7 @@ input[type="text"]{
 		font-size: 20px;
 	}
 	#expired tr{
-		text-align: center;
+		text-align: right;
 		padding: 5px;
 	}
 #expired-list {
@@ -189,7 +195,7 @@ input[type="text"]{
     border-radius: 5px;
     height:450px;
     padding: 20px;
-    overflow-y: auto;
+    
 	font-size:1.7vw;
 }
 #expired-material{
@@ -197,6 +203,10 @@ input[type="text"]{
 }
 #near-expired-material {
     color: #ff8c00;
+	
+}
+#nearlist1 tr{
+	text-align: right;
 }
 
 body{
