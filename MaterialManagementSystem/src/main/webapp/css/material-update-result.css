@@ -6,6 +6,7 @@ body{
 	color:#9C6455;
 	padding:0px;
 	margin:0px;
+	overflow-x: hidden;
 }
 /* 四角背景 */
 
