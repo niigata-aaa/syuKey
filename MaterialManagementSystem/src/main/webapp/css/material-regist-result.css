@@ -20,6 +20,19 @@ body{
 
 	box-sizing:border-box;
 }
+.check-mark{
+
+	font-size:60px;
+
+	margin-bottom:15px;
+}
+
+.success-mark{
+	color:#72C472;
+}
+
+
+
 #big{
 	font-size:25px;
 	text-align:center;
