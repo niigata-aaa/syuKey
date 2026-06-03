@@ -9,6 +9,8 @@
 </head>
 <body>
 	<%@include file="header.jsp" %>
+	
+	<div class="main-content">
 	<div class="area">
 		<%
 			int cnt = (Integer)request.getAttribute("cnt");
@@ -24,6 +26,7 @@
 		<%
 			}
 		%>
+	</div>
 	</div>
 	<%@include file="footer.jsp" %>
 </body>

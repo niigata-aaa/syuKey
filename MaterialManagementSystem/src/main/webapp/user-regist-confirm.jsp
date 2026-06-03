@@ -9,6 +9,7 @@
 </head>
 <body>
 	<%@include file="header.jsp" %>
+	<div class="main-content">
 	<%
 		request.setCharacterEncoding("UTF-8");
 	%>
@@ -20,7 +21,7 @@
 		<jsp:setProperty name="user" property="admin_flg" param="admin_flg"/>
 	    
 	    ユーザID：<jsp:getProperty name="user" property="user_id"/><br>
-		パスワード：<jsp:getProperty name="user" property="user_pass"/><br>
+<!--		パスワード：<jsp:getProperty name="user" property="user_pass"/><br>-->
 		<%
 		Boolean admin_flg = user.getAdmin_flg();
 		String flg_name = "";
@@ -42,6 +43,7 @@
 				<input type="submit" value="OK" class="btn">
 			</form>
 		</div>
+	</div>
 	</div>
 	<%@include file="footer.jsp" %>
 </body>

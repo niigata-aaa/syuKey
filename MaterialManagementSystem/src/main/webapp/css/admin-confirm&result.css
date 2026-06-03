@@ -3,6 +3,16 @@ body{
 	background-color: rgb(219, 241, 242);
 	text-align:center;
 	font-size: 30px;
+    margin:0px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 100%;
+    min-height: 97.7vh; 
+
+}
+
+.main-content{
+	height:60vh;
 }
 
 .area {

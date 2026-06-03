@@ -9,6 +9,7 @@
 </head>
 <body>
 	<%@include file="header.jsp" %>
+	<div class="main-content">
 	<%	
 		String material_name = (String)request.getAttribute("material_name");
 	%>
@@ -25,6 +26,7 @@
 				<input type="submit" value="削除" class="btn">
 			</form>
 		</div>
+	</div>
 	</div>
 	<%@include file="footer.jsp" %>
 </body>

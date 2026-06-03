@@ -9,6 +9,7 @@
 </head>
 <body>
 	<%@include file="header.jsp" %>
+	<div class="main-content">
 	<%
 		request.setCharacterEncoding("UTF-8");
 	%>
@@ -30,6 +31,7 @@
 				<input type="submit" value="OK" class="btn">
 			</form>
 		</div>
+	</div>
 	</div>
 	<%@include file="footer.jsp" %>
 </body>

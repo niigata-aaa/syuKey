@@ -12,6 +12,7 @@
 	<%
 		request.setCharacterEncoding("UTF-8");
 	%>
+	<div class="main-content">
 	<div class="area">
 		以下のユーザを削除します。よろしいですか？<br>
 		<jsp:useBean id="user" scope="session" class="model.entity.UserBean"/>
@@ -28,6 +29,7 @@
 				<input type="submit" value="OK" class="btn">
 			</form>	
 		</div>
+	</div>
 	</div>
 	<%@include file="footer.jsp" %>
 </body>

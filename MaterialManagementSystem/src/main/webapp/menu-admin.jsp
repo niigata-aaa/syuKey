@@ -41,15 +41,15 @@ String user_id = (String) session.getAttribute("user_id");
 		
 		<div class="d3">
 			<h2>管理メニュー</h2>
-			<form action="user-regist" method="POST">
+			<form action="user-regist.jsp" method="POST">
 				<input type="submit" value="ユーザ登録" class="btn">
 			</form>
 		
-			<form action="user-update" method="POST">
+			<form action="user-update.jsp" method="POST">
 				<input type="submit" value="ユーザのパスワード更新" class="btn">
 			</form>
 		
-			<form action="user-delete" method="POST">
+			<form action="user-delete.jsp" method="POST">
 				<input type="submit" value="ユーザ削除" class="btn">
 			</form>
 		

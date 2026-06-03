@@ -4,16 +4,15 @@
 
 <style>
 #footer{
-	height:40px;
+	height:45px;
 	background-color: #9C6455;
 	text-align: left;
-	padding:20px;
-	margin-top:20px;
+	padding:10px;
 }
 
 #footer input{
-	width: 200px;
-	height: 50px;
+	width: 150px;
+	height: 30px;
 	background-color: #ED7F70;
 	border: none;
 	color: white;

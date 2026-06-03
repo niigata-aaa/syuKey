@@ -9,6 +9,7 @@
 </head>
 <body>
 	<%@include file="header.jsp" %>
+	<div class="main-content">
 	<div class="area">
 		<%
 		int processingNumber = (Integer) request.getAttribute("processingNumber");
@@ -27,6 +28,7 @@
 				<input type="submit" value="削除を続ける" class="btn">
 			</form>
 		</div>
+	</div>
 	</div>
 	<%@include file="footer.jsp" %>
 </body>

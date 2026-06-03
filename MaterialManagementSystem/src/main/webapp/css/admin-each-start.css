@@ -3,15 +3,31 @@ body{
 	background-color: rgb(219, 241, 242);
 	text-align:center;
 	font-size: 30px;
+    margin:0px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 100%;
+    min-height: 97.7vh; 
+
+}
+
+/*.main-content{*/
+/*	display:block;*/
+	
+/*}*/
+
+.main-content{
+	height:60vh;
 }
 
 .area {
-    background-color: #000000;
-	width: 60%;;
-	height: 50%;
-	margin: 50px auto;
+    background-color: #f5f5f5;
+	width: 50%;
+	height: 100%;
+	margin: 0px auto;
 	border-radius: 40px;
-	padding: 100px;
+	padding: 10px;
+	padding-bottom:20px;
 }
 
 .btn-area {
@@ -46,7 +62,6 @@ body{
 	position: relative;
 	top: -6px;
 }
-
 
 p{
 	font-size: 15px;

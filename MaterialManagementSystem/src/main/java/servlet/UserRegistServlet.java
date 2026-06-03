@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.dao.UserDAO;
 import model.entity.UserBean;
@@ -43,9 +44,10 @@ public class UserRegistServlet extends HttpServlet {
 		
 		// リクエストオブジェクトのエンコーディング方式の指定
     	request.setCharacterEncoding("UTF-8");
-    	
+    	HttpSession session = request.getSession();
+    	String user_id = (String)session.getAttribute("user_id");
 		UserBean userBean = new UserBean();
-		userBean.setUser_id(request.getParameter("User_id"));
+		userBean.setUser_id(user_id);
 		userBean.setUser_pass(request.getParameter("User_pass"));
 		userBean.setAdmin_flg(Boolean.valueOf(request.getParameter("Admin_flg")));
 		
