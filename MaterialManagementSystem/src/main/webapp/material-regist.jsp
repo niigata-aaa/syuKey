@@ -35,7 +35,7 @@
 				数量：<input type="number" name="material_amount" class="text-box" min="0" step="1" required> <span id="unit"></span>
 				<input type="hidden" name="unit_id" id="unit_id">
 			<input type="submit" value="登録確認へ" class="btn-regist">
-		</div>
+		
 	</form>
 	
 	<div class="btn-area">
@@ -46,6 +46,7 @@
 		<form action="material-delete" method="post">
 			<input type="submit" value="材料削除" class="btn">
 		</form>
+	</div>
 	</div>
 	<%@include file="footer.jsp"%>
 	<script>
