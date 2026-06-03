@@ -99,8 +99,22 @@ public class UserDAO {
 	 */
 	public int delete(UserBean user) throws ClassNotFoundException,SQLException {
 		int processingNumber = 0; //処理件数
+		String sql = "DELETE FROM m_material WHERE user_id = ?";
+		try (Connection con = ConnectionManager.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql)) {
 
-		String sql = "DELETE FROM m_user WHERE user_id = ?";
+			//DTOからデータの取り出し
+			String user_id = user.getUser_id();
+
+			// プレースホルダへの値の設定
+			pstmt.setString(1, user_id);
+
+			// SQLステートメントの実行
+			processingNumber = pstmt.executeUpdate();
+		}
+		
+		
+		sql = "DELETE FROM m_user WHERE user_id = ?";
 
 		//データベースへの接続の取得、PreparedStatementの取得
 		try (Connection con = ConnectionManager.getConnection();
