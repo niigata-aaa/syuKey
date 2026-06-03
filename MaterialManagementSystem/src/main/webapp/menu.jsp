@@ -129,7 +129,7 @@ body{
 			<%
 			if (list.size() != 0) {
 			%>
-			<div class="exe-tablewrapper">
+			<div id="exe-tablewrapper">
 			<table id="expired">
 				<%
 				for (int i = 0; i < list.size(); i++) {
@@ -154,6 +154,7 @@ body{
 				%>
 			</table>
 			</div>
+			</div>
 			<%
 			} else {
 			%>
@@ -161,7 +162,7 @@ body{
 			<%
 			}
 			%>
-		</div>
+		
 		<div id="near-expired-material">
 			<p class="expired-title">-------------------期限切れの近い材料-------------------</p>
 			<%
@@ -171,8 +172,9 @@ body{
 				long diffDays;
 				int time = 0;
 			%>
-			<div class="exe-tablewrapper2">
+			<div id="exe-tablewrapper2">
 			<table>
+			
 				<%
 				for (int i = 0; i < nearlist.size(); i++) {
 					long datetimeList = nearlist.get(i).getMaterial_limit().getTime();
@@ -181,6 +183,7 @@ body{
 					switch (time) {
 						case 1 :
 				%>
+				
 				<tr id="nearlist1">
 					<td><%=nearlist.get(i).getMaterial_name()%></td>
 					<td><%=nearlist.get(i).getMaterial_limit()%></td>
@@ -215,7 +218,11 @@ body{
 				}
 				}
 				%>
+				
 			</table>
+			</div>
+			</div>
+			</div>
 			
 			<%
 			} else {
@@ -226,10 +233,10 @@ body{
 			%>
 		</div>
 		</div>
-		</div>
+		
 		
 
-	</div>
+	
 	</div>
 	<script>
 		document.getElementById('searchInput').addEventListener(

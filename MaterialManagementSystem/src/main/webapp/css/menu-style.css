@@ -44,8 +44,13 @@
 	border-radius: 10px;
 	background: white;
 }
-.exe-tablewrapper{
-	height: 540px;
+#exe-tablewrapper{
+	max-height: 170px;
+	overflow-y: auto;
+	
+}
+#exe-tablewrapper2{
+	max-height: 170px;
 	overflow-y: auto;
 }
 
@@ -189,7 +194,7 @@ input[type="text"]{
     border-radius: 5px;
     height:450px;
     padding: 20px;
-    overflow-y: auto;
+    
 	font-size:1.7vw;
 }
 #expired-material{
@@ -197,6 +202,7 @@ input[type="text"]{
 }
 #near-expired-material {
     color: #ff8c00;
+	
 }
 
 body{
