@@ -12,10 +12,10 @@
 <%@include file="header.jsp" %>
 <div id="box">
 <div id="big">
-失敗
+登録失敗
 </div>
 <div id="A">
-3つも同じものを買うん<br>じゃあない！！！
+同じものを3つ以上は<br>登録できません。
 </div>
 </div>
 <%@include file="footer.jsp" %>
