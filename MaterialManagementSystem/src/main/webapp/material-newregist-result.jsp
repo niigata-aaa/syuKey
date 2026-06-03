@@ -11,12 +11,13 @@
 <%@include file="header.jsp" %>
 
 <div id="box">
+<div id ="big">
 <%
 request.setCharacterEncoding("UTF-8");
 int cnt = (Integer)request.getAttribute("cnt");
 if(cnt == 2){
 %>
-<div id ="big">
+
 正常に完了しました。<br>
 <%} else { %>
 登録が完了できませんでした。<br>
@@ -29,7 +30,6 @@ if(cnt == 2){
 <form action="material-newregist" method="post">
 <input type="submit" value="続けて登録する">
 </form>
-
 
 <%@include file="footer.jsp" %>
 </body>
