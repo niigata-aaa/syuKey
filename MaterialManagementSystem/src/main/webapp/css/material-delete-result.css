@@ -81,3 +81,15 @@
 .menu-btn:hover{
 	opacity:0.85;
 }
+
+body{
+	color:#9C6455 ;
+	background-color: #FDEED1;
+	margin:0px;
+	padding:0px;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	grid-template-columns: 100%;
+	min-height: 100vh; 
+	        
+}
