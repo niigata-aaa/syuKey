@@ -14,15 +14,9 @@ body{
 	    background: #fffdf9;
 	    border: 2px solid #f0e6d2;
 	    border-radius: 20px;
-/*	    background-color: #fffdf8;*/
-/*		border: 2px solid #f0e6d2;*/
-/*	    border-radius: 10px;*/
-/*	    padding: 20px;*/
-/*	    text-align: center;*/
-	
 }
 #update{
-	padding-top: 50px;
+	padding-top: 20px;
 }
 #main-content{
 	display: flex;
@@ -59,14 +53,16 @@ body{
 	   color: white;
 	   border: none;
 	   border-radius: 10px;
+	   transition: .2s;
 }
 
 
 #add:hover{
-	filter:brightness(10%);
+	filter:brightness(60%);
 }
 input[type="text"]{
-	
+	border: 1.5px solid rgb(203, 188, 156);
+	   border-radius: 10px;
 	resize: both;
 	height: 20px;
 	width: 200px;
@@ -74,6 +70,8 @@ input[type="text"]{
 	
 }
 input[type="number"]{
+	border: 1.5px solid rgb(203, 188, 156);
+	   border-radius: 10px;
 	resize: both;
 	height: 20px;
 	width: 60px;
@@ -86,6 +84,7 @@ input[type="number"]{
        padding: 12px 12px;
    }
    #tb1 th{
+	
 	text-align: left;
 	font-size: 20px;
    }
@@ -111,13 +110,16 @@ input[type="number"]{
     width: 90%;
     padding: 12px;
 
-    border: 1px solid #d8d8d8;
+    border: 1px solid rgb(203, 188, 156);
     border-radius: 10px;
 
     font-size: 16px;
     box-sizing: border-box;
 
     transition: all 0.2s;
+}
+#history input[type="text"]{
+	text-align: center;  
 }
 
 #history textarea{
@@ -137,9 +139,9 @@ input[type="number"]{
 }
 
 #history-title{
-    font-size: 1.4rem;
+    font-size: 18px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-top: 10px;
     color:#9C6455;
 }
 
