@@ -34,6 +34,7 @@ body{
 /* ボタン全体 */
 #buttonArea{
 	margin-top:10px;
+	transition: .2s;
 }
 /* 共通ボタン */
 input{
@@ -67,7 +68,7 @@ input[type="submit"][value = "OK"]{
 		margin-top:15px;
 		margin-right:10px;
 }
-nput[type="submit"][value="OK"]:hover{
+input[type="submit"][value="OK"]:hover{
 	background-color: rgb(224, 89, 65);
 }
 

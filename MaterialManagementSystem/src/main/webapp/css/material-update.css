@@ -4,6 +4,7 @@ body{
 	text-align:center;
 	color:#9C6455;
 }
+
 #update,#history{
 	flex: 1;
 	
@@ -22,6 +23,7 @@ body{
 	display: flex;
 	    justify-content: center;
 	    align-items: stretch;
+		
 	    gap: 80px;
 	    width: 70%;
 	    max-width: 1200px;
@@ -181,5 +183,9 @@ input[value="OK"]{
 input[value="OK"]:hover{
 	filter:brightness(60%);
 }
-
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
 
