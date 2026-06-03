@@ -22,7 +22,7 @@
 			<div class="radio">
 				<input type="radio" name="material_name"
 					value="<%=nameunitList.get(i).getMaterial_name() %>"
-					onchange="showSelected()"> <span><%=nameunitList.get(i).getMaterial_name() %></span>
+					onchange="showSelected()" required> <span><%=nameunitList.get(i).getMaterial_name() %></span>
 			</div>
 			<%
 				}
