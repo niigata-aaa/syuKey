@@ -45,7 +45,7 @@ HistoryBean historyBean = (HistoryBean) request.getAttribute("historyDetail");
 
     </div>
 
-    <form action="history-list" method="post">
+    <form action="history-list" method="post" class="content-form">
         <input type="submit" value="一覧へ戻る" class="button">
     </form>
 

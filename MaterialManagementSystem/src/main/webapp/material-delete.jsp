@@ -11,25 +11,70 @@
 </head>
 
 <body>
+
 <%@include file="header.jsp" %>
-	<%
-		List<MaterialBean> materialNameList = (List<MaterialBean>)request.getAttribute("materialNameList");
-	%>
+
+<%
+	List<MaterialBean> materialNameList =
+		(List<MaterialBean>)request.getAttribute("materialNameList");
+%>
+
+<div class="delete-container">
+
+	<h2>材料削除</h2>
+
+	<p class="count">
+		登録材料数：<%= materialNameList.size() %>件
+	</p>
+
 	<%if(materialNameList.size() != 0){ %>
+
 	<form action="material-delete-confirm" method="post">
+
+		<div class="material-list">
+
 		<%
-			for(MaterialBean material : materialNameList){
+		for(MaterialBean material : materialNameList){
 		%>
-		<input type="radio" name="material_name" value="<%= material.getMaterial_name() %>"> 
-		<span><%= material.getMaterial_name() %></span><br>
+
+			<label class="material-card">
+
+				<input type="checkbox"
+					   name="material_name"
+					   value="<%= material.getMaterial_name() %>">
+
+				<span class="material-name">
+					<%= material.getMaterial_name() %>
+				</span>
+
+			</label>
+
 		<%
-			}
+		}
 		%>
-		<input type="submit" value="削除確認へ">
+
+		</div>
+
+		<div class="button-area">
+			<input type="submit"
+				   value="削除確認へ"
+				   class="delete-btn">
+		</div>
+
 	</form>
+
 	<%} else { %>
-	削除できる材料はありません。
+
+<div id="confirm-card">
+	<p class="empty-message">
+		削除できる材料はありません。
+	</p>
+</div>
 	<%} %>
+
+</div>
+
 <%@include file="footer.jsp" %>
+
 </body>
 </html>

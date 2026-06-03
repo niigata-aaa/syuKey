@@ -8,7 +8,7 @@ body{
 	flex: 1;
 	
 	    background-color: #fffdf8;
-	    border: 2px solid #c89b6d;
+	   
 	    border-radius: 10px;
 	    padding: 20px;
 	    text-align: center;
@@ -66,17 +66,18 @@ body{
    }
 
 #history{
+	flex: 1;
 	margin:10px auto;
-			width: 700px;
+	width: 700px;
     max-width: 700px;
 	padding: 30px;
     background: #fffdf9;
     border: 2px solid #f0e6d2;
     border-radius: 20px;
 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+/*    box-shadow: 0 4px 15px rgba(0,0,0,0.08);*/
 
-    line-height: 2;
+    line-height: 1.5;
 }
 
 #history input[type="text"],
@@ -117,26 +118,26 @@ body{
     color: #7a5c3e;
 }
 
-#historyBtn{
-    padding: 12px 24px;
-    border: none;
-    border-radius: 999px;
+/*#historyBtn{*/
+/*    padding: 12px 24px;*/
+/*    border: none;*/
+/*    border-radius: 999px;*/
 
-    background: #ED7F70;
-    color: white;
+/*    background: #ED7F70;*/
+/*    color: white;*/
 
-    font-size: 16px;
-    font-weight: bold;
+/*    font-size: 16px;*/
+/*    font-weight: bold;*/
 
-    cursor: pointer;
-    transition: .2s;
-	margin: 30px;
-}
+/*    cursor: pointer;*/
+/*    transition: .2s;*/
+/*	margin: 30px;*/
+/*}*/
 
-#historyBtn:hover{
-    background: rgb(227, 77, 55);
-    transform: translateY(-2px);
-}
+/*#historyBtn:hover{*/
+/*    background: rgb(227, 77, 55);*/
+/*    transform: translateY(-2px);*/
+/*}*/
 input[value="OK"]{
 	width: 20%;
 	height: 40px;

@@ -40,7 +40,8 @@ public class MaterialDeleteConfirmServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
 		//リクエストパラメータ取得
-		String material_name = request.getParameter("material_name");
+		String[] material_name =
+				request.getParameterValues("material_name");
 		
 		request.setAttribute("material_name", material_name);
 		RequestDispatcher rd = request.getRequestDispatcher("material-delete-confirm.jsp");

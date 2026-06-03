@@ -22,10 +22,13 @@
 #main-content {
     display: flex;
     gap: 20px;
+	margin: 0 auto;
+	width:100%;
 	
 }
 
 #searchInput{
+	margin-top:10px;
 	width: 100px;
 	height: 30px;
 	margin-right: auto;
@@ -34,11 +37,15 @@
 }
 
 .tablewrapper{
-	max-height: 500px;
+	max-height: 600px;
 	overflow-y: auto;
+
+	border: 4px solid #c89b6d;
+	border-radius: 10px;
+	background: white;
 }
 .exe-tablewrapper{
-	max-height: 380px;
+	height: 540px;
 	overflow-y: auto;
 }
 
@@ -122,9 +129,8 @@ input[type="text"]{
 	padding: 30px; 
 	text-align: center;
     width: 100%;
-    height: 500px;
     border-collapse: collapse;
-    border: 8px solid #c89b6d;
+    border: none;
     background-color: white;
 }
 
@@ -181,11 +187,13 @@ input[type="text"]{
 	
     background-color: white;
     border-radius: 5px;
-    min-height: 500px;
+    height:600px;
     padding: 20px;
     overflow-y: auto;
 }
-
+#expired-material{
+	height:200px;
+}
 #near-expired-material {
     color: #ff8c00;
 }

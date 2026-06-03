@@ -1,1 +1,108 @@
 @charset "UTF-8";
+
+.delete-container{
+	width: 70%;
+	margin: 30px auto;
+	text-align: center;
+}
+
+.delete-container h2{
+	color: #9C6455;
+	margin-bottom: 10px;
+}
+
+.count{
+	color: #9C6455;
+	margin-bottom: 25px;
+	font-size:25px;
+}
+
+.material-list{
+	width:100%;
+
+	display:grid;
+
+	grid-template-columns:
+		repeat(2, 1fr);
+
+	gap:15px;
+}
+
+.material-card{
+	display:flex;
+	align-items:center;
+
+	background:#FFF8EE;
+
+	border:2px solid #D8B89A;
+
+	border-radius:12px;
+
+	padding:12px 15px;
+
+	cursor:pointer;
+
+	transition:0.2s;
+}
+
+.material-card:hover{
+	transform: translateY(-2px);
+
+	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.material-card input[type="checkbox"]{
+	transform: scale(1.4);
+	margin-right: 15px;
+}
+
+.material-name{
+	font-size: 20px;
+	font-weight: bold;
+	color: #9C6455;
+}
+
+.button-area{
+	margin-top: 30px;
+}
+
+.delete-btn{
+	background-color: #E46E5C;
+	color: white;
+
+	border: none;
+
+	padding: 15px 40px;
+
+	border-radius: 12px;
+
+	font-size: 18px;
+
+	cursor: pointer;
+}
+
+.delete-btn:hover{
+	opacity: 0.9;
+}
+
+.empty-message{
+	color: #9C6455;
+	font-size: 20px;
+	margin-top: 30px;
+}
+
+#confirm-card{
+	width:500px;
+	margin:0 auto 25px auto;
+	background:rgb(255, 255, 255);
+	border-radius:40px;
+	padding:30px;
+	box-sizing:border-box;
+	font-size:35px;
+	margin-top:10px;
+}
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

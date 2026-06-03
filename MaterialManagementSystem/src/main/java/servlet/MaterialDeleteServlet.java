@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.dao.MaterialDAO;
 import model.entity.MaterialBean;
@@ -42,11 +43,12 @@ public class MaterialDeleteServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<MaterialBean> materialNameList = null;
-
+		HttpSession session = request.getSession();
+		String user_id = (String)session.getAttribute("user_id");
 		MaterialDAO dao = new MaterialDAO();
 
 		try {
-			materialNameList = dao.selectDeleteName();
+			materialNameList = dao.selectDeleteName(user_id);
 			request.setAttribute("materialNameList", materialNameList);
 		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();

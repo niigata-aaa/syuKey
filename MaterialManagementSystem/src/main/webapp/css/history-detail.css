@@ -70,12 +70,12 @@ body{
     font-size: 1.1rem;
 }
 
-form{
+.content-form{
     margin-top: 40px;
     text-align: center;
 }
 
-.button{
+.content-form input{
 	background-color: #ED7F70 ;
 	height:35px;
 	color:white;
@@ -83,7 +83,7 @@ form{
 	border-radius: 0.5em;
 }
 
-.button:hover{
+.content-form input:hover{
 	filter:brightness(70%);
 }
 

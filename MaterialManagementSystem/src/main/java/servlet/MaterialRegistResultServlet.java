@@ -2,8 +2,6 @@ package servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -53,7 +51,6 @@ public class MaterialRegistResultServlet extends HttpServlet {
 		
 		int cnt = 0;
 		String url = "";
-		List<MaterialBean> tf = new ArrayList<MaterialBean>();
 		
 		
 		MaterialBean materialBean = new MaterialBean();
