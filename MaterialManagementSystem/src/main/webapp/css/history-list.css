@@ -90,3 +90,8 @@ body{
             grid-template-columns: 100%;
             min-height: 100vh; 
         }
+
+#none-history{
+	font-size: 300px;
+	text-align: center;
+}
