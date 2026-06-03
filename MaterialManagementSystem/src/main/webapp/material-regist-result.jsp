@@ -10,9 +10,11 @@
 <body>
 
 <%@include file="header.jsp" %>
+<div id="result-card">
 <div id="box">
 <div id="big">
 登録成功
+</div>
 </div>
 </div>
 <%@include file="footer.jsp" %>
