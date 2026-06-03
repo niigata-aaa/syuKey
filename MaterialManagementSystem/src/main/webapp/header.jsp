@@ -5,7 +5,7 @@
 <style>
 #header{
     width:100%;
-    height:80px;
+    height:90px;
     background-image:url(img/header.png);
     background-repeat: repeat-x;
     padding:3px;
@@ -22,7 +22,7 @@
 #logoutbtn{
 	position: absolute;
 	right: 20px;
-    top: 5%;
+    top: 4%;
 	transform: translateY(-50%);
 }
 
