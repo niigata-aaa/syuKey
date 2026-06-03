@@ -6,14 +6,19 @@ body{
 	color:#9C6455;
 }
 /* 四角背景 */
-#box{
-	background-color:white;
-	width:350px;
-	height:200px;
-	margin-left:auto;
-	margin-right:auto;
-	margin-top:60px;
-	border-radius:50px;
+#confirm-card{
+
+	width:600px;
+
+	margin:0 auto;
+
+	background:rgb(255, 255, 255);
+
+	border-radius:40px;
+
+	padding:35px;
+
+	box-sizing:border-box;
 }
 #big{
 	font-size:25px;
@@ -49,6 +54,7 @@ input[type="submit"][value = "戻る"]{
 
 input[type="submit"][value="OK"]{
 	    background-color:#ED7F70;
+		border: none;
 		color:white;
 		border-radius:30px;
 		width:120px;

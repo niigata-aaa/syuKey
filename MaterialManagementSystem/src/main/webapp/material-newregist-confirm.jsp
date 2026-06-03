@@ -21,15 +21,17 @@ String unitName = (String)request.getAttribute("unit_name");
 String unitId = (String)request.getAttribute("unit_id");
 %>
 <div id="big">
+<div id="confirm-card">
 以下の内容で登録します。<br>
-</div>
+
 <div id ="sample">
 材料名：<%= materialName %><br>
 数量：<%= amount %> <%= unitName %><br>
 消費期限：<%= materialLimit %><br>
 </div>
 </div>
-
+</div>
+</div>
 <div id ="btn-area">
 <form action="material-newregist" method="post">
 <input type="submit" value="戻る">

@@ -6,13 +6,17 @@ body{
 }
 
 #newregist {
-    background-color: white;
-	width: 30%;;
-	height: 30%;
-	margin: 5px auto;
-	border-radius: 40px;
-	padding: 40px;
-	font-size: 20px;
+	width:600px;
+
+		margin:0 auto;
+
+		background:rgb(255, 255, 255);
+
+		border-radius:40px;
+
+		padding:35px;
+
+		box-sizing:border-box;
 }
 #info{
 	font-weight: bold; 
