@@ -28,7 +28,11 @@ String user_id = (String) session.getAttribute("user_id");
 					<%for(UserBean user : userList){ %>
 						<tr>
 							<td><%=user.getUser_id()%>さん</td>
+							<%if(user.getLast_login_date() == null){ %>
+							<td>ログイン履歴がありません</td>
+							<%} else { %>
 							<td>（<%=user.getLast_login_date() %>）<br></td>
+							<%} %>
 						</tr>
 					<%} %>
 					<% 
