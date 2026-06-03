@@ -79,17 +79,17 @@
                name="sweets_name"
                id="sweets_name"
                onchange="setRequired(this)">
-    </label>
+    </label><br>
 
     <label>
-        URL
+        参考レシピのURL<br>
         <input type="url" name="recipe_url">
-    </label>
+    </label><br>
 
     <label>
         コメント
         <textarea name="comment"></textarea>
-    </label>
+    </label><br>
 
     <label>
         画像

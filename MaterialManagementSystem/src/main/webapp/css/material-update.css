@@ -4,20 +4,31 @@ body{
 	text-align:center;
 	color:#9C6455;
 }
-#update{
+#update,#history{
 	flex: 1;
-	    background-color: #fffdf8;
-	   
-	    border-radius: 10px;
-	    padding: 20px;
-	    text-align: center;
 	
+	margin: 0,10,0,10;
+		width: 700px;
+	    max-width: 700px;
+		padding: 10px;
+	    background: #fffdf9;
+	    border: 2px solid #f0e6d2;
+	    border-radius: 20px;
+/*	    background-color: #fffdf8;*/
+/*		border: 2px solid #f0e6d2;*/
+/*	    border-radius: 10px;*/
+/*	    padding: 20px;*/
+/*	    text-align: center;*/
+	
+}
+#update{
+	padding-top: 50px;
 }
 #main-content{
 	display: flex;
 	    justify-content: center;
 	    align-items: stretch;
-	    gap: 40px;
+	    gap: 80px;
 	    width: 70%;
 	    max-width: 1200px;
 	    margin: 50px auto;
@@ -29,7 +40,7 @@ body{
 }
 #update input[type="submit"] {
     
-    margin: 30px auto;
+    margin: 10px;
     width: 120px;
     height: 40px;
     background-color: #ED7F70;
@@ -54,6 +65,20 @@ body{
 #add:hover{
 	filter:brightness(10%);
 }
+input[type="text"]{
+	
+	resize: both;
+	height: 20px;
+	width: 200px;
+	
+	
+}
+input[type="number"]{
+	resize: both;
+	height: 20px;
+	width: 60px;
+	
+}
 
 #tb1 th,
    #tb1 td {
@@ -61,18 +86,19 @@ body{
        padding: 12px 12px;
    }
    #tb1 th{
+	text-align: left;
 	font-size: 20px;
    }
 
 #history{
-	flex: 1;
-	margin:10px auto;
-	width: 700px;
-    max-width: 700px;
-	padding: 30px;
-    background: #fffdf9;
-    border: 2px solid #f0e6d2;
-    border-radius: 20px;
+/*	flex: 1;*/
+/*	margin:10px auto;*/
+/*	width: 700px;*/
+/*    max-width: 700px;*/
+/*	padding: 30px;*/
+/*    background: #fffdf9;*/
+/*    border: 2px solid #f0e6d2;*/
+/*    border-radius: 20px;*/
 
 /*    box-shadow: 0 4px 15px rgba(0,0,0,0.08);*/
 
@@ -95,7 +121,7 @@ body{
 }
 
 #history textarea{
-    min-height: 150px;
+    min-height: 120px;
     resize: vertical;
 }
 
@@ -114,7 +140,7 @@ body{
     font-size: 1.4rem;
     font-weight: bold;
     margin-bottom: 20px;
-    color: #7a5c3e;
+    color:#9C6455;
 }
 
 /*#historyBtn{*/
@@ -148,7 +174,7 @@ input[value="OK"]{
 	    cursor: pointer;
 	    transition: .2s;
 		border-radius: 999px;
-		margin: 10px;
+		margin: 5px;
 }
 input[value="OK"]:hover{
 	filter:brightness(60%);
