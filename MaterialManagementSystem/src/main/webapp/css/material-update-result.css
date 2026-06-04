@@ -9,6 +9,9 @@ body{
 	overflow-x: hidden;
 }
 /* 四角背景 */
+.success-mark{
+	color:#72C472;
+}
 
 #big{
 	font-size:25px;

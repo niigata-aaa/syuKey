@@ -25,9 +25,12 @@ if(!(msgList == null || msgList.isEmpty())){
 } else {
 %>
 <div id="big">
-
+<div class="check-mark success-mark">
+				✔
+			</div>
 正常に更新完了しました。<br>
 <%if(!(msg == null || msg.isEmpty())){ %>
+
 <%for(int i=0;i<msg.size();i++){ %>
 <%=msg.get(i) %><br>
 <%} %>
