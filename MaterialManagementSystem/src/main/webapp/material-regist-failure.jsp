@@ -18,6 +18,9 @@
 同じものを3つ以上は<br>登録できません。
 </div>
 </div>
+<form action="material-regist" method="post">
+<input type="submit" value="続けて登録" class="btn">
+</form>
 <%@include file="footer.jsp" %>
 </body>
 </html>

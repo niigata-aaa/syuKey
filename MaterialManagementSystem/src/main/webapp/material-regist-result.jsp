@@ -21,6 +21,11 @@
 </div>
 </div>
 </div>
+<div class="btn-area">
+<form action="material-regist" method="post">
+<input type="submit" value="続けて登録" class="btn">
+</form>
+</div>
 <%@include file="footer.jsp" %>
 </body>
 </html>

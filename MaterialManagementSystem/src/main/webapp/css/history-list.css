@@ -45,6 +45,7 @@
 	padding-top:40px;
 	border : 0px solid;
 	border-radius: 3em;
+	margin-bottom:20px;
 }
 
 .button{
@@ -62,7 +63,7 @@
 #searchInput{
 	height:15px;
 	width:200px;
-	margin-top: 50px;
+	margin-top: 20px;
 	border: 1px solid #acacac;
 	color: #fff;
 	opacity: .7;
