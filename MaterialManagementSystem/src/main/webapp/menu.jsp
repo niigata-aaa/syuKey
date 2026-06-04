@@ -19,15 +19,15 @@ String user_id = (String) session.getAttribute("user_id");
 }
 
 #nearlist1 {
-	color: #ff4500;
+	color: #f609de;
 }
 
 #nearlist2 {
-	color: #ffd700;
+	color: #f609de;
 }
 
 #nearlist3 {
-	color: #ffff00;
+	color: #f609de;
 }
 body{
 	color:#9C6455 ;
