@@ -21,7 +21,7 @@ public class UserDAO {
 		//データベースへの接続の取得、Statementの取得、SQLステートメントの実行
 		try(Connection con = ConnectionManager.getConnection();
 				Statement stmt = con.createStatement();
-				ResultSet res = stmt.executeQuery("SELECT * From m_user")){
+				ResultSet res = stmt.executeQuery("SELECT * From m_user order by last_login_date desc")){
 			//結果の操作
 			while(res.next()){
 				String user_id = res.getString("user_id");
