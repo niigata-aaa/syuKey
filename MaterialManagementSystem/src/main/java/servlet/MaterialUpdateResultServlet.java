@@ -90,7 +90,7 @@ public class MaterialUpdateResultServlet extends HttpServlet {
 			
 			for(int i=0;i<names.size();i++) {
 				int total_amount = materialDAO.getTotalAmount(names.get(i));
-				if((total_amount - amounts.get(i)) >= 0) {
+				if((total_amount - amounts.get(i)) > 0) {
 					List<MaterialBean> listForUpdate = new ArrayList<MaterialBean>();
 					listForUpdate = materialDAO.selectToUpdate(names.get(i));
 					int sub = 0;
@@ -110,7 +110,25 @@ public class MaterialUpdateResultServlet extends HttpServlet {
 					count += materialDAO.update(listForUpdate);
 					//materialDAOのSQL文どうしようかな。
 					
-				} else {
+				} else if((total_amount - amounts.get(i)) == 0) {
+					List<MaterialBean> listForUpdate = new ArrayList<MaterialBean>();
+					listForUpdate = materialDAO.selectToUpdate(names.get(i));
+					int sub = 0;
+					if((listForUpdate.get(0).getAmount() - amounts.get(i)) >= 0) {
+						if((listForUpdate.get(0).getAmount() - amounts.get(i)) == 0) {
+						}
+						sub = listForUpdate.get(0).getAmount() - amounts.get(i);
+						listForUpdate.get(0).setAmount(sub);
+					} else {
+						amounts.set(i,amounts.get(i) - listForUpdate.get(0).getAmount());
+						listForUpdate.get(0).setAmount(0);
+						sub = listForUpdate.get(1).getAmount() - amounts.get(i);
+						listForUpdate.get(1).setAmount(sub);
+					}
+					count += materialDAO.update(listForUpdate);
+					msg.add(names.get(i) + "を2つ使い切りました！");
+					
+			}else {
 					msgList.add(names.get(i) + "の在庫が足りませんでした。");
 					
 				}
