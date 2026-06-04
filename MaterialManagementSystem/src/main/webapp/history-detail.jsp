@@ -38,7 +38,7 @@ HistoryBean historyBean = (HistoryBean) request.getAttribute("historyDetail");
             </div>
 
             <div id="url">
-            	<p class="section">＜参考URL＞</p>
+            	<p class="section">＜レシピ参考URL＞</p>
                 <%=historyBean.getRecipe_url()%>
             </div>
         </div>

@@ -95,6 +95,9 @@ public class MaterialUpdateResultServlet extends HttpServlet {
 					listForUpdate = materialDAO.selectToUpdate(names.get(i));
 					int sub = 0;
 					if((listForUpdate.get(0).getAmount() - amounts.get(i)) >= 0) {
+						if((listForUpdate.get(0).getAmount() - amounts.get(i)) == 0) {
+							msg.add(names.get(i) + "を1つ使い切りました！");
+						}
 						sub = listForUpdate.get(0).getAmount() - amounts.get(i);
 						listForUpdate.get(0).setAmount(sub);
 					} else {
