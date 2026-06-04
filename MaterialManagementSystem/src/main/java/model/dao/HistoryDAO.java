@@ -17,7 +17,7 @@ import model.entity.HistoryBean;
 public class HistoryDAO {
 	public List<HistoryBean> selectAll(String user_id) throws SQLException,ClassNotFoundException {
 		List<HistoryBean> historyList = new ArrayList<HistoryBean>();
-		String sql = "select * from history where user_id = ? order by date";
+		String sql = "select * from history where user_id = ? order by date desc";
 		
 		try(Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
