@@ -14,6 +14,7 @@
 		List<MaterialBean> nameunitList = (List<MaterialBean>)request.getAttribute("nameunitList");
 			
 	%>
+	<div id="main-content">
 	<form action="material-regist-confirm" method="post">
 		<div class="radio-grid">
 			<%
@@ -46,6 +47,7 @@
 		<form action="material-delete" method="post">
 			<input type="submit" value="材料削除 >" class="btn">
 		</form>
+	</div>
 	</div>
 	</div>
 	<%@include file="footer.jsp"%>
