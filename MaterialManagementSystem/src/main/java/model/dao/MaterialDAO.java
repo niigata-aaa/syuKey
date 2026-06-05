@@ -56,7 +56,7 @@ public class MaterialDAO {
 
 	public List<MaterialBean> selectAllLimit() throws SQLException,ClassNotFoundException {
 		List<MaterialBean> materialList = new ArrayList<MaterialBean>();
-		String sql = "select material_name,material_limit,material_amount,unit_name from m_material inner join m_unit on m_material.material_unit_id = m_unit.unit_id where material_amount is not null";
+		String sql = "select material_name,material_limit,material_amount,unit_name from m_material inner join m_unit on m_material.material_unit_id = m_unit.unit_id where material_amount is not null order by material_limit";
 		try(Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
 			ResultSet res = pstmt.executeQuery();
